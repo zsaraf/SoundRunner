@@ -31,22 +31,23 @@
 bool firstTime = true;
 
 
-// idk what this function is for
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+//// idk what this function is for
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
+    NSLog(@"go");
     [super viewDidLoad];
-    if (firstTime)
-    {
-        
+//    if (firstTime)
+//    {
+        NSLog(@"go");
         self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
         
         if (!self.context) {
@@ -68,7 +69,7 @@ bool firstTime = true;
         [self startMyMotionDetect];
         [self startGyroDetect];
         firstTime = false;
-    }
+//    }
     
     
 }

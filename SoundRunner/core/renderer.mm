@@ -80,13 +80,6 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 }
 
 
-
-
-
-
-
-
-
 //-----------------------------------------------------------------------------
 // name: touch_callback()
 // desc: the touch call back
@@ -189,7 +182,8 @@ void RunnerInit()
     
     
     // load the texture
-    MoGfx::loadTexture( @"violin_outline_bold", @"png" );
+
+    MoGfx::loadTexture( @"flare-tng-3", @"png" );
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     

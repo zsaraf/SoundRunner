@@ -22,8 +22,16 @@ cCompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-ip
 cCompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/mo_fun.o /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_fun.cpp normal armv7s c++ com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner normal armv7s
+cCpResource data/texture/jelly-body-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bw
 cCopyStringsFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/en.lproj/InfoPlist.strings SoundRunner/en.lproj/InfoPlist.strings
-cCompileStoryboard /Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard
+cCpResource data/texture/jelly-body-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw
+cCpResource data/texture/flare-tng-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw
+cCopyPNGFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png data/texture/bokeh.png
+cCopyPNGFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png data/texture/flare-tng-3.png
+cCpResource data/texture/flare-tng-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bw
+cCompileStoryboard /Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main_iPhone.storyboard
+cCpResource data/texture/flare-tng-4.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw
+cCpResource data/texture/flare-tng-5.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw
 cCompileAssetCatalog /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app /Users/loudmouth/github/SoundRunner/SoundRunner/Images.xcassets
 cProcessInfoPlistFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist
 cGenerateDSYMFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner
@@ -327,8 +335,8 @@ t1393478951
 s2640
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o
-t1393478952
-s80344
+t1393485250
+s79736
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/SettingsViewController.o
 t1393477837
@@ -376,11 +384,11 @@ t1393477837
 s229968
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o
-t1393478952
-s84684
+t1393488138
+s84676
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent
-t1393477921
+t1393488038
 s460
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/assetcatalog_dependencies.txt
@@ -392,23 +400,27 @@ t1393477921
 s525
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app
-t1393478952
-s408
+t1393488254
+s714
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM
-t1393477921
+t1393488038
 s102
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Base.lproj/Main.storyboardc
-t1393477921
+t1393484769
+s170
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Base.lproj/Main_iPhone.storyboardc
+t1393485251
 s170
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist
-t1393477921
-s1288
+t1393485251
+s1295
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/PkgInfo
-t1393477921
+t1393485251
 s8
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist
@@ -416,8 +428,12 @@ t1393477835
 s150
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner
-t1393478952
-s120668
+t1393488138
+s104216
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png
+t1393488038
+s127875
 
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/embedded.mobileprovision
 t1393477921
@@ -426,6 +442,47 @@ s223953
 N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/en.lproj/InfoPlist.strings
 t1393477920
 s42
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bw
+t1393484423
+s212953
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw
+t1393484423
+s208779
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.bw
+t2
+s0
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png
+t1393488254
+s61072
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw
+t1393484423
+s173338
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw
+t1393484423
+s228503
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bw
+t1393484423
+s911662
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw
+t1393484423
+s1202567
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/violin_outline_bold.png
+t1393487014
+s38073
+
+N/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png
+c000000005305D64700000000000094DB
+t1392891463
+s38107
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/AppDelegate.h
 c00000000530EC7D400000000000001AA
@@ -438,9 +495,14 @@ t1393465044
 s2208
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard
-c00000000530E946100000000000007F6
-t1393464417
+c00000000530EE3DF00000000000007F6
+t1393484767
 s2038
+
+N/Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main_iPhone.storyboard
+c00000000530EE5C10000000000000819
+t1393485249
+s2073
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/Images.xcassets
 c00000000530D32BB0000000000000088
@@ -448,14 +510,14 @@ t1393373883
 s136
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.h
-c00000000530E95D5000000000000012A
-t1393464789
-s298
+c00000000530EE5AC000000000000012B
+t1393485228
+s299
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm
-c00000000530ECC910000000000001457
-t1393478801
-s5207
+c00000000530EE5AF000000000000148E
+t1393485231
+s5262
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/SettingsViewController.h
 c00000000530E958A00000000000000F2
@@ -468,9 +530,9 @@ t1393464714
 s743
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist
-c00000000530EC8CD00000000000004AA
-t1393477837
-s1194
+c00000000530EE4E200000000000004B1
+t1393485026
+s1201
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Prefix.pch
 c00000000530D32BB0000000000000158
@@ -588,9 +650,9 @@ t1393477588
 s567
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm
-c00000000530ECC780000000000001A22
-t1393478776
-s6690
+c00000000530EF1090000000000001A1E
+t1393488137
+s6686
 
 N/Users/loudmouth/github/SoundRunner/SoundRunner/en.lproj/InfoPlist.strings
 c00000000530D32BB000000000000002D
@@ -601,6 +663,51 @@ N/Users/loudmouth/github/SoundRunner/SoundRunner/main.m
 c00000000530D32BB0000000000000167
 t1393373883
 s359
+
+N/Users/loudmouth/github/SoundRunner/data/texture/bokeh.png
+c0000000050012F0200000000000136E5
+t1342254850
+s79589
+
+N/Users/loudmouth/github/SoundRunner/data/texture/flare-tng-1.bw
+c0000000050014D040000000000033FD9
+t1342262532
+s212953
+
+N/Users/loudmouth/github/SoundRunner/data/texture/flare-tng-2.bw
+c00000000504D77400000000000032F8B
+t1347254080
+s208779
+
+N/Users/loudmouth/github/SoundRunner/data/texture/flare-tng-3.bw
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/loudmouth/github/SoundRunner/data/texture/flare-tng-3.png
+c00000000530EF179000000000000985B
+t1393488249
+s39003
+
+N/Users/loudmouth/github/SoundRunner/data/texture/flare-tng-4.bw
+c00000000504D7740000000000002A51A
+t1347254080
+s173338
+
+N/Users/loudmouth/github/SoundRunner/data/texture/flare-tng-5.bw
+c0000000052817B5E0000000000037C97
+t1384217438
+s228503
+
+N/Users/loudmouth/github/SoundRunner/data/texture/jelly-body-1.bw
+c000000005285572600000000000DE92E
+t1384470310
+s911662
+
+N/Users/loudmouth/github/SoundRunner/data/texture/jelly-body-2.bw
+c00000000528553600000000000125987
+t1384469344
+s1202567
 
 CBuild AST from /Users/loudmouth/github/SoundRunner/SoundRunner/AppDelegate.mm
 r0
@@ -649,16 +756,16 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies66855ea704bfb841^8dec5ea704bfb841^---0#1#1#--18"Check dependencies36"141940BE-54E1-4383-9909-F0ABF9757DEF-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies9887400a29bfb841^eb015b0a29bfb841^---0#1#1#--18"Check dependencies36"6AA79946-C44D-45AD-A7F3-D5E98D65858F-
 
 CCodeSign /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app
-s415171752.322369
-e415171753.897966
+s415181066.400494
+e415181067.236682
 r1
 xCodeSign
 x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"CodeSign DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app78"CodeSign DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.appe99952a804bfb841^d2e1e5a904bfb841^---0#0#1#-19%DVTDocumentLocation2@113"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/0000000000000000^1125"CodeSign DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app    cd /Users/loudmouth/github/SoundRunner    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    Using code signing identity "iPhone Developer: John WRIGHT (FP8D79B65F)" and provisioning profile "iOS Team Provisioning Profile: edu.stanford.music256b.*" (362978DD-9434-4851-BF6C-B8573572DB16)    codesign --force --sign 835403E8B6C4915C1FF0CEA30C23529374652B63 --resource-rules=/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist --entitlements /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"0429BBD0-B087-46BB-8D6C-A07059B9B3A9-
-b164BA5C9-9E02-4CE3-B230-A08499C934D8
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"CodeSign DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app78"CodeSign DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app60ad660a29bfb841^0b983c0b29bfb841^---0#0#1#-19%DVTDocumentLocation2@113"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/0000000000000000^1196"CodeSign DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app    cd /Users/loudmouth/github/SoundRunner    setenv CODESIGN_ALLOCATE /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    Using code signing identity "iPhone Developer: John WRIGHT (FP8D79B65F)" and provisioning profile "iOS Team Provisioning Profile: edu.stanford.music256b.*" (362978DD-9434-4851-BF6C-B8573572DB16)    codesign --force --sign 835403E8B6C4915C1FF0CEA30C23529374652B63 --resource-rules=/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist --entitlements /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"3F597C48-0E5C-498C-B502-844BAD234510-
+b5646029F-9AF3-46F4-A4DF-99C118E22877
 
 CCompileAssetCatalog /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app /Users/loudmouth/github/SoundRunner/SoundRunner/Images.xcassets
 s415170720.428787
@@ -737,8 +844,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Compile
 b164BA5C9-9E02-4CE3-B230-A08499C934D8
 
 CCompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o /Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s415171751.372877
-e415171752.215610
+s415178049.592796
+e415178050.307073
 r1
 xCompileC
 xDerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o
@@ -755,21 +862,21 @@ d/Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_audio.h
 d/Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_def.h
 d/Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_touch.h
 d/Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_gfx.h
-o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:164:24: warning: unused variable 'roll' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:165:24: warning: unused variable 'roll' [-Wunused-variable]
 o                 float roll = 180/M_PI*self.motionManager.deviceMotion.attitude.roll;
 o                       ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:165:24: warning: unused variable 'yaw' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:166:24: warning: unused variable 'yaw' [-Wunused-variable]
 o                 float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
 o                       ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:166:24: warning: unused variable 'pitch' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:167:24: warning: unused variable 'pitch' [-Wunused-variable]
 o                 float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
 o                       ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:149:25: warning: unused variable 'attitude' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:150:25: warning: unused variable 'attitude' [-Wunused-variable]
 o            CMAttitude *attitude = deviceMotion.attitude;
 o                        ^
 o4 warnings generated.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm256"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o SoundRunner/RunnerViewController.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compilere78d5fa704bfb841^6a3237a804bfb841^-971"/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:164:24: warning: unused variable 'roll' [-Wunused-variable]                 float roll = 180/M_PI*self.motionManager.deviceMotion.attitude.roll;                       ^/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:165:24: warning: unused variable 'yaw' [-Wunused-variable]                 float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;                       ^/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:166:24: warning: unused variable 'pitch' [-Wunused-variable]                 float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;                       ^/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:149:25: warning: unused variable 'attitude' [-Wunused-variable]            CMAttitude *attitude = deviceMotion.attitude;                        ^4 warnings generated.4(36%IDEClangDiagnosticActivityLogMessage2@22"Unused variable 'roll'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^163#23#163#23#4181#0#19"Unused Entity Issue--2@21"Unused variable 'yaw'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^164#23#164#23#4267#0#19"Unused Entity Issue--2@23"Unused variable 'pitch'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^165#23#165#23#4351#0#19"Unused Entity Issue--2@26"Unused variable 'attitude'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^148#24#148#24#3455#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^4058"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o SoundRunner/RunnerViewController.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/loudmouth/github/SoundRunner    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -fmodules -fmodules-cache-path=/Users/loudmouth/github/SoundRunner/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility-inlines-hidden -Wno-sign-conversion -miphoneos-version-min=7.0 -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-generated-files.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-own-target-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-all-target-headers.hmap -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-project-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources/armv7s -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources -F/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -include /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/PrecompiledHeaders/SoundRunner-Prefix-dgnzqogwkrpbbhgbvhekoaoxkuch/SoundRunner-Prefix.pch -MMD -MT dependencies -MF /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.d --serialize-diagnostics /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.dia -c /Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o36"E0CEF1CC-E7C8-4686-9E24-7F88CEA68ED7-
-b164BA5C9-9E02-4CE3-B230-A08499C934D8
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm256"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o SoundRunner/RunnerViewController.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compilercfdc97411dbfb841^7c9b4e421dbfb841^-971"/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:165:24: warning: unused variable 'roll' [-Wunused-variable]                 float roll = 180/M_PI*self.motionManager.deviceMotion.attitude.roll;                       ^/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:166:24: warning: unused variable 'yaw' [-Wunused-variable]                 float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;                       ^/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:167:24: warning: unused variable 'pitch' [-Wunused-variable]                 float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;                       ^/Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm:150:25: warning: unused variable 'attitude' [-Wunused-variable]            CMAttitude *attitude = deviceMotion.attitude;                        ^4 warnings generated.4(36%IDEClangDiagnosticActivityLogMessage2@22"Unused variable 'roll'-415178050#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^164#23#164#23#4236#0#19"Unused Entity Issue--2@21"Unused variable 'yaw'-415178050#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^165#23#165#23#4322#0#19"Unused Entity Issue--2@23"Unused variable 'pitch'-415178050#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^166#23#166#23#4406#0#19"Unused Entity Issue--2@26"Unused variable 'attitude'-415178050#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^149#24#149#24#3510#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@78"file:///Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm0000000000000000^4129"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o SoundRunner/RunnerViewController.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/loudmouth/github/SoundRunner    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -fmodules -fmodules-cache-path=/Users/loudmouth/github/SoundRunner/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility-inlines-hidden -Wno-sign-conversion -miphoneos-version-min=7.0 -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-generated-files.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-own-target-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-all-target-headers.hmap -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-project-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources/armv7s -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources -F/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -include /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/PrecompiledHeaders/SoundRunner-Prefix-dgnzqogwkrpbbhgbvhekoaoxkuch/SoundRunner-Prefix.pch -MMD -MT dependencies -MF /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.d --serialize-diagnostics /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.dia -c /Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.mm -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/RunnerViewController.o36"B025EC70-7584-4E7B-8064-3342F1B329E9-
+b5DA3676F-F973-41F6-BB4D-76540C12F074
 
 CCompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/SettingsViewController.o /Users/loudmouth/github/SoundRunner/SoundRunner/SettingsViewController.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
 s415170636.920126
@@ -1060,8 +1167,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile
 b94149A5F-A4CC-40E4-861D-CE110D4A5234
 
 CCompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s415171751.374426
-e415171752.022356
+s415180938.058168
+e415180938.666782
 r1
 xCompileC
 xDerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o
@@ -1079,37 +1186,76 @@ d/Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_gfx.h
 d/Users/loudmouth/github/SoundRunner/SoundRunner/core/Entity.h
 d/Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_glut.h
 d/Users/loudmouth/github/SoundRunner/SoundRunner/core/Globals.h
-o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:115:17: warning: unused variable 'x' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:108:17: warning: unused variable 'x' [-Wunused-variable]
 o        GLfloat x = (pt.y / g_gfxWidth * 2 * ratio) - ratio;
 o                ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:116:17: warning: unused variable 'y' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:109:17: warning: unused variable 'y' [-Wunused-variable]
 o        GLfloat y = (pt.x / g_gfxHeight * 2 ) - 1;
 o                ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:118:17: warning: unused variable 'prevX' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:111:17: warning: unused variable 'prevX' [-Wunused-variable]
 o        GLfloat prevX = (prev.y / g_gfxWidth * 2 * ratio) - ratio;
 o                ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:119:17: warning: unused variable 'prevY' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:112:17: warning: unused variable 'prevY' [-Wunused-variable]
 o        GLfloat prevY = (prev.x / g_gfxHeight * 2) - 1;
 o                ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:103:16: warning: unused variable 'n' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:96:16: warning: unused variable 'n' [-Wunused-variable]
 o    NSUInteger n = [touches count];
 o               ^
-o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:192:13: warning: unused variable 'ratio' [-Wunused-variable]
+o/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:188:13: warning: unused variable 'ratio' [-Wunused-variable]
 o    GLfloat ratio = g_gfxWidth / g_gfxHeight;
 o            ^
 o6 warnings generated.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm237"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o SoundRunner/core/renderer.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler13f45fa704bfb841^45b805a804bfb841^-1186"/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:115:17: warning: unused variable 'x' [-Wunused-variable]        GLfloat x = (pt.y / g_gfxWidth * 2 * ratio) - ratio;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:116:17: warning: unused variable 'y' [-Wunused-variable]        GLfloat y = (pt.x / g_gfxHeight * 2 ) - 1;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:118:17: warning: unused variable 'prevX' [-Wunused-variable]        GLfloat prevX = (prev.y / g_gfxWidth * 2 * ratio) - ratio;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:119:17: warning: unused variable 'prevY' [-Wunused-variable]        GLfloat prevY = (prev.x / g_gfxHeight * 2) - 1;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:103:16: warning: unused variable 'n' [-Wunused-variable]    NSUInteger n = [touches count];               ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:192:13: warning: unused variable 'ratio' [-Wunused-variable]    GLfloat ratio = g_gfxWidth / g_gfxHeight;            ^6 warnings generated.6(36%IDEClangDiagnosticActivityLogMessage2@19"Unused variable 'x'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^114#16#114#16#2686#0#19"Unused Entity Issue--2@19"Unused variable 'y'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^115#16#115#16#2747#0#19"Unused Entity Issue--2@23"Unused variable 'prevX'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^117#16#117#16#2807#0#19"Unused Entity Issue--2@23"Unused variable 'prevY'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^118#16#118#16#2874#0#19"Unused Entity Issue--2@19"Unused variable 'n'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^102#15#102#15#2330#0#19"Unused Entity Issue--2@23"Unused variable 'ratio'-415171752#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^191#12#191#12#5233#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^3996"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o SoundRunner/core/renderer.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/loudmouth/github/SoundRunner    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -fmodules -fmodules-cache-path=/Users/loudmouth/github/SoundRunner/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility-inlines-hidden -Wno-sign-conversion -miphoneos-version-min=7.0 -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-generated-files.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-own-target-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-all-target-headers.hmap -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-project-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources/armv7s -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources -F/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -include /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/PrecompiledHeaders/SoundRunner-Prefix-dgnzqogwkrpbbhgbvhekoaoxkuch/SoundRunner-Prefix.pch -MMD -MT dependencies -MF /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.d --serialize-diagnostics /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.dia -c /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o36"EEE2C99A-4E8F-479A-8D5A-0FFEEFA2F6C7-
-b164BA5C9-9E02-4CE3-B230-A08499C934D8
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm237"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o SoundRunner/core/renderer.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler7eff0e8a28bfb841^0cb1aa8a28bfb841^-1185"/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:108:17: warning: unused variable 'x' [-Wunused-variable]        GLfloat x = (pt.y / g_gfxWidth * 2 * ratio) - ratio;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:109:17: warning: unused variable 'y' [-Wunused-variable]        GLfloat y = (pt.x / g_gfxHeight * 2 ) - 1;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:111:17: warning: unused variable 'prevX' [-Wunused-variable]        GLfloat prevX = (prev.y / g_gfxWidth * 2 * ratio) - ratio;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:112:17: warning: unused variable 'prevY' [-Wunused-variable]        GLfloat prevY = (prev.x / g_gfxHeight * 2) - 1;                ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:96:16: warning: unused variable 'n' [-Wunused-variable]    NSUInteger n = [touches count];               ^/Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm:188:13: warning: unused variable 'ratio' [-Wunused-variable]    GLfloat ratio = g_gfxWidth / g_gfxHeight;            ^6 warnings generated.6(36%IDEClangDiagnosticActivityLogMessage2@19"Unused variable 'x'-415180938#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^107#16#107#16#2679#0#19"Unused Entity Issue--2@19"Unused variable 'y'-415180938#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^108#16#108#16#2740#0#19"Unused Entity Issue--2@23"Unused variable 'prevX'-415180938#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^110#16#110#16#2800#0#19"Unused Entity Issue--2@23"Unused variable 'prevY'-415180938#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^111#16#111#16#2867#0#19"Unused Entity Issue--2@19"Unused variable 'n'-415180938#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^95#15#95#15#2323#0#19"Unused Entity Issue--2@23"Unused variable 'ratio'-415180938#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^187#12#187#12#5229#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@71"file:///Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm0000000000000000^4067"CompileC DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o SoundRunner/core/renderer.mm normal armv7s objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/loudmouth/github/SoundRunner    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -fmodules -fmodules-cache-path=/Users/loudmouth/github/SoundRunner/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility-inlines-hidden -Wno-sign-conversion -miphoneos-version-min=7.0 -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-generated-files.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-own-target-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-all-target-headers.hmap -iquote /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner-project-headers.hmap -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources/armv7s -I/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/DerivedSources -F/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -include /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/PrecompiledHeaders/SoundRunner-Prefix-dgnzqogwkrpbbhgbvhekoaoxkuch/SoundRunner-Prefix.pch -MMD -MT dependencies -MF /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.d --serialize-diagnostics /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.dia -c /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.mm -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/renderer.o36"47E25F29-3A7C-4DC1-8FF7-1EF02BD794E2-
+b01A77419-DCD8-4808-83EF-54E4BD64C0E0
 
 CCompileStoryboard /Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard
-s415170720.428448
-e415170721.828435
+s415177569.391742
+e415177569.475460
 r1
 xCompileStoryboard
 x/Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard
-o2014-02-26 21:12:01.253 Interface Builder Cocoa Touch Tool[2108:303] CFPreferences: user home directory at file:///Users/loudmouth/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"CompileStoryboard SoundRunner/Base.lproj/Main.storyboard56"CompileStoryboard SoundRunner/Base.lproj/Main.storyboard05bf6da000bfb841^9c1ad4a100bfb841^-233"2014-02-26 21:12:01.253 Interface Builder Cocoa Touch Tool[2108:303] CFPreferences: user home directory at file:///Users/loudmouth/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.-0#0#1#-19%DVTDocumentLocation2@81"file:///Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard0000000000000000^807"CompileStoryboard SoundRunner/Base.lproj/Main.storyboard    cd /Users/loudmouth/github/SoundRunner    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.0 --output-format human-readable-text --compile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Base.lproj/Main.storyboardc /Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard36"F07FA155-3255-4823-8363-F923ED7D1C69-
-b3BA25AA6-0145-410D-B223-D2C3A7B71934
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"CompileStoryboard SoundRunner/Base.lproj/Main.storyboard56"CompileStoryboard SoundRunner/Base.lproj/Main.storyboard715a64611bbfb841^c3ba79611bbfb841^---0#0#1#-19%DVTDocumentLocation2@81"file:///Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard0000000000000000^878"CompileStoryboard SoundRunner/Base.lproj/Main.storyboard    cd /Users/loudmouth/github/SoundRunner    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.0 --output-format human-readable-text --compile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Base.lproj/Main.storyboardc /Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main.storyboard36"BC9002C1-74CB-4C21-8A85-C603D8360553-
+b44F49F6E-66AC-4BDE-B605-7C48D6099DF0
+
+CCompileStoryboard /Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main_iPhone.storyboard
+s415178050.372886
+e415178051.334083
+r1
+xCompileStoryboard
+x/Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main_iPhone.storyboard
+o2014-02-26 23:14:11.240 Interface Builder Cocoa Touch Tool[1736:303] CFPreferences: user home directory at file:///Users/loudmouth/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"CompileStoryboard SoundRunner/Base.lproj/Main_iPhone.storyboard63"CompileStoryboard SoundRunner/Base.lproj/Main_iPhone.storyboard50895f421dbfb841^1e8755431dbfb841^-233"2014-02-26 23:14:11.240 Interface Builder Cocoa Touch Tool[1736:303] CFPreferences: user home directory at file:///Users/loudmouth/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.-0#0#1#-19%DVTDocumentLocation2@88"file:///Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main_iPhone.storyboard0000000000000000^899"CompileStoryboard SoundRunner/Base.lproj/Main_iPhone.storyboard    cd /Users/loudmouth/github/SoundRunner    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.0 --output-format human-readable-text --compile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Base.lproj/Main_iPhone.storyboardc /Users/loudmouth/github/SoundRunner/SoundRunner/Base.lproj/Main_iPhone.storyboard36"8548BF1F-EF08-4565-91B8-BF012DFB2745-
+b5DA3676F-F973-41F6-BB4D-76540C12F074
+
+CCopyPNGFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png data/texture/bokeh.png
+s415180838.606754
+e415180838.745311
+r1
+xCopyPNGFile
+x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png
+xdata/texture/bokeh.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png data/texture/bokeh.png114"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png data/texture/bokeh.pnga5669b2628bfb841^31cfbe2628bfb841^---0#0#1#-19%DVTDocumentLocation2@65"file:///Users/loudmouth/github/SoundRunner/data/texture/bokeh.png0000000000000000^703"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png data/texture/bokeh.png    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress /Users/loudmouth/github/SoundRunner/data/texture/bokeh.png /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/bokeh.png36"44544BDC-B689-4105-AB04-945E7326A836-
+bBB334648-277A-4498-8247-0B2C3CD9B4B1
+
+CCopyPNGFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png data/texture/flare-tng-3.png
+s415181054.656228
+e415181054.715687
+r1
+xCopyPNGFile
+x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png
+xdata/texture/flare-tng-3.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png data/texture/flare-tng-3.png126"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png data/texture/flare-tng-3.png1f10a8fe28bfb841^da37b7fe28bfb841^---0#0#1#-19%DVTDocumentLocation2@71"file:///Users/loudmouth/github/SoundRunner/data/texture/flare-tng-3.png0000000000000000^727"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png data/texture/flare-tng-3.png    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-3.png /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.png36"2C9F07FE-6A38-4469-927E-16A5B6E65732-
+b8CFD2009-17F9-43E9-B404-DC5A5BF92912
+
+CCopyPNGFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/violin_outline_bold.png DerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png
+s415179814.121242
+e415179814.258408
+r1
+xCopyPNGFile
+x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/violin_outline_bold.png
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection183"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/violin_outline_bold.png DerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png183"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/violin_outline_bold.png DerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png3f1d1f2624bfb841^2029422624bfb841^---0#0#1#-19%DVTDocumentLocation2@120"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png0000000000000000^841"CopyPNGFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/violin_outline_bold.png DerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/copypng -compress /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/violin_outline_bold.png /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/violin_outline_bold.png36"61487EB0-7AB1-437B-983E-A4E30380E766-
+bD4CDE37C-F0DA-412A-9273-1A6AEB3EB4C7
 
 CCopyStringsFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/en.lproj/InfoPlist.strings SoundRunner/en.lproj/InfoPlist.strings
 s415170720.428319
@@ -1131,19 +1277,89 @@ xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceR
 lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist222"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/ResourceRules.plist DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist9e5eed4b00bfb841^aabbee4b00bfb841^---0#0#1#-19%DVTDocumentLocation2@132"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist00340cc8dfffdf42^794"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/ResourceRules.plist DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/ResourceRules.plist /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"634CFE4A-7416-4CB7-A8C1-AB458F9C27BC-
 b94149A5F-A4CC-40E4-861D-CE110D4A5234
 
+CCpResource data/texture/flare-tng-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bw
+s415177223.732410
+e415177223.734195
+r1
+xCpResource
+xdata/texture/flare-tng-1.bw
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bw
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bw123"CpResource data/texture/flare-tng-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bwe695bb071abfb841^baf4bb071abfb841^---0#0#1#-19%DVTDocumentLocation2@127"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bw00343802ddffdf42^708"CpResource data/texture/flare-tng-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-1.bw    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-1.bw /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"065760CA-467E-4516-B2A5-4F9163658344-
+b0BB6BD8B-27BF-4A02-8DDC-96A4C361C51F
+
+CCpResource data/texture/flare-tng-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw
+s415177223.732257
+e415177223.734264
+r1
+xCpResource
+xdata/texture/flare-tng-2.bw
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw123"CpResource data/texture/flare-tng-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw3388bb071abfb841^11fcbb071abfb841^---0#0#1#-19%DVTDocumentLocation2@127"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw00343802ddffdf42^708"CpResource data/texture/flare-tng-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-2.bw    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-2.bw /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"45883DB5-162D-4073-96E6-0C6BFF09846E-
+b0BB6BD8B-27BF-4A02-8DDC-96A4C361C51F
+
+CCpResource data/texture/flare-tng-3.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.bw
+s415181054.656707
+e415181054.657429
+r0
+xCpResource
+xdata/texture/flare-tng-3.bw
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.bw
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.bw123"CpResource data/texture/flare-tng-3.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.bwa62ba8fe28bfb841^11a6a8fe28bfb841^-98"error: /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-3.bw: No such file or directory1(21%IDEActivityLogMessage2@97"error: /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-3.bw: No such file or directory-415181054#18446744073709551615#0#-2#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#11"PBXCp Error--0#0#1#-19%DVTDocumentLocation4@127"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.bw00343802ddffdf42^708"CpResource data/texture/flare-tng-3.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-3.bw    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-3.bw /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"A02B9A36-F280-40D2-A667-B70147E0E192-
+b8CFD2009-17F9-43E9-B404-DC5A5BF92912
+
+CCpResource data/texture/flare-tng-4.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw
+s415177223.733002
+e415177223.734997
+r1
+xCpResource
+xdata/texture/flare-tng-4.bw
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw123"CpResource data/texture/flare-tng-4.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw83bfbb071abfb841^f129bc071abfb841^---0#0#1#-19%DVTDocumentLocation2@127"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw00343802ddffdf42^708"CpResource data/texture/flare-tng-4.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-4.bw    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-4.bw /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"4096948D-7099-4C2E-ABCB-24FDB18AED65-
+b0BB6BD8B-27BF-4A02-8DDC-96A4C361C51F
+
+CCpResource data/texture/flare-tng-5.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw
+s415177223.733927
+e415177223.735541
+r1
+xCpResource
+xdata/texture/flare-tng-5.bw
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw123"CpResource data/texture/flare-tng-5.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw19febb071abfb841^124dbc071abfb841^---0#0#1#-19%DVTDocumentLocation2@127"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw00343802ddffdf42^708"CpResource data/texture/flare-tng-5.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/flare-tng-5.bw    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/loudmouth/github/SoundRunner/data/texture/flare-tng-5.bw /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"1D7C9B9A-7CDF-4985-B7D1-DCD48463B363-
+b0BB6BD8B-27BF-4A02-8DDC-96A4C361C51F
+
+CCpResource data/texture/jelly-body-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bw
+s415177223.731780
+e415177223.734283
+r1
+xCpResource
+xdata/texture/jelly-body-1.bw
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bw
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bw125"CpResource data/texture/jelly-body-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bwd866bb071abfb841^b309bc071abfb841^---0#0#1#-19%DVTDocumentLocation2@128"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bw00343802ddffdf42^711"CpResource data/texture/jelly-body-1.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-1.bw    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/loudmouth/github/SoundRunner/data/texture/jelly-body-1.bw /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"06049445-6751-4FF1-94CE-D85BBC9E4E63-
+b0BB6BD8B-27BF-4A02-8DDC-96A4C361C51F
+
+CCpResource data/texture/jelly-body-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw
+s415177223.732045
+e415177223.735191
+r1
+xCpResource
+xdata/texture/jelly-body-2.bw
+xDerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw125"CpResource data/texture/jelly-body-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw8176bb071abfb841^4436bc071abfb841^---0#0#1#-19%DVTDocumentLocation2@128"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw00343802ddffdf42^711"CpResource data/texture/jelly-body-2.bw DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/jelly-body-2.bw    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/loudmouth/github/SoundRunner/data/texture/jelly-body-2.bw /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"1D7FA4E6-3B3A-4988-B62D-299125B6ED49-
+b0BB6BD8B-27BF-4A02-8DDC-96A4C361C51F
+
 CGenerateDSYMFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner
-s415171752.270685
-e415171752.321298
+s415181066.363674
+e415181066.398961
 r1
 xGenerateDSYMFile
 x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM
 x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Generate /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM173"GenerateDSYMFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunnerfb5845a804bfb841^964052a804bfb841^---0#0#1#-19%DVTDocumentLocation2@118"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM/0000000000000000^737"GenerateDSYMFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM36"5BAFCA2D-8593-456E-BECF-BC3541D84DBF-
-b164BA5C9-9E02-4CE3-B230-A08499C934D8
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Generate /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM173"GenerateDSYMFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunneraa295d0a29bfb841^c023660a29bfb841^---0#0#1#-19%DVTDocumentLocation2@118"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM/0000000000000000^808"GenerateDSYMFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app.dSYM36"C1FEF149-23F1-4F0B-B1CE-1EAE90EAE8EB-
+b5646029F-9AF3-46F4-A4DF-99C118E22877
 
 CLd /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner normal armv7s
-s415171752.219810
-e415171752.267176
+s415180938.670258
+e415180938.718279
 r1
 xLd
 x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner
@@ -1183,7 +1399,6 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Develope
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreText.framework/CoreText
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/lib/system/libcache.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/lib/system/libcommonCrypto.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/lib/system/libcompiler_rt.dylib
@@ -1212,18 +1427,19 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Develope
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/lib/system/libsystem_stats.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/lib/system/libunwind.dylib
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/usr/lib/system/libxpc.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection122"Link /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner98"Ld DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner normal armv7sb05738a804bfb841^066744a804bfb841^---0#0#1#--1540"Ld DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner normal armv7s    cd /Users/loudmouth/github/SoundRunner    setenv IPHONEOS_DEPLOYMENT_TARGET 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch armv7s -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -L/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -F/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -filelist /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/SoundRunner.LinkFileList -dead_strip -stdlib=libc++ -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=7.0 -framework Foundation -framework AudioToolbox -framework OpenGLES -framework GLKit -framework CoreMotion -framework CoreGraphics -framework UIKit -Xlinker -dependency_info -Xlinker /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/SoundRunner_dependency_info.dat -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner36"07F1BE1B-CDFA-429C-9AC3-113F8EE65E31-
-b164BA5C9-9E02-4CE3-B230-A08499C934D8
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection122"Link /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner98"Ld DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner normal armv7s97abab8a28bfb841^cae1b78a28bfb841^---0#0#1#--1611"Ld DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner normal armv7s    cd /Users/loudmouth/github/SoundRunner    setenv IPHONEOS_DEPLOYMENT_TARGET 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch armv7s -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk -L/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -F/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos -filelist /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/SoundRunner.LinkFileList -dead_strip -stdlib=libc++ -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=7.0 -framework Foundation -framework AudioToolbox -framework OpenGLES -framework GLKit -framework CoreMotion -framework CoreGraphics -framework UIKit -Xlinker -dependency_info -Xlinker /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/Objects-normal/armv7s/SoundRunner_dependency_info.dat -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/SoundRunner36"828CEE85-6909-419B-A646-1527C09AEFE3-
+b01A77419-DCD8-4808-83EF-54E4BD64C0E0
 
 CProcessInfoPlistFile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist
-s415170721.828979
-e415170721.832213
+s415178051.334647
+e415178051.337646
 r1
 xProcessInfoPlistFile
 x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist
 x/Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Process /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist136"ProcessInfoPlistFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist SoundRunner/SoundRunner-Info.pliste048d4a100bfb841^6b0dd5a100bfb841^---0#0#1#-19%DVTDocumentLocation2@77"file:///Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist0000000000000000^1102"ProcessInfoPlistFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist SoundRunner/SoundRunner-Info.plist    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist -genpkginfo /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist -additionalcontentfile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/assetcatalog_generated_info.plist -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist36"73CBBE17-67C3-453D-8914-389B120FF85F-
-b3BA25AA6-0145-410D-B223-D2C3A7B71934
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Process /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist136"ProcessInfoPlistFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist SoundRunner/SoundRunner-Info.plist48c355431dbfb841^0ce756431dbfb841^---0#0#1#-19%DVTDocumentLocation2@77"file:///Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist0000000000000000^1173"ProcessInfoPlistFile DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist SoundRunner/SoundRunner-Info.plist    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-infoPlistUtility /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunner-Info.plist -genpkginfo /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/ResourceRules.plist -additionalcontentfile /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/assetcatalog_generated_info.plist -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/Info.plist36"E76FC3F4-D980-41C6-A648-4E06C521425F-
+b5DA3676F-F973-41F6-BB4D-76540C12F074
 
 CProcessPCH /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/PrecompiledHeaders/SoundRunner-Prefix-czebbberqlbrayfvgiactxugvkrk/SoundRunner-Prefix.pch.pch SoundRunner/SoundRunner-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s415170635.930865
@@ -1280,14 +1496,14 @@ CProcessPCH++ /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Index/
 r0
 
 CProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent
-s415170721.896351
-e415170721.897785
+s415180838.801621
+e415180838.802985
 r1
 xProcessProductPackaging
 x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist
 x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection257"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent257"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent1b84e5a100bfb841^7cd6e5a100bfb841^---0#0#1#-19%DVTDocumentLocation2@155"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent00340cc8dfffdf42^824"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-productPackagingUtility /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent36"EC98ED4A-E61B-401F-B14A-DD0BFE07A08D-
-b3BA25AA6-0145-410D-B223-D2C3A7B71934
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection257"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent257"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent2448cd2628bfb841^cd91cd2628bfb841^---0#0#1#-19%DVTDocumentLocation2@155"file:///Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent0000000000000000^895"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    builtin-productPackagingUtility /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/Entitlements.plist -entitlements -format xml -o /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphoneos/SoundRunner.build/SoundRunner.xcent36"E50EBCEE-F15E-4BE1-9D44-160EB8E2DE9C-
+bBB334648-277A-4498-8247-0B2C3CD9B4B1
 
 CProcessProductPackaging /Users/loudmouth/Library/MobileDevice/Provisioning\ Profiles/362978DD-9434-4851-BF6C-B8573572DB16.mobileprovision /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app/embedded.mobileprovision
 s415170721.893862
@@ -1300,5 +1516,11 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection232"Proces
 b3BA25AA6-0145-410D-B223-D2C3A7B71934
 
 CTouch /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app
-r0
+s415178051.392992
+e415178051.397328
+r1
+xTouch
+x/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Touch /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app75"Touch DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.appefad64431dbfb841^7cb765431dbfb841^---0#0#1#--506"Touch DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app    cd /Users/loudmouth/github/SoundRunner    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"    /usr/bin/touch -c /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Products/Debug-iphoneos/SoundRunner.app36"31B4A139-E3CF-4280-9599-7D229CDB8AA3-
+b5DA3676F-F973-41F6-BB4D-76540C12F074
 

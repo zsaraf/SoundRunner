@@ -11,6 +11,6 @@
 #import "SettingsViewController.h"
 
 
-@interface RunnerViewController : UIViewController
+@interface RunnerViewController : GLKViewController
 
 @end
