@@ -45,8 +45,8 @@ bool firstTime = true;
 {
     NSLog(@"go");
     [super viewDidLoad];
-//    if (firstTime)
-//    {
+    if (firstTime)
+    {
         NSLog(@"go");
         self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
         
@@ -69,7 +69,7 @@ bool firstTime = true;
         [self startMyMotionDetect];
         [self startGyroDetect];
         firstTime = false;
-//    }
+    }
     
     
 }
@@ -77,7 +77,7 @@ bool firstTime = true;
 - (void)viewDidLayoutSubviews
 {
     
-    //RunnerSetDims( self.view.bounds.size.width, self.view.bounds.size.height );
+    RunnerSetDims( self.view.bounds.size.width, self.view.bounds.size.height );
 }
 
 - (void)dealloc
@@ -166,6 +166,9 @@ bool firstTime = true;
                  float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
                  float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
+                 
+                 moveAvatar(pitch/180.0);
+                 
                  // do stuff with gyro data
                  
                  
@@ -206,6 +209,6 @@ bool firstTime = true;
 {
     //    glClearColor( 1.0f, 1.0f, 0.0f, 1.0f);
     //    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    //RunnerRender();
+    RunnerRender();
 }
 @end

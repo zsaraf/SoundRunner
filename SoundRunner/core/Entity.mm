@@ -39,9 +39,9 @@ Entity::Entity()
     
 }
 
-Avatar::Avatar(bool fade)
+Avatar::Avatar(bool isMoving)
 {
-    fadeOut = fade;
+    this->isMoving = isMoving;
 }
 
 // update
@@ -57,45 +57,32 @@ void Avatar::update( double dt )
     {
         loc.set(loc.x + dt*vel.x, + loc.y + dt*vel.y, loc.z + dt*vel.z);
         
-        if ( loc.x <= -ratio )
-        {
-            loc.x = -ratio;
-            vel.x = vel.x * -1.0;
-
-        }
-        else if (loc.x >= ratio)
-        {
-            loc.x = ratio;
-            vel.x = vel.x * -1.0;
-
-        }
+        
         if ( loc.y <= -1  )
         {
-            //NSLog(@"hit a wall, changing y velocity");
-            loc.y = -1;
-            vel.y = vel.y * -1.0;
+            active = false;
+            //NSLog(@"off screen. deleting.");
         }
-        else if (loc.y >= 1)
-        {
-            loc.y = 1;
-            vel.y = vel.y * -1.0;
-        }
+        
+        sca.x -= inc;
+        sca.y -= inc;
+        sca.z -= inc;
     }
     
-    if ( fadeOut )
-    {
-        sca.x += inc;
-        sca.y += inc;
-        sca.z += inc;
-        alpha -= 2*dt;
-        
-        // check for termination condition
-        if( alpha < .01 )
-        {
-            active = false;
-        }
-
-    }
+//    if ( fadeOut )
+//    {
+//        sca.x += inc;
+//        sca.y += inc;
+//        sca.z += inc;
+//        alpha -= 2*dt;
+//        
+//        // check for termination condition
+//        if( alpha < .01 )
+//        {
+//            active = false;
+//        }
+//
+//    }
     
     
 }

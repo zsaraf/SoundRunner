@@ -24,6 +24,8 @@ void RunnerSetDims( GLfloat width, GLfloat height );
 // draw next frame of graphics
 void RunnerRender();
 
+// control mechanism for moving the avatar
+void moveAvatar(float displacement);
 
 
 #endif /* defined(__SoundRunner__renderer__) */
