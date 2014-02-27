@@ -24,6 +24,13 @@
 		5D69C67618BED3C4006F0951 /* renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67518BED3C4006F0951 /* renderer.mm */; };
 		5D69C67918BED5BB006F0951 /* Entity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67818BED5BB006F0951 /* Entity.mm */; };
 		5D69C67C18BEFDCD006F0951 /* Globals.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67A18BEFDCD006F0951 /* Globals.mm */; };
+		5D69C68918BF061C006F0951 /* flare-tng-1.bw in Resources */ = {isa = PBXBuildFile; fileRef = 5D69C68118BF061C006F0951 /* flare-tng-1.bw */; };
+		5D69C68A18BF061C006F0951 /* flare-tng-2.bw in Resources */ = {isa = PBXBuildFile; fileRef = 5D69C68218BF061C006F0951 /* flare-tng-2.bw */; };
+		5D69C68B18BF061C006F0951 /* flare-tng-3.bw in Resources */ = {isa = PBXBuildFile; fileRef = 5D69C68318BF061C006F0951 /* flare-tng-3.bw */; };
+		5D69C68C18BF061C006F0951 /* flare-tng-4.bw in Resources */ = {isa = PBXBuildFile; fileRef = 5D69C68418BF061C006F0951 /* flare-tng-4.bw */; };
+		5D69C68D18BF061C006F0951 /* flare-tng-5.bw in Resources */ = {isa = PBXBuildFile; fileRef = 5D69C68518BF061C006F0951 /* flare-tng-5.bw */; };
+		5D69C68E18BF061C006F0951 /* jelly-body-1.bw in Resources */ = {isa = PBXBuildFile; fileRef = 5D69C68618BF061C006F0951 /* jelly-body-1.bw */; };
+		5D69C68F18BF061C006F0951 /* jelly-body-2.bw in Resources */ = {isa = PBXBuildFile; fileRef = 5D69C68718BF061C006F0951 /* jelly-body-2.bw */; };
 		9251D1AD18BD638E00FA09DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1AC18BD638E00FA09DB /* Foundation.framework */; };
 		9251D1AF18BD638E00FA09DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1AE18BD638E00FA09DB /* CoreGraphics.framework */; };
 		9251D1B118BD638E00FA09DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1B018BD638E00FA09DB /* UIKit.framework */; };
@@ -81,6 +88,13 @@
 		5D69C67818BED5BB006F0951 /* Entity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Entity.mm; sourceTree = "<group>"; };
 		5D69C67A18BEFDCD006F0951 /* Globals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Globals.mm; sourceTree = "<group>"; };
 		5D69C67B18BEFDCD006F0951 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		5D69C68118BF061C006F0951 /* flare-tng-1.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-1.bw"; sourceTree = "<group>"; };
+		5D69C68218BF061C006F0951 /* flare-tng-2.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-2.bw"; sourceTree = "<group>"; };
+		5D69C68318BF061C006F0951 /* flare-tng-3.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-3.bw"; sourceTree = "<group>"; };
+		5D69C68418BF061C006F0951 /* flare-tng-4.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-4.bw"; sourceTree = "<group>"; };
+		5D69C68518BF061C006F0951 /* flare-tng-5.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-5.bw"; sourceTree = "<group>"; };
+		5D69C68618BF061C006F0951 /* jelly-body-1.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jelly-body-1.bw"; sourceTree = "<group>"; };
+		5D69C68718BF061C006F0951 /* jelly-body-2.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jelly-body-2.bw"; sourceTree = "<group>"; };
 		9251D1A918BD638E00FA09DB /* SoundRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9251D1AC18BD638E00FA09DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9251D1AE18BD638E00FA09DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -175,9 +189,32 @@
 			path = SoundRunner/core;
 			sourceTree = SOURCE_ROOT;
 		};
+		5D69C67D18BF061C006F0951 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				5D69C68018BF061C006F0951 /* texture */,
+			);
+			path = data;
+			sourceTree = SOURCE_ROOT;
+		};
+		5D69C68018BF061C006F0951 /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				5D69C68118BF061C006F0951 /* flare-tng-1.bw */,
+				5D69C68218BF061C006F0951 /* flare-tng-2.bw */,
+				5D69C68318BF061C006F0951 /* flare-tng-3.bw */,
+				5D69C68418BF061C006F0951 /* flare-tng-4.bw */,
+				5D69C68518BF061C006F0951 /* flare-tng-5.bw */,
+				5D69C68618BF061C006F0951 /* jelly-body-1.bw */,
+				5D69C68718BF061C006F0951 /* jelly-body-2.bw */,
+			);
+			path = texture;
+			sourceTree = "<group>";
+		};
 		9251D1A018BD638E00FA09DB = {
 			isa = PBXGroup;
 			children = (
+				5D69C67D18BF061C006F0951 /* data */,
 				5D69C65818BED3B9006F0951 /* api */,
 				5D69C67318BED3C4006F0951 /* core */,
 				9251D1B218BD638E00FA09DB /* SoundRunner */,
@@ -336,8 +373,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9251D1C518BD638E00FA09DB /* Images.xcassets in Resources */,
+				5D69C68E18BF061C006F0951 /* jelly-body-1.bw in Resources */,
 				9251D1B718BD638E00FA09DB /* InfoPlist.strings in Resources */,
+				5D69C68F18BF061C006F0951 /* jelly-body-2.bw in Resources */,
+				5D69C68A18BF061C006F0951 /* flare-tng-2.bw in Resources */,
+				5D69C68918BF061C006F0951 /* flare-tng-1.bw in Resources */,
 				9251D1C018BD638E00FA09DB /* Main.storyboard in Resources */,
+				5D69C68C18BF061C006F0951 /* flare-tng-4.bw in Resources */,
+				5D69C68B18BF061C006F0951 /* flare-tng-3.bw in Resources */,
+				5D69C68D18BF061C006F0951 /* flare-tng-5.bw in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  renderer.cpp
+//  renderer.mm
 //  SoundRunner
 //
 //  Created by JP Wright on 2/26/14.
@@ -13,16 +13,13 @@
 using namespace std;
 
 
-
-
 #define SRATE 24000
 #define FRAMESIZE 512
 #define NUM_CHANNELS 2
 
 
-// ========================================================
-// ===================instance variables===================
-// ========================================================
+// -------------------instance variables-------------------
+// --------------------------------------------------------
 GLfloat g_waveformWidth = 2;
 GLfloat g_gfxWidth = 1024;
 GLfloat g_gfxHeight = 640;
@@ -36,9 +33,8 @@ std::vector<Entity *> g_entities;
 
 
 
-// ========================================================
-// ===================function prototypes==================
-// ========================================================
+// -------------------function prototypes------------------
+// --------------------------------------------------------
 
 void renderEntities();
 void renderSingleEntity(Entity * e);
@@ -74,9 +70,6 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
         // zero out for now so we don't get mic input coming out!
         buffer[2*i] = buffer[2*i+1] = 0;
         
-        
-        
-        
     }
     
     // save the num frames
@@ -109,8 +102,6 @@ void touch_callback( NSSet * touches, UIView * view,
     // number of touches in set
     NSUInteger n = [touches count];
     
-    // NSLog( @"total number of touches: %d", n );
-    
     // iterate over all touch events
     for( UITouch * touch in touches )
     {
@@ -131,62 +122,52 @@ void touch_callback( NSSet * touches, UIView * view,
         switch( touch.phase )
         {
                 
-                // ===============================================
-                // TOUCH BEGAN
-                // ===============================================
+            // --------------------------------------------
+            // ---------------touch began------------------
             case UITouchPhaseBegan:
             {
                 //NSLog( @"touch began... %f %f", x, y );
-                
                 break;
             }
-                
-                
+            // --------------------------------------------
+            // -------------touch stationary---------------
             case UITouchPhaseStationary:
             {
-                NSLog( @"touch stationary... %f %f", pt.x, pt.y );
+                //NSLog( @"touch stationary... %f %f", pt.x, pt.y );
                 break;
             }
                 
-                
-                // ===============================================================
-                // TOUCH MOVED
-                // ===============================================================
+            // --------------------------------------------
+            // ---------------touch moved------------------
             case UITouchPhaseMoved:
             {
                 //NSLog( @"touch moved... %f %f", pt.x, pt.y );
                 // GL coordinates
                 // NSLog( @"touch moved... %f %f", x, y );
-                
-                
                 break;
             }
                 
-                // ===============================================================
-                // TOUCH ENDED
-                // ===============================================================
+            // --------------------------------------------
+            // ---------------touch ended------------------
             case UITouchPhaseEnded:
             {
                 //NSLog( @"touch ended... %f %f", x, y );
-               
-                
-                
                 break;
             }
                 
-                
+            // --------------------------------------------
+            // --------------touch canceled----------------
+
             case UITouchPhaseCancelled:
             {
-                NSLog( @"touch cancelled... %f %f", pt.x, pt.y );
-                                break;
+                //NSLog( @"touch cancelled... %f %f", pt.x, pt.y );
+                break;
             }
                 // should not get here
             default:
                 break;
         }
     }
-    
-    
 }
 
 
@@ -205,10 +186,10 @@ void RunnerInit()
     // setting parameters
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    
+    
     // load the texture
     MoGfx::loadTexture( @"violin_outline_bold", @"png" );
-    
-    // init the instrument
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
@@ -228,10 +209,6 @@ void RunnerInit()
         int * p = 0;
         *p = 0;
     }
-    
-    
-    
-    
 }
 
 
@@ -259,7 +236,6 @@ void renderEntities()
             renderSingleEntity((*e));
         }
     }
-    
 }
 
 

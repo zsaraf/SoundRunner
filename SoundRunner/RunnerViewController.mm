@@ -133,7 +133,7 @@ bool firstTime = true;
     [self.motionManager startAccelerometerUpdatesToQueue:[[NSOperationQueue alloc] init] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
      {
          
-            // do stuff with accelerometer data
+         // do stuff with accelerometer data
          
      }];
 }
