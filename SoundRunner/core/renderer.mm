@@ -124,7 +124,7 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 //NSLog( @"touch began... %f %f", x, y );
                 g_avatar->col.set(0.0, 0.0, 0.0);
-                g_synth->noteOn(0, 440.0, 126);
+                g_synth->noteOn(1, 440.0, 126);
                 
 
 //                if (newBeat)
