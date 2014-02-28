@@ -51,7 +51,6 @@ bool newBeat = false;
 
 
 
-
 // -------------------function prototypes------------------
 // --------------------------------------------------------
 
@@ -204,7 +203,6 @@ void moveAvatar(float displacement)
 }
 
 
-
 // initialize the engine (audio, grx, interaction)
 void RunnerInit()
 {
@@ -223,8 +221,6 @@ void RunnerInit()
     
     // load the texture
     MoGfx::loadTexture( @"flare-tng-3", @"png" );
-    
-    
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
@@ -266,9 +262,9 @@ void RunnerInit()
 void moveCamera(GLfloat inc)
 {
     leftClip += inc;
-    
     rightClip += inc;
 }
+
 
 Entity * makeAvatar(float x, float y)
 {
@@ -295,6 +291,8 @@ Entity * makeAvatar(float x, float y)
     return e;
 }
 
+
+
 void makeParticleSystem()
 {
     for (int i = 0; i < NUM_PARTICLES; i++)
@@ -310,7 +308,7 @@ void makeParticleSystem()
         // alpha
         part->alpha = 1.0;
         // scale
-        part->sca.setAll( 0.3 );
+        part->sca.setAll( 0.07 );
         // color
         part->col.set(1.0, 1.0, 1.0);
         // active
@@ -323,8 +321,6 @@ void makeParticleSystem()
 
 
 
-
-
 // set graphics dimensions
 void RunnerSetDims( GLfloat width, GLfloat height )
 {
@@ -334,8 +330,6 @@ void RunnerSetDims( GLfloat width, GLfloat height )
     
     g_waveformWidth = width / height * 1.9;
 }
-
-
 
 
 
