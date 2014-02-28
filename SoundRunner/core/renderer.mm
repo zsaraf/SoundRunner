@@ -10,12 +10,15 @@
 #import "mo_audio.h"
 #import <math.h>
 #import "Entity.h"
+#import "gex-basssynth.h"
 using namespace std;
 
 
 #define SRATE 24000
 #define FRAMESIZE 512
 #define NUM_CHANNELS 2
+#define NUM_PARTICLES 1000
+
 
 
 // -------------------instance variables-------------------
@@ -23,15 +26,29 @@ using namespace std;
 GLfloat g_waveformWidth = 2;
 GLfloat g_gfxWidth = 1024;
 GLfloat g_gfxHeight = 640;
+GLfloat g_ratio = g_gfxWidth / g_gfxHeight;
+GLfloat leftClip = -g_ratio;
+GLfloat rightClip = g_ratio;
 
 // buffer
-SAMPLE g_vertices[FRAMESIZE*2];
 UInt32 g_numFrames;
+
+// graphics stuffs
 Entity * g_avatar;
 std::vector<Entity *> g_entities;
-
-
 GLfloat nextAvatarX = 0.0;
+
+
+// placeholder for audio
+GeXBASSSynth * g_synth;
+// number of voices
+int numVoices = 32;
+
+// time keepingstuffs
+double lastTime = 0.0;
+double timePerBeat = 1/(Globals::BPM/60.0); // seconds per beat
+bool newBeat = false;
+
 
 
 
@@ -41,7 +58,7 @@ GLfloat nextAvatarX = 0.0;
 Entity * makeAvatar(float x, float y);
 void renderEntities();
 void renderSingleEntity(Entity * e);
-
+void makeParticleSystem();
 
 
 //-----------------------------------------------------------------------------
@@ -50,30 +67,13 @@ void renderSingleEntity(Entity * e);
 //-----------------------------------------------------------------------------
 void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 {
-    // our x
-    SAMPLE x = 0;
-    // increment
-    SAMPLE inc = g_waveformWidth / numFrames;
-    
-    // zero!!!
-    memset( g_vertices, 0, sizeof(SAMPLE)*FRAMESIZE*2 );
-    
-    //g_mutex.acquire();
     for( int i = 0; i < numFrames; i++ )
     {
-        // tick argument is channel so need to be weary of that
-        //myInstrument->tick(0);
-        // set to current x value
-        g_vertices[2*i] = x;
-        // increment x
-        x += inc;
-        // set the y coordinate (with scaling)
-        g_vertices[2*i+1] = buffer[2*i] * 2;
-        
         // zero out for now so we don't get mic input coming out!
         buffer[2*i] = buffer[2*i+1] = 0;
-        
     }
+    
+    g_synth->synthesize2(buffer, numFrames);
     
     // save the num frames
     g_numFrames = numFrames;
@@ -124,13 +124,33 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 //NSLog( @"touch began... %f %f", x, y );
                 g_avatar->col.set(0.0, 0.0, 0.0);
+                g_synth->noteOn(0, 440.0, 126);
+                
+
+//                if (newBeat)
+//                {
+//                    // turn note on!
+//                    g_synth->noteOn(0, 220.0, 100);
+//                    newBeat = false;
+//                }
                 break;
             }
             // --------------------------------------------
             // -------------touch stationary---------------
             case UITouchPhaseStationary:
             {
+                
                 //NSLog( @"touch stationary... %f %f", pt.x, pt.y );
+//                if (newBeat)
+//                {
+//                    // turn note on!
+//                    g_synth->noteOn(0, 220.0, 100);
+//
+//                    newBeat = false;
+//
+//                    
+//                }
+                
                 break;
             }
                 
@@ -141,6 +161,14 @@ void touch_callback( NSSet * touches, UIView * view,
                 //NSLog( @"touch moved... %f %f", pt.x, pt.y );
                 // GL coordinates
                 // NSLog( @"touch moved... %f %f", x, y );
+//                if (newBeat)
+//                {
+//                    // turn note on!
+//                    g_synth->noteOn(0, 220.0, 100);
+//
+//                    newBeat = false;
+//                }
+                
                 break;
             }
                 
@@ -150,6 +178,7 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 //NSLog( @"touch ended... %f %f", x, y );
                 g_avatar->col.set(1.0, 1.0, 1.0);
+                g_synth->noteOff(0, 220.0);
                 break;
             }
                 
@@ -195,7 +224,21 @@ void RunnerInit()
     // load the texture
     MoGfx::loadTexture( @"flare-tng-3", @"png" );
     
+    
+    
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
+    
+    // init bass (soundfont player)
+    g_synth = new GeXBASSSynth();
+    g_synth->init(SRATE, numVoices);
+    g_synth->load("GeneralUser_GS_FluidSynth_v1.44.sf2");
+    
+
+//    g_synth->programChange( 0, 0 );
+//    g_synth->programChange( 1, 79 );
+//    g_synth->programChange( 2, 4 );
+//    g_synth->programChange( 3, 10 );
+//    g_synth->programChange( 4, 13 );
     
     // init audio
     bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -215,7 +258,16 @@ void RunnerInit()
     }
     
     g_avatar = makeAvatar(0.0, 0.0);
+    makeParticleSystem();
+}
+
+
+
+void moveCamera(GLfloat inc)
+{
+    leftClip += inc;
     
+    rightClip += inc;
 }
 
 Entity * makeAvatar(float x, float y)
@@ -243,6 +295,31 @@ Entity * makeAvatar(float x, float y)
     return e;
 }
 
+void makeParticleSystem()
+{
+    for (int i = 0; i < NUM_PARTICLES; i++)
+    {
+        Particle * part = new Particle();
+        // random size between 0 and 0.5
+        part->size.setAll( 0.5*( rand()  / (float)RAND_MAX ) );
+        // random x location
+        part->loc.x = 10*( (rand() / (float)RAND_MAX) - 0.5 );
+        // random y location between -1 and1
+        part->loc.y = 2*g_ratio*( (rand() / (float)RAND_MAX) - 0.5 );
+        part->loc.z = 0;
+        // alpha
+        part->alpha = 1.0;
+        // scale
+        part->sca.setAll( 0.3 );
+        // color
+        part->col.set(1.0, 1.0, 1.0);
+        // active
+        part->active = true;
+        // insert
+        g_entities.push_back(part);
+    }
+
+}
 
 
 
@@ -263,14 +340,27 @@ void RunnerSetDims( GLfloat width, GLfloat height )
 
 
 
-
 // draw next frame of graphics
 void RunnerRender()
 {
     g_avatar = makeAvatar(nextAvatarX, 0.0);
 
-    // refresh current time reading
-    MoGfx::getCurrentTime( true );
+    // refresh current time reading (in microseconds)
+    double currTime = MoGfx::getCurrentTime( true );
+    
+    
+    
+    // if the duration of a beat has passed
+    if (currTime - lastTime >= timePerBeat && !newBeat)
+    {
+        // update the lastTime
+        lastTime = currTime;
+        // turn off anything that is playing
+        
+        // tell touch callback that a note can be played.
+        newBeat = true;
+
+    }
     
     // projection
     glMatrixMode( GL_PROJECTION );
@@ -278,9 +368,8 @@ void RunnerRender()
     glLoadIdentity();
     // alternate
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
-    glOrthof( -ratio, ratio, -1, 1, -1, 1 );
     // orthographic
-    //glOrthof( -g_gfxWidth/2, g_gfxWidth/2, -g_gfxHeight/2, g_gfxHeight/2, -1.0f, 1.0f );
+    glOrthof( leftClip, rightClip, -1, 1, -1, 1 );
     // modelview
     glMatrixMode( GL_MODELVIEW );
     // reset
@@ -327,7 +416,6 @@ void renderEntities()
         }
     }
 }
-
 
 
 void renderSingleEntity(Entity * e)

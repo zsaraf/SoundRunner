@@ -9,7 +9,7 @@
 #ifndef __SoundRunner__renderer__
 #define __SoundRunner__renderer__
 
-#include <iostream>
+#import <iostream>
 #import <vector>
 #import "mo_audio.h"
 #import "mo_touch.h"
@@ -23,6 +23,8 @@ void RunnerInit();
 void RunnerSetDims( GLfloat width, GLfloat height );
 // draw next frame of graphics
 void RunnerRender();
+
+void moveCamera(GLfloat inc);
 
 // control mechanism for moving the avatar
 void moveAvatar(float displacement);

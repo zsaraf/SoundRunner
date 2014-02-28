@@ -168,6 +168,7 @@ bool firstTime = true;
                  
                  
                  moveAvatar(pitch/180.0);
+                 moveCamera(pitch/180.0);
                  
                  // do stuff with gyro data
                  

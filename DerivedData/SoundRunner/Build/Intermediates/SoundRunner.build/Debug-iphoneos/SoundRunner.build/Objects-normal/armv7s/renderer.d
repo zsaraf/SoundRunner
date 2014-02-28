@@ -7,4 +7,14 @@ dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_gfx.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Entity.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_glut.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/core/Globals.h
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/Globals.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/Sitar.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/Instrmnt.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/Stk.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/DelayA.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/Filter.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/OneZero.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/Noise.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/Generator.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/MoMu-STK-1.0.0/include/ADSR.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/PartSystem.h

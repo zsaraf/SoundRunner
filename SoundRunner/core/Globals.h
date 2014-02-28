@@ -20,7 +20,9 @@
 class Globals
 {
 public:
-    static GLuint g_texture[1];
+    static GLuint g_texture[2];
+    // default BPM
+    static float BPM;
     
 };
 

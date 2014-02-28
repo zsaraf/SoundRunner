@@ -50,7 +50,6 @@ public:
     Avatar(bool fade);
     // update
     virtual void update( double dt );
-    
     // render
     virtual void render();
     bool isMoving;
@@ -59,53 +58,24 @@ private:
 };
 
 
-
-
-class String : public Entity
+class Particle : public Entity
 {
 public:
-    // constructor
-    String(Vector3D *a, Vector3D *b, float start_freq, float halfWidth);
-    
-public:
-    // udpate
-    virtual void update( double dt );
-    // render
-    virtual void render();
-    
-    // set the ends of the String
-    void setPointA(GLfloat x, GLfloat y);
-    void setMidpoint(GLfloat x, GLfloat y);
-    void setPointB(GLfloat x, GLfloat y);
-    
-private:
-    Vector3D pointA, midpoint, pointB;
-    GLfloat stringVertices[6];
-    GLfloat stringRectVertices[8];
-};
-
-
-
-
-
-class Sphere : public Entity
-{
-public:
-    Sphere() : size( 1, 1, 1.0f ), stacks(10), slices(10) { }
+    Particle() : size( 1, 1, 1.0f ), stacks(10), slices(10) { }
 public:
     // update
     virtual void update( double dt );
     
     // render
     virtual void render();
-    
+
 public:
     Vector3D size;
     GLint slices;
     GLint stacks;
-    bool isMoving;
-
+private:
 };
+
 
 
 
