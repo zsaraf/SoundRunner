@@ -123,7 +123,7 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 //NSLog( @"touch began... %f %f", x, y );
                 g_avatar->col.set(0.0, 0.0, 0.0);
-                g_synth->noteOn(1, 440.0, 126);
+                g_synth->noteOn(0, 440.0, 126);
                 
 
 //                if (newBeat)
@@ -227,7 +227,11 @@ void RunnerInit()
     // init bass (soundfont player)
     g_synth = new GeXBASSSynth();
     g_synth->init(SRATE, numVoices);
-    g_synth->load("GeneralUser_GS_FluidSynth_v1.44.sf2");
+    if (!g_synth->load("GeneralUser_GS_FluidSynth_v1.44.sf2"))
+    {
+        std::cerr << "error loading soundfont" << std::endl;
+    }
+    
     
 
 //    g_synth->programChange( 0, 0 );

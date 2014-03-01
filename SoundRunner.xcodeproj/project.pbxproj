@@ -196,6 +196,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D2AC47118C2994500847793 /* flare-tng-1.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-1.bw"; sourceTree = "<group>"; };
+		5D2AC47218C2994500847793 /* flare-tng-2.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-2.bw"; sourceTree = "<group>"; };
+		5D2AC47318C2994500847793 /* flare-tng-3.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-3.bw"; sourceTree = "<group>"; };
+		5D2AC47418C2994500847793 /* flare-tng-4.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-4.bw"; sourceTree = "<group>"; };
 		5D4662E218BECB5E00DA6000 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		5D4662E418BECB6700DA6000 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		5D4662E618BECB7000DA6000 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -586,6 +590,10 @@
 		5D69C68018BF061C006F0951 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				5D2AC47118C2994500847793 /* flare-tng-1.bw */,
+				5D2AC47218C2994500847793 /* flare-tng-2.bw */,
+				5D2AC47318C2994500847793 /* flare-tng-3.bw */,
+				5D2AC47418C2994500847793 /* flare-tng-4.bw */,
 				5DDBF19C18BF2A0400C9220A /* flare-tng-1.png */,
 				5DDBF19D18BF2A0400C9220A /* flare-tng-2.png */,
 				5DDBF19E18BF2A0400C9220A /* flare-tng-4.png */,
