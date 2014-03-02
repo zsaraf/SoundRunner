@@ -481,8 +481,8 @@
 		5DDBF2F218BFC9C200C9220A /* VERSIONS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS; sourceTree = "<group>"; };
 		5DDBF39118BFD0B300C9220A /* gex-basssynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "gex-basssynth.h"; path = "../core/gex-basssynth.h"; sourceTree = "<group>"; };
 		5DDBF39218BFD0B300C9220A /* gex-basssynth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "gex-basssynth.mm"; path = "../core/gex-basssynth.mm"; sourceTree = "<group>"; };
-		920EF04818C2B022000BC189 /* SoundGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundGen.h; sourceTree = "<group>"; };
-		920EF04918C2B022000BC189 /* SoundGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundGen.m; sourceTree = "<group>"; };
+		920EF04818C2B022000BC189 /* SoundGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundGen.h; path = ../../data/soundfonts/SoundGen.h; sourceTree = "<group>"; };
+		920EF04918C2B022000BC189 /* SoundGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundGen.m; path = ../../data/soundfonts/SoundGen.m; sourceTree = "<group>"; };
 		920EF04B18C2B039000BC189 /* SoundRunnerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundRunnerUtil.h; sourceTree = "<group>"; };
 		920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundRunnerUtil.m; sourceTree = "<group>"; };
 		9251D1A918BD638E00FA09DB /* SoundRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -576,6 +576,8 @@
 		5D69C67318BED3C4006F0951 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				920EF04818C2B022000BC189 /* SoundGen.h */,
+				920EF04918C2B022000BC189 /* SoundGen.m */,
 				5D2AC47718C2C1D300847793 /* Scales.h */,
 				5D2AC47818C2C1D300847793 /* Scales.mm */,
 				5D69C67718BED5BB006F0951 /* Entity.h */,
@@ -665,8 +667,6 @@
 			isa = PBXGroup;
 			children = (
 				5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 */,
-				920EF04818C2B022000BC189 /* SoundGen.h */,
-				920EF04918C2B022000BC189 /* SoundGen.m */,
 			);
 			path = soundfonts;
 			sourceTree = "<group>";
