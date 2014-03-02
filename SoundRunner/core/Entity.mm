@@ -48,11 +48,12 @@ Avatar::Avatar(bool isMoving)
 void Avatar::update( double dt )
 {
     // update!
-    GLfloat inc = .5 * dt;
+    GLfloat inc = .3 * dt;
 
     GLfloat g_gfxWidth = 1024;
     GLfloat g_gfxHeight = 640;
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
+    alpha -= 0.01;
     if (isMoving)
     {
         loc.set(loc.x + dt*vel.x, + loc.y + dt*vel.y, loc.z + dt*vel.z);
@@ -65,10 +66,10 @@ void Avatar::update( double dt )
         }
         
         // bound
-        if (loc.x < -ratio)
-            loc.x = -ratio;
-        if (loc.x > ratio)
-            loc.x = ratio;
+        if (loc.x < Globals::leftBound)
+            loc.x = Globals::leftBound;
+        if (loc.x > Globals::rightBound)
+            loc.x = Globals::rightBound;
         
         sca.x -= inc;
         sca.y -= inc;
@@ -130,7 +131,38 @@ void Particle::render()
 }
 
 
+NoteBoundary::NoteBoundary(GLfloat xPos)
+{
+    boundVertices[0] = boundVertices[2] = xPos;
+    boundVertices[1] = y1;
+    boundVertices[3] = y2;
+}
 
+void NoteBoundary::update(double dt)
+{
+    
+}
+
+void NoteBoundary::render()
+{
+    // enable blending
+    glEnable( GL_BLEND );
+    // set blend func
+    glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+    // glBlendFunc( GL_ONE, GL_ONE );
+    glLineWidth(1.0);
+    
+    // vertex pointer
+    glVertexPointer( 2, GL_FLOAT, 0, boundVertices );
+    glEnableClientState( GL_VERTEX_ARRAY );
+    
+    // line strip
+    glDrawArrays( GL_LINE_STRIP, 0, 2);
+    
+ 
+    // disable blend
+    glDisable( GL_BLEND );
+}
 
 
 

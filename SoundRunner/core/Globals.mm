@@ -12,3 +12,6 @@
 GLuint Globals::g_texture[2];
 // default BPM
 float Globals::BPM = 120.0;
+
+GLfloat Globals::leftBound = -8.0;
+GLfloat Globals::rightBound = 8.0;

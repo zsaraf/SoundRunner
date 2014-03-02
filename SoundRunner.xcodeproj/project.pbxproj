@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D2AC47618C29E4200847793 /* rocking8m11e.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5D2AC47518C29C0000847793 /* rocking8m11e.sf2 */; };
+		5D2AC47918C2C1D300847793 /* Scales.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D2AC47818C2C1D300847793 /* Scales.mm */; };
 		5D4662E318BECB5E00DA6000 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E218BECB5E00DA6000 /* CoreMotion.framework */; };
 		5D4662E518BECB6700DA6000 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E418BECB6700DA6000 /* GLKit.framework */; };
 		5D4662E718BECB7000DA6000 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E618BECB7000DA6000 /* OpenGLES.framework */; };
@@ -200,6 +202,9 @@
 		5D2AC47218C2994500847793 /* flare-tng-2.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-2.bw"; sourceTree = "<group>"; };
 		5D2AC47318C2994500847793 /* flare-tng-3.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-3.bw"; sourceTree = "<group>"; };
 		5D2AC47418C2994500847793 /* flare-tng-4.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-4.bw"; sourceTree = "<group>"; };
+		5D2AC47518C29C0000847793 /* rocking8m11e.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rocking8m11e.sf2; sourceTree = "<group>"; };
+		5D2AC47718C2C1D300847793 /* Scales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scales.h; sourceTree = "<group>"; };
+		5D2AC47818C2C1D300847793 /* Scales.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Scales.mm; sourceTree = "<group>"; };
 		5D4662E218BECB5E00DA6000 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		5D4662E418BECB6700DA6000 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		5D4662E618BECB7000DA6000 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -567,10 +572,12 @@
 		5D69C67318BED3C4006F0951 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				5D2AC47718C2C1D300847793 /* Scales.h */,
+				5D2AC47818C2C1D300847793 /* Scales.mm */,
 				5D69C67718BED5BB006F0951 /* Entity.h */,
 				5D69C67818BED5BB006F0951 /* Entity.mm */,
-				5D69C67A18BEFDCD006F0951 /* Globals.mm */,
 				5D69C67B18BEFDCD006F0951 /* Globals.h */,
+				5D69C67A18BEFDCD006F0951 /* Globals.mm */,
 				5D69C67418BED3C4006F0951 /* renderer.h */,
 				5D69C67518BED3C4006F0951 /* renderer.mm */,
 			);
@@ -653,6 +660,7 @@
 		5DDBF1BC18BFC1D000C9220A /* soundfonts */ = {
 			isa = PBXGroup;
 			children = (
+				5D2AC47518C29C0000847793 /* rocking8m11e.sf2 */,
 				5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.44.sf2 */,
 			);
 			path = soundfonts;
@@ -1123,6 +1131,7 @@
 				5DDBF31718BFC9C200C9220A /* ppksblnk.raw in Resources */,
 				5DDBF32418BFC9C200C9220A /* README in Resources */,
 				5DDBF30D18BFC9C200C9220A /* mand4.raw in Resources */,
+				5D2AC47618C29E4200847793 /* rocking8m11e.sf2 in Resources */,
 				5DDBF31618BFC9C200C9220A /* peksblnk.raw in Resources */,
 				5DDBF30018BFC9C200C9220A /* hihatcym.raw in Resources */,
 				5DDBF2F618BFC9C200C9220A /* INSTALL in Resources */,
@@ -1259,6 +1268,7 @@
 				5D69C66E18BED3B9006F0951 /* mo_fun.cpp in Sources */,
 				5DDBF34718BFC9C200C9220A /* InetWvOut.cpp in Sources */,
 				5DDBF36418BFC9C200C9220A /* SineWave.cpp in Sources */,
+				5D2AC47918C2C1D300847793 /* Scales.mm in Sources */,
 				5DDBF39318BFD0B300C9220A /* gex-basssynth.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

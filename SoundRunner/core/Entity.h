@@ -77,6 +77,22 @@ private:
 };
 
 
+class NoteBoundary : public Entity
+{
+public:
+    NoteBoundary(GLfloat xPos);
+    
+    //update
+    virtual void update( double dt);
+    // render
+    virtual void render();
+    
+private:
+    GLfloat boundVertices[4];
+    GLfloat y1 = 1.5;
+    GLfloat y2 = -1.5;
+};
+
 
 
 #endif /* defined(__LBow__Entity__) */
