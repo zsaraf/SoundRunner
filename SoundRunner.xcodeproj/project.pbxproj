@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D2AC47618C29E4200847793 /* rocking8m11e.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5D2AC47518C29C0000847793 /* rocking8m11e.sf2 */; };
 		5D2AC47918C2C1D300847793 /* Scales.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D2AC47818C2C1D300847793 /* Scales.mm */; };
 		5D4662E318BECB5E00DA6000 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E218BECB5E00DA6000 /* CoreMotion.framework */; };
 		5D4662E518BECB6700DA6000 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E418BECB6700DA6000 /* GLKit.framework */; };
@@ -35,7 +34,7 @@
 		5DDBF19F18BF2A0400C9220A /* flare-tng-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19C18BF2A0400C9220A /* flare-tng-1.png */; };
 		5DDBF1A018BF2A0400C9220A /* flare-tng-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19D18BF2A0400C9220A /* flare-tng-2.png */; };
 		5DDBF1A118BF2A0400C9220A /* flare-tng-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19E18BF2A0400C9220A /* flare-tng-4.png */; };
-		5DDBF1BE18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.44.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.44.sf2 */; };
+		5DDBF1BE18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 */; };
 		5DDBF2F318BFC9C200C9220A /* AUTHORS in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF20918BFC9C100C9220A /* AUTHORS */; };
 		5DDBF2F418BFC9C200C9220A /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF20A18BFC9C100C9220A /* COPYING */; };
 		5DDBF2F518BFC9C200C9220A /* DEVELOPER in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF20B18BFC9C100C9220A /* DEVELOPER */; };
@@ -172,6 +171,8 @@
 		5DDBF37818BFC9C200C9220A /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF2F118BFC9C200C9220A /* TODO */; };
 		5DDBF37918BFC9C200C9220A /* VERSIONS in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF2F218BFC9C200C9220A /* VERSIONS */; };
 		5DDBF39318BFD0B300C9220A /* gex-basssynth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBF39218BFD0B300C9220A /* gex-basssynth.mm */; };
+		920EF04A18C2B022000BC189 /* SoundGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 920EF04918C2B022000BC189 /* SoundGen.m */; };
+		920EF04D18C2B039000BC189 /* SoundRunnerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */; };
 		9251D1AD18BD638E00FA09DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1AC18BD638E00FA09DB /* Foundation.framework */; };
 		9251D1AF18BD638E00FA09DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1AE18BD638E00FA09DB /* CoreGraphics.framework */; };
 		9251D1B118BD638E00FA09DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1B018BD638E00FA09DB /* UIKit.framework */; };
@@ -202,7 +203,6 @@
 		5D2AC47218C2994500847793 /* flare-tng-2.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-2.bw"; sourceTree = "<group>"; };
 		5D2AC47318C2994500847793 /* flare-tng-3.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-3.bw"; sourceTree = "<group>"; };
 		5D2AC47418C2994500847793 /* flare-tng-4.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-4.bw"; sourceTree = "<group>"; };
-		5D2AC47518C29C0000847793 /* rocking8m11e.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rocking8m11e.sf2; sourceTree = "<group>"; };
 		5D2AC47718C2C1D300847793 /* Scales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scales.h; sourceTree = "<group>"; };
 		5D2AC47818C2C1D300847793 /* Scales.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Scales.mm; sourceTree = "<group>"; };
 		5D4662E218BECB5E00DA6000 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -247,7 +247,7 @@
 		5DDBF19C18BF2A0400C9220A /* flare-tng-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-1.png"; sourceTree = "<group>"; };
 		5DDBF19D18BF2A0400C9220A /* flare-tng-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-2.png"; sourceTree = "<group>"; };
 		5DDBF19E18BF2A0400C9220A /* flare-tng-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-4.png"; sourceTree = "<group>"; };
-		5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.44.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeneralUser_GS_FluidSynth_v1.44.sf2; sourceTree = "<group>"; };
+		5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeneralUser_GS_FluidSynth_v1.sf2; sourceTree = "<group>"; };
 		5DDBF20918BFC9C100C9220A /* AUTHORS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS; sourceTree = "<group>"; };
 		5DDBF20A18BFC9C100C9220A /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		5DDBF20B18BFC9C100C9220A /* DEVELOPER */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DEVELOPER; sourceTree = "<group>"; };
@@ -481,6 +481,10 @@
 		5DDBF2F218BFC9C200C9220A /* VERSIONS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS; sourceTree = "<group>"; };
 		5DDBF39118BFD0B300C9220A /* gex-basssynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "gex-basssynth.h"; path = "../core/gex-basssynth.h"; sourceTree = "<group>"; };
 		5DDBF39218BFD0B300C9220A /* gex-basssynth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "gex-basssynth.mm"; path = "../core/gex-basssynth.mm"; sourceTree = "<group>"; };
+		920EF04818C2B022000BC189 /* SoundGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundGen.h; sourceTree = "<group>"; };
+		920EF04918C2B022000BC189 /* SoundGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundGen.m; sourceTree = "<group>"; };
+		920EF04B18C2B039000BC189 /* SoundRunnerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundRunnerUtil.h; sourceTree = "<group>"; };
+		920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundRunnerUtil.m; sourceTree = "<group>"; };
 		9251D1A918BD638E00FA09DB /* SoundRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9251D1AC18BD638E00FA09DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9251D1AE18BD638E00FA09DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -660,8 +664,9 @@
 		5DDBF1BC18BFC1D000C9220A /* soundfonts */ = {
 			isa = PBXGroup;
 			children = (
-				5D2AC47518C29C0000847793 /* rocking8m11e.sf2 */,
-				5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.44.sf2 */,
+				5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 */,
+				920EF04818C2B022000BC189 /* SoundGen.h */,
+				920EF04918C2B022000BC189 /* SoundGen.m */,
 			);
 			path = soundfonts;
 			sourceTree = "<group>";
@@ -972,6 +977,8 @@
 			children = (
 				9251D1BB18BD638E00FA09DB /* AppDelegate.h */,
 				9251D1BC18BD638E00FA09DB /* AppDelegate.mm */,
+				920EF04B18C2B039000BC189 /* SoundRunnerUtil.h */,
+				920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */,
 				9251D1BE18BD638E00FA09DB /* Main_iPhone.storyboard */,
 				5D4662EA18BECC4000DA6000 /* RunnerViewController.h */,
 				5D4662EB18BECC4000DA6000 /* RunnerViewController.mm */,
@@ -1131,7 +1138,6 @@
 				5DDBF31718BFC9C200C9220A /* ppksblnk.raw in Resources */,
 				5DDBF32418BFC9C200C9220A /* README in Resources */,
 				5DDBF30D18BFC9C200C9220A /* mand4.raw in Resources */,
-				5D2AC47618C29E4200847793 /* rocking8m11e.sf2 in Resources */,
 				5DDBF31618BFC9C200C9220A /* peksblnk.raw in Resources */,
 				5DDBF30018BFC9C200C9220A /* hihatcym.raw in Resources */,
 				5DDBF2F618BFC9C200C9220A /* INSTALL in Resources */,
@@ -1147,7 +1153,7 @@
 				5DDBF31518BFC9C200C9220A /* ooo.raw in Resources */,
 				5DDBF30E18BFC9C200C9220A /* mand5.raw in Resources */,
 				5DDBF2FC18BFC9C200C9220A /* dope.raw in Resources */,
-				5DDBF1BE18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.44.sf2 in Resources */,
+				5DDBF1BE18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1183,6 +1189,7 @@
 				5DDBF33118BFC9C200C9220A /* Chorus.cpp in Sources */,
 				5D69C66F18BED3B9006F0951 /* mo_gfx.mm in Sources */,
 				5DDBF34A18BFC9C200C9220A /* Mandolin.cpp in Sources */,
+				920EF04D18C2B039000BC189 /* SoundRunnerUtil.m in Sources */,
 				5D69C67C18BEFDCD006F0951 /* Globals.mm in Sources */,
 				5DDBF32D18BFC9C200C9220A /* BlowBotl.cpp in Sources */,
 				5DDBF37118BFC9C200C9220A /* TubeBell.cpp in Sources */,
@@ -1230,6 +1237,7 @@
 				5DDBF36918BFC9C200C9220A /* Sphere.cpp in Sources */,
 				5DDBF33918BFC9C200C9220A /* FileLoop.cpp in Sources */,
 				5DDBF36C18BFC9C200C9220A /* StkUdpSocket.cpp in Sources */,
+				920EF04A18C2B022000BC189 /* SoundGen.m in Sources */,
 				5DDBF37418BFC9C200C9220A /* Voicer.cpp in Sources */,
 				5DDBF34818BFC9C200C9220A /* JCRev.cpp in Sources */,
 				5DDBF37518BFC9C200C9220A /* VoicForm.cpp in Sources */,
@@ -1405,21 +1413,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassenc,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassflac,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassmidi,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassmix,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/basswv,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass,
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass/mp3-free",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassenc",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassflac",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassmidi",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassmix",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassopus",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/basswv",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/mp3-free",
+					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass/**",
+					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/**",
+					"/Users/zach/Developer/SoundRunner/SoundRunner/bass24-ios",
+					"/Users/zach/Developer/SoundRunner/SoundRunner/bass/**",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1443,21 +1440,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassenc,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassflac,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassmidi,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassmix,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass/basswv,
-					/Users/loudmouth/github/SoundRunner/SoundRunner/bass,
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass/mp3-free",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassenc",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassflac",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassmidi",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassmix",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/bassopus",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/basswv",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/mp3-free",
+					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass/**",
+					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/**",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
