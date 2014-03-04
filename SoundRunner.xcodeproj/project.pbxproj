@@ -25,11 +25,6 @@
 		5D69C67618BED3C4006F0951 /* renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67518BED3C4006F0951 /* renderer.mm */; };
 		5D69C67918BED5BB006F0951 /* Entity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67818BED5BB006F0951 /* Entity.mm */; };
 		5D69C67C18BEFDCD006F0951 /* Globals.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67A18BEFDCD006F0951 /* Globals.mm */; };
-		5DD8F39318BFDD62000DEDFA /* libbassflac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD8F37718BFDD62000DEDFA /* libbassflac.a */; };
-		5DD8F39418BFDD62000DEDFA /* libbassmidi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD8F37918BFDD62000DEDFA /* libbassmidi.a */; };
-		5DD8F39518BFDD62000DEDFA /* libbassmix.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD8F37C18BFDD62000DEDFA /* libbassmix.a */; };
-		5DD8F39618BFDD62000DEDFA /* libbasswv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD8F37E18BFDD62000DEDFA /* libbasswv.a */; };
-		5DD8F39718BFDD62000DEDFA /* libbass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD8F37F18BFDD62000DEDFA /* libbass.a */; };
 		5DDBF19B18BF287600C9220A /* flare-tng-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19A18BF287600C9220A /* flare-tng-3.png */; };
 		5DDBF19F18BF2A0400C9220A /* flare-tng-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19C18BF2A0400C9220A /* flare-tng-1.png */; };
 		5DDBF1A018BF2A0400C9220A /* flare-tng-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19D18BF2A0400C9220A /* flare-tng-2.png */; };
@@ -170,7 +165,6 @@
 		5DDBF37718BFC9C200C9220A /* Wurley.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBF2F018BFC9C200C9220A /* Wurley.cpp */; };
 		5DDBF37818BFC9C200C9220A /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF2F118BFC9C200C9220A /* TODO */; };
 		5DDBF37918BFC9C200C9220A /* VERSIONS in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF2F218BFC9C200C9220A /* VERSIONS */; };
-		5DDBF39318BFD0B300C9220A /* gex-basssynth.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBF39218BFD0B300C9220A /* gex-basssynth.mm */; };
 		920EF04A18C2B022000BC189 /* SoundGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 920EF04918C2B022000BC189 /* SoundGen.m */; };
 		920EF04D18C2B039000BC189 /* SoundRunnerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */; };
 		9251D1AD18BD638E00FA09DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1AC18BD638E00FA09DB /* Foundation.framework */; };
@@ -236,13 +230,6 @@
 		5D69C67818BED5BB006F0951 /* Entity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Entity.mm; sourceTree = "<group>"; };
 		5D69C67A18BEFDCD006F0951 /* Globals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Globals.mm; sourceTree = "<group>"; };
 		5D69C67B18BEFDCD006F0951 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
-		5DD8F37318BFDD62000DEDFA /* bass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bass.h; sourceTree = "<group>"; };
-		5DD8F37718BFDD62000DEDFA /* libbassflac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbassflac.a; sourceTree = "<group>"; };
-		5DD8F37918BFDD62000DEDFA /* libbassmidi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbassmidi.a; sourceTree = "<group>"; };
-		5DD8F37C18BFDD62000DEDFA /* libbassmix.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbassmix.a; sourceTree = "<group>"; };
-		5DD8F37E18BFDD62000DEDFA /* libbasswv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbasswv.a; sourceTree = "<group>"; };
-		5DD8F37F18BFDD62000DEDFA /* libbass.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbass.a; sourceTree = "<group>"; };
-		5DD8F3A518C008DA000DEDFA /* bassmidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bassmidi.h; sourceTree = "<group>"; };
 		5DDBF19A18BF287600C9220A /* flare-tng-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-3.png"; sourceTree = "<group>"; };
 		5DDBF19C18BF2A0400C9220A /* flare-tng-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-1.png"; sourceTree = "<group>"; };
 		5DDBF19D18BF2A0400C9220A /* flare-tng-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-2.png"; sourceTree = "<group>"; };
@@ -479,8 +466,6 @@
 		5DDBF2F018BFC9C200C9220A /* Wurley.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wurley.cpp; sourceTree = "<group>"; };
 		5DDBF2F118BFC9C200C9220A /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		5DDBF2F218BFC9C200C9220A /* VERSIONS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSIONS; sourceTree = "<group>"; };
-		5DDBF39118BFD0B300C9220A /* gex-basssynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "gex-basssynth.h"; path = "../core/gex-basssynth.h"; sourceTree = "<group>"; };
-		5DDBF39218BFD0B300C9220A /* gex-basssynth.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "gex-basssynth.mm"; path = "../core/gex-basssynth.mm"; sourceTree = "<group>"; };
 		920EF04818C2B022000BC189 /* SoundGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundGen.h; path = ../../data/soundfonts/SoundGen.h; sourceTree = "<group>"; };
 		920EF04918C2B022000BC189 /* SoundGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundGen.m; path = ../../data/soundfonts/SoundGen.m; sourceTree = "<group>"; };
 		920EF04B18C2B039000BC189 /* SoundRunnerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundRunnerUtil.h; sourceTree = "<group>"; };
@@ -510,12 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9251D1AD18BD638E00FA09DB /* Foundation.framework in Frameworks */,
-				5DD8F39418BFDD62000DEDFA /* libbassmidi.a in Frameworks */,
-				5DD8F39618BFDD62000DEDFA /* libbasswv.a in Frameworks */,
-				5DD8F39718BFDD62000DEDFA /* libbass.a in Frameworks */,
-				5DD8F39518BFDD62000DEDFA /* libbassmix.a in Frameworks */,
 				5D4662E918BECB7D00DA6000 /* AudioToolbox.framework in Frameworks */,
-				5DD8F39318BFDD62000DEDFA /* libbassflac.a in Frameworks */,
 				5D4662E718BECB7000DA6000 /* OpenGLES.framework in Frameworks */,
 				5D4662E518BECB6700DA6000 /* GLKit.framework in Frameworks */,
 				5D4662E318BECB5E00DA6000 /* CoreMotion.framework in Frameworks */,
@@ -540,8 +520,6 @@
 		5D69C65818BED3B9006F0951 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				5DDBF39118BFD0B300C9220A /* gex-basssynth.h */,
-				5DDBF39218BFD0B300C9220A /* gex-basssynth.mm */,
 				5DDBF20818BFC9C100C9220A /* MoMu-STK-1.0.0 */,
 				5D69C65918BED3B9006F0951 /* momu */,
 			);
@@ -614,53 +592,6 @@
 			);
 			name = textures;
 			path = texture;
-			sourceTree = "<group>";
-		};
-		5DD8F37218BFDD62000DEDFA /* bass */ = {
-			isa = PBXGroup;
-			children = (
-				5DD8F37318BFDD62000DEDFA /* bass.h */,
-				5DD8F3A518C008DA000DEDFA /* bassmidi.h */,
-				5DD8F37618BFDD62000DEDFA /* bassflac */,
-				5DD8F37818BFDD62000DEDFA /* bassmidi */,
-				5DD8F37B18BFDD62000DEDFA /* bassmix */,
-				5DD8F37D18BFDD62000DEDFA /* basswv */,
-				5DD8F37F18BFDD62000DEDFA /* libbass.a */,
-			);
-			name = bass;
-			path = SoundRunner/bass;
-			sourceTree = "<group>";
-		};
-		5DD8F37618BFDD62000DEDFA /* bassflac */ = {
-			isa = PBXGroup;
-			children = (
-				5DD8F37718BFDD62000DEDFA /* libbassflac.a */,
-			);
-			path = bassflac;
-			sourceTree = "<group>";
-		};
-		5DD8F37818BFDD62000DEDFA /* bassmidi */ = {
-			isa = PBXGroup;
-			children = (
-				5DD8F37918BFDD62000DEDFA /* libbassmidi.a */,
-			);
-			path = bassmidi;
-			sourceTree = "<group>";
-		};
-		5DD8F37B18BFDD62000DEDFA /* bassmix */ = {
-			isa = PBXGroup;
-			children = (
-				5DD8F37C18BFDD62000DEDFA /* libbassmix.a */,
-			);
-			path = bassmix;
-			sourceTree = "<group>";
-		};
-		5DD8F37D18BFDD62000DEDFA /* basswv */ = {
-			isa = PBXGroup;
-			children = (
-				5DD8F37E18BFDD62000DEDFA /* libbasswv.a */,
-			);
-			path = basswv;
 			sourceTree = "<group>";
 		};
 		5DDBF1BC18BFC1D000C9220A /* soundfonts */ = {
@@ -938,7 +869,6 @@
 			isa = PBXGroup;
 			children = (
 				5D69C67D18BF061C006F0951 /* data */,
-				5DD8F37218BFDD62000DEDFA /* bass */,
 				5D69C65818BED3B9006F0951 /* api */,
 				5D69C67318BED3C4006F0951 /* core */,
 				9251D1B218BD638E00FA09DB /* SoundRunner */,
@@ -1277,7 +1207,6 @@
 				5DDBF34718BFC9C200C9220A /* InetWvOut.cpp in Sources */,
 				5DDBF36418BFC9C200C9220A /* SineWave.cpp in Sources */,
 				5D2AC47918C2C1D300847793 /* Scales.mm in Sources */,
-				5DDBF39318BFD0B300C9220A /* gex-basssynth.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
