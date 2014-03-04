@@ -10,7 +10,6 @@
 #import "mo_audio.h"
 #import <math.h>
 #import "Entity.h"
-#import "gex-basssynth.h"
 #import "Globals.h"
 #import "Scales.h"
 using namespace std;
@@ -44,8 +43,6 @@ GLfloat nextAvatarX = 0.0;
 int numNotesInScale = Scales::numNotesPerScale;
 
 
-// placeholder for audio
-GeXBASSSynth * g_synth;
 // number of voices
 int numVoices = 32;
 
@@ -122,14 +119,12 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
         if (sampCount == samplesPerBeat)
         {
             // turn note off
-            g_synth->noteOff(0, 220.0);
             newBeat = true;
             sampCount = 0;
         }
     }
     
     
-    g_synth->synthesize2(buffer, numFrames);
     
     // save the num frames
     g_numFrames = numFrames;
@@ -181,7 +176,8 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
-                    g_synth->noteOn(0, 440.0, 126);
+                    // note on
+                    
                     newBeat = false;
                 }
                 
@@ -199,8 +195,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
-                    
-                    g_synth->noteOn(0, 440.0, 126);
+                    // note on
                     newBeat = false;
 
                 }
@@ -218,8 +213,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
-
-                    g_synth->noteOn(0, 440.0, 126);
+                    // note on
                     newBeat = false;
 
                 }
@@ -234,7 +228,7 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 //NSLog( @"touch ended... %f %f", x, y );
                 g_avatar->col.set(1.0, 1.0, 1.0);
-                g_synth->noteOff(0, 220.0);
+                // note off
                 break;
             }
                 
@@ -277,20 +271,6 @@ void RunnerInit()
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
-    // init bass (soundfont player)
-    g_synth = new GeXBASSSynth();
-    g_synth->init(SRATE, numVoices);
-    
-    if (!g_synth->load("/Users/loudmouth/github/SoundRunner/data/soundfonts/rocking8m11e.sf2"))
-    {
-        std::cerr << "error loading soundfont" << std::endl;
-    }
-    
-    g_synth->programChange( 0, 0 );
-    g_synth->programChange( 1, 79 );
-    g_synth->programChange( 2, 4 );
-    g_synth->programChange( 3, 10 );
-    g_synth->programChange( 4, 13 );
     
     // init audio
     bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
