@@ -415,7 +415,7 @@ void RunnerRender()
     // glLoadIdentity();
     
     // BACKGROUND COLOR
-    glClearColor( 0, 1, 1, 0.85); // turquoize
+    glClearColor( 22/255.0, 31/255.0, 40/255.0, 1); // rgba(44, 62, 80,1.0)
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     
     // push
