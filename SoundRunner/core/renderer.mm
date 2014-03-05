@@ -13,6 +13,7 @@
 #import "Globals.h"
 #import "Scales.h"
 #import "SoundRunnerUtil.h"
+#import "Physics.h"
 
 using namespace std;
 
@@ -67,6 +68,8 @@ void renderEntities();
 void renderSingleEntity(Entity * e);
 void makeParticleSystem();
 void makeNoteBoundarys(int numNotes);
+void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p);
+
 
 
 
@@ -266,6 +269,90 @@ void touch_callback( NSSet * touches, UIView * view,
         }
     }
 }
+
+
+
+
+
+void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p)
+{
+    std::vector<Entity *>::iterator p2;
+    for ( p2 = g_entities.begin(); p2 != g_entities.end(); p2++ )
+    {
+        // get midpoint between two objects.
+        GLfloat distance = distance_two_points( &(*p)->loc, &(*p2)->loc );
+        
+        // create a connection between the two vectors
+        Vector3D * connection = connection_vector( &(*p)->loc, &(*p2)->loc );
+        
+        // sum the radii
+        GLfloat radiiSum = ( (*p)->sca.x + (*p2)->sca.x ) / 2;
+        
+        // if we aren't comparing at the same projectile and the distance is too short
+        if ( (*p) != (*p2) && distance <= radiiSum  )
+        {
+            // thanks to chets paper and the paper reza sent out :-)
+            
+            // first correct the distances so that they are now the minimum distance apart
+            (*p)->loc =  (*p)->loc + (*connection) * ( (distance - radiiSum ) / (GLfloat)2.0) ;
+            (*p2)->loc = (*p2)->loc - (*connection) * ( (distance - radiiSum ) / (GLfloat)2.0) ;
+            
+            // recompute connection vector and name it unit normal--pointing from p to p2
+            Vector3D * unitNormAB = connection_vector( &(*p)->loc, &(*p2)->loc );
+            
+            // normalize
+            normalize( unitNormAB );
+            
+            // get tangent
+            Vector3D * unitTang = tangent( unitNormAB );
+            
+            // calculate projections-- pointing from A to B
+            GLfloat ptA_vel_norm = dot_product( &(*p)->vel , unitNormAB );
+            
+            // get unit norm poiting in opposite direction from p2 to p (B to A)
+            Vector3D * unitNormBA = new Vector3D( *unitNormAB );
+            (*unitNormBA) = (*unitNormAB);
+            
+            GLfloat ptB_vel_norm = dot_product( &(*p2)->vel, unitNormBA );
+            
+            // remember tangent before = tangent after
+            GLfloat ptA_vel_tang = dot_product( &(*p)->vel , unitTang );
+            GLfloat ptB_vel_tang = dot_product( &(*p2)->vel , unitTang );
+            
+            // arbitrary mass values
+            GLfloat massA = 1.0;
+            GLfloat massB = 1.0;
+            
+            // calculate norm velocity projections after collisions [derived from elastic collision equations]
+            GLfloat ptA_vel_norm_after = ptA_vel_norm * (massA - massB) + 2 * massB * ptB_vel_norm / (massA + massB);
+            GLfloat ptB_vel_norm_after = ptB_vel_norm * (massB - massA) + 2 * massA * ptA_vel_norm / (massA + massB);
+            
+            
+            // final vecocity is scalar norm after collion times norm
+            (*p)->vel = (*unitNormAB) * ptA_vel_norm_after + (*unitTang) * ptA_vel_tang;
+            (*p2)->vel = (*unitNormBA) * ptB_vel_norm_after + (*unitTang) * ptB_vel_tang;
+            
+            // cleanup
+            delete(connection);
+            delete(unitNormAB);
+            delete(unitNormBA);
+            delete(unitTang);
+            
+            
+    
+            //NSLog(@"COLLLISION!");
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
 
 
 
