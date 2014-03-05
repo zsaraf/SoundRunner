@@ -12,7 +12,10 @@
 
 #import "Globals.h"
 #import "Scales.h"
+#import "SoundRunnerUtil.h"
+#import "Physics.h"
 #import <stdlib.h>
+
 using namespace std;
 
 
@@ -47,10 +50,12 @@ UInt32 g_numFrames;
 // graphics stuffs
 Entity * g_avatar;
 std::vector<Entity *> g_entities;
+std::vector<Entity *> g_particles;
 GLfloat nextAvatarX = 0.0;
 int numNotesInScale = Scales::numNotesPerScale;
 
-
+// audio stuffs
+SoundGen * soundGen;
 // number of voices
 int numVoices = 32;
 
@@ -62,6 +67,7 @@ int sampCount = 0;
 
 
 
+
 // -------------------function prototypes------------------
 // --------------------------------------------------------
 
@@ -70,11 +76,14 @@ void renderEntities();
 void renderSingleEntity(Entity * e);
 void makeParticleSystem();
 void makeNoteBoundarys(int numNotes);
+void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p);
+
 
 
 
 void moveCamera(GLfloat inc)
 {
+    // bound the avatar
     if ( nextAvatarX <= Globals::leftBound + g_ratio && leftClip == Globals::leftBound )
     {
         return;
@@ -83,16 +92,19 @@ void moveCamera(GLfloat inc)
     {
         return;
     }
+    // increment the clip
     leftClip += inc;
     rightClip += inc;
     
-    
+    // bounding to Globals::leftBound
     if (leftClip <= Globals::leftBound)
     {
         
         leftClip = Globals::leftBound;
         rightClip = Globals::leftBound + g_ratio*2;
     }
+    // bounding to Globals::rightBound
+
     if (rightClip >= Globals::rightBound)
     {
         
@@ -126,6 +138,8 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
         // synching stuff
         if (sampCount == samplesPerBeat)
         {
+            [soundGen stopPlayingMidiNote:127];
+
             // turn note off
             newBeat = true;
             sampCount = 0;
@@ -186,6 +200,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 {
                     NSLog(@"NOTE ON!");
                     // note on
+                    [soundGen playMidiNote:127 velocity:127];
                     
                     newBeat = false;
                 }
@@ -204,9 +219,12 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
+                    
                     // note on
-                    newBeat = false;
+                    [soundGen playMidiNote:127 velocity:127];
 
+                    newBeat = false;
+                    
                 }
                 //g_avatar->col.set(0.0, 0.0, 0.0);
                 //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
@@ -223,7 +241,10 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
+                    
                     // note on
+                    [soundGen playMidiNote:127 velocity:127];
+
                     newBeat = false;
 
                 }
@@ -236,11 +257,15 @@ void touch_callback( NSSet * touches, UIView * view,
             // ---------------touch ended------------------
             case UITouchPhaseEnded:
             {
+                // NSLog( @"touch ended... %f %f", x, y );
+                g_avatar->col.set(1.0, 1.0, 1.0);
                 touch_down = false;
                 //NSLog( @"touch ended... %f %f", x, y );
                 //g_avatar->col.set(1.0, 1.0, 1.0);
                 //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
                 // note off
+                [soundGen stopPlayingMidiNote:127];
+                newBeat = false;
                 break;
             }
                 
@@ -258,6 +283,94 @@ void touch_callback( NSSet * touches, UIView * view,
         }
     }
 }
+
+
+
+
+/** handleCollision(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p)
+ *  -----------------------------
+ *  Arguments std::vector<Entity *> * entities is a pointer to a vector of entity pointers that are the entities that
+ *  will be colliding. Also pass in an iterator to the same
+ */
+void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p)
+{
+    std::vector<Entity *>::iterator p2;
+    for ( p2 = g_entities.begin(); p2 != g_entities.end(); p2++ )
+    {
+        // get midpoint between two objects.
+        GLfloat distance = distance_two_points( &(*p)->loc, &(*p2)->loc );
+        
+        // create a connection between the two vectors
+        Vector3D * connection = connection_vector( &(*p)->loc, &(*p2)->loc );
+        
+        // sum the radii
+        GLfloat radiiSum = ( (*p)->sca.x + (*p2)->sca.x ) / 2;
+        
+        // if we aren't comparing at the same projectile and the distance is too short
+        if ( (*p) != (*p2) && distance <= radiiSum  )
+        {
+            // thanks to chets paper and the paper reza sent out :-)
+            
+            // first correct the distances so that they are now the minimum distance apart
+            (*p)->loc =  (*p)->loc + (*connection) * ( (distance - radiiSum ) / (GLfloat)2.0) ;
+            (*p2)->loc = (*p2)->loc - (*connection) * ( (distance - radiiSum ) / (GLfloat)2.0) ;
+            
+            // recompute connection vector and name it unit normal--pointing from p to p2
+            Vector3D * unitNormAB = connection_vector( &(*p)->loc, &(*p2)->loc );
+            
+            // normalize
+            normalize( unitNormAB );
+            
+            // get tangent
+            Vector3D * unitTang = tangent( unitNormAB );
+            
+            // calculate projections-- pointing from A to B
+            GLfloat ptA_vel_norm = dot_product( &(*p)->vel , unitNormAB );
+            
+            // get unit norm poiting in opposite direction from p2 to p (B to A)
+            Vector3D * unitNormBA = new Vector3D( *unitNormAB );
+            (*unitNormBA) = (*unitNormAB);
+            
+            GLfloat ptB_vel_norm = dot_product( &(*p2)->vel, unitNormBA );
+            
+            // remember tangent before = tangent after
+            GLfloat ptA_vel_tang = dot_product( &(*p)->vel , unitTang );
+            GLfloat ptB_vel_tang = dot_product( &(*p2)->vel , unitTang );
+            
+            // arbitrary mass values
+            GLfloat massA = 1.0;
+            GLfloat massB = 1.0;
+            
+            // calculate norm velocity projections after collisions [derived from elastic collision equations]
+            GLfloat ptA_vel_norm_after = ptA_vel_norm * (massA - massB) + 2 * massB * ptB_vel_norm / (massA + massB);
+            GLfloat ptB_vel_norm_after = ptB_vel_norm * (massB - massA) + 2 * massA * ptA_vel_norm / (massA + massB);
+            
+            
+            // final vecocity is scalar norm after collion times norm
+            (*p)->vel = (*unitNormAB) * ptA_vel_norm_after + (*unitTang) * ptA_vel_tang;
+            (*p2)->vel = (*unitNormBA) * ptB_vel_norm_after + (*unitTang) * ptB_vel_tang;
+            
+            // cleanup
+            delete(connection);
+            delete(unitNormAB);
+            delete(unitNormBA);
+            delete(unitTang);
+            
+            
+    
+            //NSLog(@"COLLLISION!");
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
 
 
 
@@ -291,6 +404,10 @@ void RunnerInit()
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
+    NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
+    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:5];
+    soundGen = [SoundRunnerUtil appDelegate].soundGen;
+    
     
     // init audio
     bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -312,8 +429,14 @@ void RunnerInit()
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeNoteBoundarys(numNotesInScale);
     makeParticleSystem();
+    
 }
 
+void RunnerRenderUpdate ()
+{
+    NSLog(@"BANG");
+}
+     
 void makeNoteBoundarys(int numNotes)
 {
     // entire x range of the GL worldapplication
@@ -404,6 +527,7 @@ void makeParticleSystem()
         part->active = true;
         // insert
         g_entities.push_back(part);
+        g_particles.push_back(part);
     }
 }
 

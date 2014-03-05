@@ -23,6 +23,8 @@ void RunnerSetDims( GLfloat width, GLfloat height );
 // draw next frame of graphics
 void RunnerRender();
 
+void RunnerRenderUpdate ();
+
 // moves camera horizontally
 void moveCamera(GLfloat inc);
 

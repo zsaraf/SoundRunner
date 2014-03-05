@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D2AC47918C2C1D300847793 /* Scales.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D2AC47818C2C1D300847793 /* Scales.mm */; };
+		5D2F3B2318C6AB56001E1923 /* Physics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B2218C6AB56001E1923 /* Physics.mm */; };
 		5D4662E318BECB5E00DA6000 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E218BECB5E00DA6000 /* CoreMotion.framework */; };
 		5D4662E518BECB6700DA6000 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E418BECB6700DA6000 /* GLKit.framework */; };
 		5D4662E718BECB7000DA6000 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4662E618BECB7000DA6000 /* OpenGLES.framework */; };
@@ -200,6 +201,8 @@
 		5D2AC47418C2994500847793 /* flare-tng-4.bw */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flare-tng-4.bw"; sourceTree = "<group>"; };
 		5D2AC47718C2C1D300847793 /* Scales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scales.h; sourceTree = "<group>"; };
 		5D2AC47818C2C1D300847793 /* Scales.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Scales.mm; sourceTree = "<group>"; };
+		5D2F3B2118C6AB56001E1923 /* Physics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics.h; sourceTree = "<group>"; };
+		5D2F3B2218C6AB56001E1923 /* Physics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Physics.mm; sourceTree = "<group>"; };
 		5D4662E218BECB5E00DA6000 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		5D4662E418BECB6700DA6000 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		5D4662E618BECB7000DA6000 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -556,6 +559,8 @@
 		5D69C67318BED3C4006F0951 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F3B2118C6AB56001E1923 /* Physics.h */,
+				5D2F3B2218C6AB56001E1923 /* Physics.mm */,
 				920EF04818C2B022000BC189 /* SoundGen.h */,
 				920EF04918C2B022000BC189 /* SoundGen.m */,
 				5D2AC47718C2C1D300847793 /* Scales.h */,
@@ -1000,7 +1005,7 @@
 				ORGANIZATIONNAME = "Zachary Waleed Saraf";
 				TargetAttributes = {
 					9251D1A818BD638E00FA09DB = {
-						DevelopmentTeam = 7NX6YPQXT3;
+						DevelopmentTeam = FUTU96J3U9;
 					};
 					9251D1C918BD638E00FA09DB = {
 						TestTargetID = 9251D1A818BD638E00FA09DB;
@@ -1149,6 +1154,7 @@
 				5DDBF34E18BFC9C200C9220A /* Modal.cpp in Sources */,
 				5DDBF37718BFC9C200C9220A /* Wurley.cpp in Sources */,
 				5DDBF30618BFC9C200C9220A /* makewavs.c in Sources */,
+				5D2F3B2318C6AB56001E1923 /* Physics.mm in Sources */,
 				5D4662EC18BECC4000DA6000 /* RunnerViewController.mm in Sources */,
 				5DDBF36B18BFC9C200C9220A /* Stk.mm in Sources */,
 				5DDBF37618BFC9C200C9220A /* Whistle.cpp in Sources */,
