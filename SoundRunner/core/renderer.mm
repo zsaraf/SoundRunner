@@ -12,6 +12,8 @@
 #import "Entity.h"
 #import "Globals.h"
 #import "Scales.h"
+#import "SoundRunnerUtil.h"
+
 using namespace std;
 
 
@@ -39,10 +41,12 @@ UInt32 g_numFrames;
 // graphics stuffs
 Entity * g_avatar;
 std::vector<Entity *> g_entities;
+std::vector<Entity *> g_particles;
 GLfloat nextAvatarX = 0.0;
 int numNotesInScale = Scales::numNotesPerScale;
 
-
+// audio stuffs
+SoundGen * soundGen;
 // number of voices
 int numVoices = 32;
 
@@ -51,6 +55,7 @@ double lastTime = 0.0;
 int samplesPerBeat = SRATE * 1/(Globals::BPM/60.0); // samples per beat
 bool newBeat = false;
 int sampCount = 0;
+
 
 
 
@@ -67,6 +72,7 @@ void makeNoteBoundarys(int numNotes);
 
 void moveCamera(GLfloat inc)
 {
+    // bound the avatar
     if ( nextAvatarX <= Globals::leftBound + g_ratio && leftClip == Globals::leftBound )
     {
         return;
@@ -75,16 +81,19 @@ void moveCamera(GLfloat inc)
     {
         return;
     }
+    // increment the clip
     leftClip += inc;
     rightClip += inc;
     
-    
+    // bounding to Globals::leftBound
     if (leftClip <= Globals::leftBound)
     {
         
         leftClip = Globals::leftBound;
         rightClip = Globals::leftBound + g_ratio*2;
     }
+    // bounding to Globals::rightBound
+
     if (rightClip >= Globals::rightBound)
     {
         
@@ -118,6 +127,8 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
         // synching stuff
         if (sampCount == samplesPerBeat)
         {
+            [soundGen stopPlayingMidiNote:127];
+
             // turn note off
             newBeat = true;
             sampCount = 0;
@@ -177,6 +188,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 {
                     NSLog(@"NOTE ON!");
                     // note on
+                    [soundGen playMidiNote:127 velocity:127];
                     
                     newBeat = false;
                 }
@@ -195,9 +207,12 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
+                    
                     // note on
-                    newBeat = false;
+                    [soundGen playMidiNote:127 velocity:127];
 
+                    newBeat = false;
+                    
                 }
                 g_avatar->col.set(0.0, 0.0, 0.0);
 
@@ -213,7 +228,10 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
+                    
                     // note on
+                    [soundGen playMidiNote:127 velocity:127];
+
                     newBeat = false;
 
                 }
@@ -226,9 +244,11 @@ void touch_callback( NSSet * touches, UIView * view,
             // ---------------touch ended------------------
             case UITouchPhaseEnded:
             {
-                //NSLog( @"touch ended... %f %f", x, y );
+                // NSLog( @"touch ended... %f %f", x, y );
                 g_avatar->col.set(1.0, 1.0, 1.0);
                 // note off
+                [soundGen stopPlayingMidiNote:127];
+                newBeat = false;
                 break;
             }
                 
@@ -271,6 +291,10 @@ void RunnerInit()
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
+    NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
+    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:5];
+    soundGen = [SoundRunnerUtil appDelegate].soundGen;
+    
     
     // init audio
     bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -291,8 +315,14 @@ void RunnerInit()
     
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeParticleSystem();
+    
 }
 
+void RunnerRenderUpdate ()
+{
+    NSLog(@"BANG");
+}
+     
 void makeNoteBoundarys(int numNotes)
 {
     // entire x range of the GL worldapplication
@@ -334,7 +364,7 @@ Entity * makeAvatar(float x, float y)
         // add to g_entities
         g_entities.push_back( e );
         // alpha
-        e->alpha = .20;
+        e->alpha = 1.0;
         // set velocity
         e->vel.set( 0.0, -1.5, 0.0);
         // set location
@@ -372,6 +402,7 @@ void makeParticleSystem()
         part->active = true;
         // insert
         g_entities.push_back(part);
+        g_particles.push_back(part);
     }
 }
 

@@ -42,10 +42,18 @@ bool firstTime = true;
 //    return self;
 //}
 
+-(IBAction)timerDidGoOff:(id)sender
+{
+    RunnerRenderUpdate();
+}
+
 - (void)viewDidLoad
 {
     NSLog(@"go");
     [super viewDidLoad];
+    
+    NSTimer *timer = [NSTimer timerWithTimeInterval:.5 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
+    
     if (firstTime)
     {
         NSLog(@"go");
@@ -72,26 +80,28 @@ bool firstTime = true;
         firstTime = false;
     }
     
-    NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
-    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:5];
-    
-    UIButton *button = [[UIButton alloc] initWithFrame:self.view.bounds];
-    [button setTitle:@"PLAY NOTE" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(playButtonPressedUp:) forControlEvents:UIControlEventTouchUpInside];
-    [button addTarget:self action:@selector(playButtonPressed:) forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:button];
+//    NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
+//    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:5];
+//    
+//    UIButton *button = [[UIButton alloc] initWithFrame:self.view.bounds];
+//    [button setTitle:@"PLAY NOTE" forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(playButtonPressedUp:) forControlEvents:UIControlEventTouchUpInside];
+//    [button addTarget:self action:@selector(playButtonPressed:) forControlEvents:UIControlEventTouchDown];
+//    [self.view addSubview:button];
 }
 
 
 -(IBAction)playButtonPressed:(UIButton *)sender
 {
     [[SoundRunnerUtil appDelegate].soundGen playMidiNote:127 velocity:127];
+    NSLog(@"Button pressed.");
 }
 
 -(IBAction)playButtonPressedUp:(UIButton *)sender
 {
     [[SoundRunnerUtil appDelegate].soundGen stopPlayingMidiNote:127];
 }
+ 
 
 - (void)viewDidLayoutSubviews
 {
