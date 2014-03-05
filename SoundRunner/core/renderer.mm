@@ -432,6 +432,11 @@ void RunnerInit()
     
 }
 
+Entity *getCurrentAvatar ()
+{
+    return g_avatar;
+}
+
 void RunnerRenderUpdate ()
 {
     NSLog(@"BANG");

@@ -111,15 +111,16 @@ void Avatar::render()
 }
 
 /* UGLY UGLY UGLY Find better way */
+#define RADIUS .2
 #define RADIUS_SQUARED .04
 
 GLfloat distanceBetweenTwoVecs( Vector3D vecA, Vector3D vecB)
 {
-    GLfloat dx_squared = powf(vecA.x - vecB.x, 2);
-    if (dx_squared < RADIUS_SQUARED) return FLT_MAX;
-    GLfloat dy_squared = powf(vecA.y - vecB.y, 2);
-    if (dy_squared < RADIUS_SQUARED) return FLT_MAX;
-    return sqrtf(dx_squared + dy_squared);
+    GLfloat dx = vecA.x - vecB.x;
+    if (dx > RADIUS) return FLT_MAX;
+    GLfloat dy = vecA.y - vecB.y;
+    if (dy > RADIUS) return FLT_MAX;
+    return sqrtf(powf(dx, 2) + powf(dy,2));
 }
 
 void Particle::update( double dt )
@@ -141,12 +142,19 @@ void Particle::update( double dt )
         vel.y = -1 * vel.y;
     }
     
-//    if (distanceBetweenTwoVecs(loc, g_avatar->loc) < RADIUS_SQUARED) {
-//        col.set(1., 1., 1.);
-//    }
+    Entity *avatar = getCurrentAvatar();
     
-    loc.x += vel.x;
-    loc.y += vel.y;
+    GLfloat dist = distanceBetweenTwoVecs(loc, avatar->loc);
+    
+    if (dist < avatar->sca.x/2) {
+//        col.set(1., 1., 1.);
+        GLfloat dx = loc.x - avatar->loc.x;
+        GLfloat dy = loc.y - avatar->loc.y;
+        loc.set(avatar->loc.x + RADIUS/dist * dx, avatar->loc.y + RADIUS/dist * dy, 0);
+    } else {
+        loc.x += vel.x;
+        loc.y += vel.y;
+    }
 }
 
 void Particle::render()

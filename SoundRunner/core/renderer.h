@@ -31,5 +31,7 @@ void moveCamera(GLfloat inc);
 // control mechanism for moving the avatar
 void moveAvatar(float displacement);
 
+Entity *getCurrentAvatar ();
+
 
 #endif /* defined(__SoundRunner__renderer__) */
