@@ -287,7 +287,11 @@ void touch_callback( NSSet * touches, UIView * view,
 
 
 
-
+/** handleCollision(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p)
+ *  -----------------------------
+ *  Arguments std::vector<Entity *> * entities is a pointer to a vector of entity pointers that are the entities that
+ *  will be colliding. Also pass in an iterator to the same
+ */
 void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p)
 {
     std::vector<Entity *>::iterator p2;

@@ -11,4 +11,5 @@ dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Scales.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunnerUtil.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/AppDelegate.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/core/../../data/soundfonts/SoundGen.h
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/../../data/soundfonts/SoundGen.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/Physics.h
