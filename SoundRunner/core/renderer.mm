@@ -310,6 +310,7 @@ void RunnerInit()
     }
     
     g_avatar = makeAvatar(0.0, avatarYStart);
+    makeNoteBoundarys(numNotesInScale);
     makeParticleSystem();
 }
 
@@ -331,7 +332,7 @@ void makeNoteBoundarys(int numNotes)
             // alpha
             bound->alpha = 1.0;
             // set color
-            bound->col.set( 0.0, 0.0, 0.0 );
+            bound->col.set( 52/255., 73/255., 94/255. ); //rgba(52, 73, 94,1.0)
             // set scale
             bound->sca.setAll( 1 );
             // activate
@@ -422,8 +423,6 @@ void RunnerSetDims( GLfloat width, GLfloat height )
 void RunnerRender()
 {
     g_avatar = makeAvatar(nextAvatarX, avatarYStart);
-    makeNoteBoundarys(numNotesInScale);
-
 
     // refresh current time reading (in microseconds)
     double currTime = MoGfx::getCurrentTime( true );
