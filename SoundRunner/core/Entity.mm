@@ -8,6 +8,7 @@
 
 #import "Entity.h"
 #import <array>
+#import "renderer.h"
 
 static const GLfloat squareVertices[] = {
     -0.5f,  -0.5f,
@@ -109,6 +110,17 @@ void Avatar::render()
     glDisable( GL_TEXTURE_2D );
 }
 
+/* UGLY UGLY UGLY Find better way */
+#define RADIUS_SQUARED .04
+
+GLfloat distanceBetweenTwoVecs( Vector3D vecA, Vector3D vecB)
+{
+    GLfloat dx_squared = powf(vecA.x - vecB.x, 2);
+    if (dx_squared < RADIUS_SQUARED) return FLT_MAX;
+    GLfloat dy_squared = powf(vecA.y - vecB.y, 2);
+    if (dy_squared < RADIUS_SQUARED) return FLT_MAX;
+    return sqrtf(dx_squared + dy_squared);
+}
 
 void Particle::update( double dt )
 {
@@ -122,6 +134,19 @@ void Particle::update( double dt )
     GLfloat g_gfxHeight = 640;
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
+    if (loc.x < Globals::leftBound || loc.x > Globals::rightBound) {
+        vel.x = -1 * vel.x;
+    }
+    if (loc.y < -1 || loc.y > 1) {
+        vel.y = -1 * vel.y;
+    }
+    
+//    if (distanceBetweenTwoVecs(loc, g_avatar->loc) < RADIUS_SQUARED) {
+//        col.set(1., 1., 1.);
+//    }
+    
+    loc.x += vel.x;
+    loc.y += vel.y;
 }
 
 void Particle::render()

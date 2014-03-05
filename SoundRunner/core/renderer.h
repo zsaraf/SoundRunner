@@ -14,8 +14,7 @@
 #import "mo_audio.h"
 #import "mo_touch.h"
 #import "mo_gfx.h"
-
-
+#import "Entity.h"
 
 // initialize the engine (audio, grx, interaction)
 void RunnerInit();

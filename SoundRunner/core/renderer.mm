@@ -9,7 +9,7 @@
 #import "renderer.h"
 #import "mo_audio.h"
 #import <math.h>
-#import "Entity.h"
+
 #import "Globals.h"
 #import "Scales.h"
 #import <stdlib.h>
@@ -388,6 +388,8 @@ void makeParticleSystem()
         // random y location between -1 and1
         part->loc.y = 2*g_ratio*( (rand() / (float)RAND_MAX) - 0.5 );
         part->loc.z = 0;
+        part->vel.x = -.005 + (rand() / (float)RAND_MAX) * .01;
+        part->vel.y = -.005 + (rand() / (float)RAND_MAX) * .01;
         // alpha
         part->alpha = 1.0;
         // scale
@@ -426,8 +428,6 @@ void RunnerRender()
 
     // refresh current time reading (in microseconds)
     double currTime = MoGfx::getCurrentTime( true );
-    
-    
     
     // projection
     glMatrixMode( GL_PROJECTION );
