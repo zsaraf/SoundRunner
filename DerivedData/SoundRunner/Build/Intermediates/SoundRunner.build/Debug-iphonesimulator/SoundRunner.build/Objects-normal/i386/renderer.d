@@ -8,7 +8,4 @@ dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Entity.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_glut.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Globals.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/core/gex-basssynth.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/bass/bass.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/bass/bassmidi.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_thread.h
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/Scales.h

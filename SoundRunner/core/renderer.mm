@@ -10,14 +10,16 @@
 #import "mo_audio.h"
 #import <math.h>
 #import "Entity.h"
-#import "gex-basssynth.h"
+#import "Globals.h"
+#import "Scales.h"
 using namespace std;
 
 
 #define SRATE 24000
 #define FRAMESIZE 512
 #define NUM_CHANNELS 2
-#define NUM_PARTICLES 1000
+#define NUM_PARTICLES 400
+
 
 
 
@@ -27,9 +29,10 @@ GLfloat g_waveformWidth = 2;
 GLfloat g_gfxWidth = 1024;
 GLfloat g_gfxHeight = 640;
 GLfloat g_ratio = g_gfxWidth / g_gfxHeight;
+
 GLfloat leftClip = -g_ratio;
 GLfloat rightClip = g_ratio;
-
+GLfloat avatarYStart = 0.3;
 // buffer
 UInt32 g_numFrames;
 
@@ -37,17 +40,17 @@ UInt32 g_numFrames;
 Entity * g_avatar;
 std::vector<Entity *> g_entities;
 GLfloat nextAvatarX = 0.0;
+int numNotesInScale = Scales::numNotesPerScale;
 
 
-// placeholder for audio
-GeXBASSSynth * g_synth;
 // number of voices
 int numVoices = 32;
 
 // time keepingstuffs
 double lastTime = 0.0;
-double timePerBeat = 1/(Globals::BPM/60.0); // seconds per beat
+int samplesPerBeat = SRATE * 1/(Globals::BPM/60.0); // samples per beat
 bool newBeat = false;
+int sampCount = 0;
 
 
 
@@ -58,6 +61,47 @@ Entity * makeAvatar(float x, float y);
 void renderEntities();
 void renderSingleEntity(Entity * e);
 void makeParticleSystem();
+void makeNoteBoundarys(int numNotes);
+
+
+
+void moveCamera(GLfloat inc)
+{
+    if ( nextAvatarX <= Globals::leftBound + g_ratio && leftClip == Globals::leftBound )
+    {
+        return;
+    }
+    else if (nextAvatarX >= Globals::rightBound - g_ratio && rightClip == Globals::rightBound)
+    {
+        return;
+    }
+    leftClip += inc;
+    rightClip += inc;
+    
+    
+    if (leftClip <= Globals::leftBound)
+    {
+        
+        leftClip = Globals::leftBound;
+        rightClip = Globals::leftBound + g_ratio*2;
+    }
+    if (rightClip >= Globals::rightBound)
+    {
+        
+        rightClip = Globals::rightBound;
+        leftClip = Globals::rightBound - g_ratio*2;
+    }
+    
+}
+
+void moveAvatar(float displacement)
+{
+    nextAvatarX = g_avatar->loc.x + displacement*2.5;
+}
+
+
+
+
 
 
 //-----------------------------------------------------------------------------
@@ -68,15 +112,22 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 {
     for( int i = 0; i < numFrames; i++ )
     {
+        sampCount++;
         // zero out for now so we don't get mic input coming out!
         buffer[2*i] = buffer[2*i+1] = 0;
+        // synching stuff
+        if (sampCount == samplesPerBeat)
+        {
+            // turn note off
+            newBeat = true;
+            sampCount = 0;
+        }
     }
     
-    g_synth->synthesize2(buffer, numFrames);
+    
     
     // save the num frames
     g_numFrames = numFrames;
-    
     
     // NSLog( @"." );
 }
@@ -121,17 +172,18 @@ void touch_callback( NSSet * touches, UIView * view,
             // ---------------touch began------------------
             case UITouchPhaseBegan:
             {
+                
+                if (newBeat)
+                {
+                    NSLog(@"NOTE ON!");
+                    // note on
+                    
+                    newBeat = false;
+                }
+                
                 //NSLog( @"touch began... %f %f", x, y );
                 g_avatar->col.set(0.0, 0.0, 0.0);
-                g_synth->noteOn(0, 440.0, 126);
                 
-
-//                if (newBeat)
-//                {
-//                    // turn note on!
-//                    g_synth->noteOn(0, 220.0, 100);
-//                    newBeat = false;
-//                }
                 break;
             }
             // --------------------------------------------
@@ -139,16 +191,16 @@ void touch_callback( NSSet * touches, UIView * view,
             case UITouchPhaseStationary:
             {
                 
-                //NSLog( @"touch stationary... %f %f", pt.x, pt.y );
-//                if (newBeat)
-//                {
-//                    // turn note on!
-//                    g_synth->noteOn(0, 220.0, 100);
-//
-//                    newBeat = false;
-//
-//                    
-//                }
+                NSLog( @"touch stationary... %f %f", pt.x, pt.y );
+                if (newBeat)
+                {
+                    NSLog(@"NOTE ON!");
+                    // note on
+                    newBeat = false;
+
+                }
+                g_avatar->col.set(0.0, 0.0, 0.0);
+
                 
                 break;
             }
@@ -158,16 +210,15 @@ void touch_callback( NSSet * touches, UIView * view,
             case UITouchPhaseMoved:
             {
                 //NSLog( @"touch moved... %f %f", pt.x, pt.y );
-                // GL coordinates
-                // NSLog( @"touch moved... %f %f", x, y );
-//                if (newBeat)
-//                {
-//                    // turn note on!
-//                    g_synth->noteOn(0, 220.0, 100);
-//
-//                    newBeat = false;
-//                }
-                
+                if (newBeat)
+                {
+                    NSLog(@"NOTE ON!");
+                    // note on
+                    newBeat = false;
+
+                }
+                g_avatar->col.set(0.0, 0.0, 0.0);
+
                 break;
             }
                 
@@ -177,7 +228,7 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 //NSLog( @"touch ended... %f %f", x, y );
                 g_avatar->col.set(1.0, 1.0, 1.0);
-                g_synth->noteOff(0, 220.0);
+                // note off
                 break;
             }
                 
@@ -197,10 +248,6 @@ void touch_callback( NSSet * touches, UIView * view,
 }
 
 
-void moveAvatar(float displacement)
-{
-    nextAvatarX = g_avatar->loc.x + displacement;
-}
 
 
 // initialize the engine (audio, grx, interaction)
@@ -224,21 +271,6 @@ void RunnerInit()
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
-    // init bass (soundfont player)
-    g_synth = new GeXBASSSynth();
-    g_synth->init(SRATE, numVoices);
-    if (!g_synth->load("GeneralUser_GS_FluidSynth_v1.44.sf2"))
-    {
-        std::cerr << "error loading soundfont" << std::endl;
-    }
-    
-    
-
-//    g_synth->programChange( 0, 0 );
-//    g_synth->programChange( 1, 79 );
-//    g_synth->programChange( 2, 4 );
-//    g_synth->programChange( 3, 10 );
-//    g_synth->programChange( 4, 13 );
     
     // init audio
     bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -257,17 +289,39 @@ void RunnerInit()
         *p = 0;
     }
     
-    g_avatar = makeAvatar(0.0, 0.0);
+    g_avatar = makeAvatar(0.0, avatarYStart);
     makeParticleSystem();
 }
 
-
-
-void moveCamera(GLfloat inc)
+void makeNoteBoundarys(int numNotes)
 {
-    leftClip += inc;
-    rightClip += inc;
+    // entire x range of the GL worldapplication
+    GLfloat xRange = Globals::rightBound - Globals::leftBound;
+    // spacing between each note boundary
+    
+    GLfloat xInc = xRange / (float)numNotes;
+    
+    for (int i = 0; i < numNotes + 1; i++)
+    {
+        NoteBoundary * bound = new NoteBoundary(Globals::leftBound +  (i * xInc) );
+        if ( bound != NULL )
+        {
+            // add to g_entities
+            g_entities.push_back( bound );
+            // alpha
+            bound->alpha = 1.0;
+            // set color
+            bound->col.set( 0.0, 0.0, 0.0 );
+            // set scale
+            bound->sca.setAll( 1 );
+            // activate
+            bound->active = true;
+        }
+    }
 }
+
+
+
 
 
 Entity * makeAvatar(float x, float y)
@@ -280,7 +334,7 @@ Entity * makeAvatar(float x, float y)
         // add to g_entities
         g_entities.push_back( e );
         // alpha
-        e->alpha = .60;
+        e->alpha = .20;
         // set velocity
         e->vel.set( 0.0, -1.5, 0.0);
         // set location
@@ -288,13 +342,12 @@ Entity * makeAvatar(float x, float y)
         // set color
         e->col.set( 1.0, 1.0, 1.0 );
         // set scale
-        e->sca.setAll( .6 );
+        e->sca.setAll( .3 );
         // activate
         e->active = true;
     }
     return e;
 }
-
 
 
 void makeParticleSystem()
@@ -304,8 +357,8 @@ void makeParticleSystem()
         Particle * part = new Particle();
         // random size between 0 and 0.5
         part->size.setAll( 0.5*( rand()  / (float)RAND_MAX ) );
-        // random x location
-        part->loc.x = 10*( (rand() / (float)RAND_MAX) - 0.5 );
+        // random x location between Globals::leftBound and Globals::rightBound
+        part->loc.x = Globals::rightBound * 2*( (rand() / (float)RAND_MAX) - 0.5 );
         // random y location between -1 and1
         part->loc.y = 2*g_ratio*( (rand() / (float)RAND_MAX) - 0.5 );
         part->loc.z = 0;
@@ -320,9 +373,7 @@ void makeParticleSystem()
         // insert
         g_entities.push_back(part);
     }
-
 }
-
 
 
 // set graphics dimensions
@@ -341,24 +392,14 @@ void RunnerSetDims( GLfloat width, GLfloat height )
 // draw next frame of graphics
 void RunnerRender()
 {
-    g_avatar = makeAvatar(nextAvatarX, 0.0);
+    g_avatar = makeAvatar(nextAvatarX, avatarYStart);
+    makeNoteBoundarys(numNotesInScale);
+
 
     // refresh current time reading (in microseconds)
     double currTime = MoGfx::getCurrentTime( true );
     
     
-    
-    // if the duration of a beat has passed
-    if (currTime - lastTime >= timePerBeat && !newBeat)
-    {
-        // update the lastTime
-        lastTime = currTime;
-        // turn off anything that is playing
-        
-        // tell touch callback that a note can be played.
-        newBeat = true;
-
-    }
     
     // projection
     glMatrixMode( GL_PROJECTION );
@@ -373,7 +414,7 @@ void RunnerRender()
     // reset
     // glLoadIdentity();
     
-    
+    // BACKGROUND COLOR
     glClearColor( 0, 1, 1, 0.85); // turquoize
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     

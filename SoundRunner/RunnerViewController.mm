@@ -185,7 +185,6 @@ bool firstTime = true;
                  float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
                  float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
-                 
                  moveAvatar(pitch/180.0);
                  moveCamera(pitch/180.0);
                  

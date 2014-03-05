@@ -15,6 +15,7 @@
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Chorus.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/mo_gfx.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Mandolin.o
+/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/SoundRunnerUtil.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Globals.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/BlowBotl.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/TubeBell.o
@@ -62,6 +63,7 @@
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Sphere.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/FileLoop.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/StkUdpSocket.o
+/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/SoundGen.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Voicer.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/JCRev.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/VoicForm.o
@@ -100,4 +102,4 @@
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/mo_fun.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/InetWvOut.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/SineWave.o
-/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/gex-basssynth.o
+/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Scales.o

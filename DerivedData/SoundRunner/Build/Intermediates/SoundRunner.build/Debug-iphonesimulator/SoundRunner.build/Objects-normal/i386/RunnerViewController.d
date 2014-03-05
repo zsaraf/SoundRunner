@@ -6,4 +6,7 @@ dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_audio.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_def.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_touch.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_gfx.h
+  /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_gfx.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunnerUtil.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/AppDelegate.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/../../data/soundfonts/SoundGen.h

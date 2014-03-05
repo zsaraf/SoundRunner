@@ -23,6 +23,8 @@ public:
     static GLuint g_texture[2];
     // default BPM
     static float BPM;
+    static GLfloat leftBound;
+    static GLfloat rightBound;
     
 };
 
