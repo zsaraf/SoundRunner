@@ -334,7 +334,7 @@ Entity * makeAvatar(float x, float y)
         // add to g_entities
         g_entities.push_back( e );
         // alpha
-        e->alpha = .20;
+        e->alpha = 1.0;
         // set velocity
         e->vel.set( 0.0, -1.5, 0.0);
         // set location
@@ -342,7 +342,7 @@ Entity * makeAvatar(float x, float y)
         // set color
         e->col.set( 1.0, 1.0, 1.0 );
         // set scale
-        e->sca.setAll( .3 );
+        e->sca.setAll( .7 );
         // activate
         e->active = true;
     }
