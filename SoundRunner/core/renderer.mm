@@ -14,6 +14,7 @@
 #import "Scales.h"
 #import "SoundRunnerUtil.h"
 #import "Physics.h"
+#import <stdlib.h>
 
 using namespace std;
 
@@ -23,7 +24,14 @@ using namespace std;
 #define NUM_CHANNELS 2
 #define NUM_PARTICLES 400
 
+#define NUM_NICE_COLORS 4
 
+static const GLfloat niceColors[] = {
+    52/255.,  152/255., 219/255., // rgba(52, 152, 219,1.0)
+    155/255.,  89/255., 182/255., // rgba(155, 89, 182,1.0)
+    46/255.,   204/255., 113/255., // rgba(46, 204, 113,1.0)
+    243/255., 156/255., 18/255.// rgba(243, 156, 18,1.0)
+};
 
 
 // -------------------instance variables-------------------
@@ -146,6 +154,7 @@ void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
     // NSLog( @"." );
 }
 
+bool touch_down = false;
 
 //-----------------------------------------------------------------------------
 // name: touch_callback()
@@ -186,7 +195,7 @@ void touch_callback( NSSet * touches, UIView * view,
             // ---------------touch began------------------
             case UITouchPhaseBegan:
             {
-                
+                touch_down = true;
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
@@ -197,7 +206,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 }
                 
                 //NSLog( @"touch began... %f %f", x, y );
-                g_avatar->col.set(0.0, 0.0, 0.0);
+                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
                 
                 break;
             }
@@ -217,7 +226,8 @@ void touch_callback( NSSet * touches, UIView * view,
                     newBeat = false;
                     
                 }
-                g_avatar->col.set(0.0, 0.0, 0.0);
+                //g_avatar->col.set(0.0, 0.0, 0.0);
+                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
 
                 
                 break;
@@ -238,8 +248,8 @@ void touch_callback( NSSet * touches, UIView * view,
                     newBeat = false;
 
                 }
-                g_avatar->col.set(0.0, 0.0, 0.0);
-
+                //g_avatar->col.set(0.0, 0.0, 0.0);
+                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
                 break;
             }
                 
@@ -249,6 +259,10 @@ void touch_callback( NSSet * touches, UIView * view,
             {
                 // NSLog( @"touch ended... %f %f", x, y );
                 g_avatar->col.set(1.0, 1.0, 1.0);
+                touch_down = false;
+                //NSLog( @"touch ended... %f %f", x, y );
+                //g_avatar->col.set(1.0, 1.0, 1.0);
+                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
                 // note off
                 [soundGen stopPlayingMidiNote:127];
                 newBeat = false;
@@ -366,7 +380,7 @@ void RunnerInit()
     MoTouch::addCallback( touch_callback, NULL );
     
     // generate texture name
-    glGenTextures( 1, &Globals::g_texture[0] );
+    glGenTextures( 2, &Globals::g_texture[0] );
     // bind the texture
     glBindTexture( GL_TEXTURE_2D, Globals::g_texture[0] );
     // setting parameters
@@ -374,7 +388,15 @@ void RunnerInit()
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
     
     // load the texture
-    MoGfx::loadTexture( @"flare-tng-3", @"png" );
+    MoGfx::loadTexture( @"flare-tng-5", @"png" );
+    
+    glBindTexture( GL_TEXTURE_2D, Globals::g_texture[1] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    
+    // load the texture
+    MoGfx::loadTexture( @"flare-tng-4", @"png" );
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
@@ -457,14 +479,19 @@ Entity * makeAvatar(float x, float y)
         // set location
         e->loc.set( x, y, 0 );
         // set color
-        e->col.set( 1.0, 1.0, 1.0 );
+        if (touch_down) {
+            e->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
+        } else {
+            e->col.set( 1.0, 1.0, 1.0 );
+        }
         // set scale
-        e->sca.setAll( .3 );
+        e->sca.setAll( .4 );
         // activate
         e->active = true;
     }
     return e;
 }
+
 
 
 void makeParticleSystem()
@@ -482,9 +509,13 @@ void makeParticleSystem()
         // alpha
         part->alpha = 1.0;
         // scale
-        part->sca.setAll( 0.07 );
+        int random_num = rand();
+        
+        part->sca.setAll((random_num/(float)RAND_MAX * .06) + .04);
+
+        int color_index = random_num % NUM_NICE_COLORS;
         // color
-        part->col.set(1.0, 1.0, 1.0);
+        part->col.set(niceColors[color_index * 3], niceColors[color_index * 3 + 1], niceColors[color_index * 3 + 2]);
         // active
         part->active = true;
         // insert
@@ -533,7 +564,7 @@ void RunnerRender()
     // glLoadIdentity();
     
     // BACKGROUND COLOR
-    glClearColor( 0, 1, 1, 0.85); // turquoize
+    glClearColor( 22/255.0, 31/255.0, 40/255.0, 1); // rgba(44, 62, 80,1.0)
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     
     // push

@@ -126,8 +126,31 @@ void Particle::update( double dt )
 
 void Particle::render()
 {
-    // render
-    glutSolidSphere( size.value, slices, stacks );
+    // enable texture mapping
+    glEnable( GL_TEXTURE_2D );
+    // enable blending
+    glEnable( GL_BLEND );
+    // set blend func
+    glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+    // glBlendFunc( GL_ONE, GL_ONE );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, Globals::g_texture[1] );
+    
+    // vertex
+    glVertexPointer( 2, GL_FLOAT, 0, squareVertices );
+    glEnableClientState( GL_VERTEX_ARRAY );
+    
+    // texture coordinate
+    glTexCoordPointer( 2, GL_FLOAT, 0, texCoords );
+    glEnableClientState( GL_TEXTURE_COORD_ARRAY );
+    
+    // triangle strip
+    glDrawArrays( GL_TRIANGLE_STRIP, 0, 4 );
+    
+    // disable blend
+    glDisable( GL_BLEND );
+    glDisable( GL_TEXTURE_2D );
 }
 
 
