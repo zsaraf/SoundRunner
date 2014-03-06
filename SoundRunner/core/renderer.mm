@@ -7,7 +7,6 @@
 //
 
 #import "renderer.h"
-#import "mo_audio.h"
 #import <math.h>
 
 #import "Globals.h"
@@ -118,41 +117,6 @@ void moveCamera(GLfloat inc)
 void moveAvatar(float displacement)
 {
     nextAvatarX = g_avatar->loc.x + displacement*2.5;
-}
-
-
-
-
-
-
-//-----------------------------------------------------------------------------
-// name: audio_callback()
-// desc: audio callback, yeah
-//-----------------------------------------------------------------------------
-void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
-{
-//    for( int i = 0; i < numFrames; i++ )
-//    {
-//        sampCount++;
-//        // zero out for now so we don't get mic input coming out!
-//        buffer[2*i] = buffer[2*i+1] = 0;
-//        // synching stuff
-//        if (sampCount == samplesPerBeat)
-//        {
-//            [soundGen stopPlayingMidiNote:127];
-//
-//            // turn note off
-//            newBeat = true;
-//            sampCount = 0;
-//        }
-//    }
-    
-    
-    
-    // save the num frames
-    g_numFrames = numFrames;
-    
-    // NSLog( @"." );
 }
 
 bool touch_down = false;
@@ -401,14 +365,6 @@ void RunnerInit()
         int * p = 0;
         *p = 0;
     }
-    // start
-//    result = MoAudio::start( audio_callback, NULL );
-//    if( !result )
-//    {
-//        // do not do this:
-//        int * p = 0;
-//        *p = 0;
-//    }
     
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeNoteBoundarys(numNotesInScale);
@@ -436,6 +392,7 @@ void RunnerRenderUpdateNote ()
 {
     if (touch_down) {
         stopAndStartPlayingMidiNoteForCurrentAvatar();
+        g_avatar->col.set(155/255., 89/255., 182/255.); //rgba(155, 89, 182,1.0)
     }
 }
      
