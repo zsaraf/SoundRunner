@@ -11,7 +11,7 @@
 #import <math.h>
 
 #import "Globals.h"
-#import "Scales.h"
+#import "Scale.h"
 #import "SoundRunnerUtil.h"
 #import "Physics.h"
 #import <stdlib.h>
@@ -52,7 +52,7 @@ Entity * g_avatar;
 std::vector<Entity *> g_entities;
 std::vector<Entity *> g_particles;
 GLfloat nextAvatarX = 0.0;
-int numNotesInScale = Scales::numNotesPerScale;
+int numNotesInScale = 20;//Scales::numNotesPerScale;
 
 // audio stuffs
 SoundGen * soundGen;
@@ -77,6 +77,7 @@ void renderSingleEntity(Entity * e);
 void makeParticleSystem();
 void makeNoteBoundarys(int numNotes);
 void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p);
+void stopAndStartPlayingMidiNoteForCurrentAvatar ();
 
 
 
@@ -130,21 +131,21 @@ void moveAvatar(float displacement)
 //-----------------------------------------------------------------------------
 void audio_callback( Float32 * buffer, UInt32 numFrames, void * userData )
 {
-    for( int i = 0; i < numFrames; i++ )
-    {
-        sampCount++;
-        // zero out for now so we don't get mic input coming out!
-        buffer[2*i] = buffer[2*i+1] = 0;
-        // synching stuff
-        if (sampCount == samplesPerBeat)
-        {
-            [soundGen stopPlayingMidiNote:127];
-
-            // turn note off
-            newBeat = true;
-            sampCount = 0;
-        }
-    }
+//    for( int i = 0; i < numFrames; i++ )
+//    {
+//        sampCount++;
+//        // zero out for now so we don't get mic input coming out!
+//        buffer[2*i] = buffer[2*i+1] = 0;
+//        // synching stuff
+//        if (sampCount == samplesPerBeat)
+//        {
+//            [soundGen stopPlayingMidiNote:127];
+//
+//            // turn note off
+//            newBeat = true;
+//            sampCount = 0;
+//        }
+//    }
     
     
     
@@ -196,17 +197,10 @@ void touch_callback( NSSet * touches, UIView * view,
             case UITouchPhaseBegan:
             {
                 touch_down = true;
-                if (newBeat)
-                {
-                    NSLog(@"NOTE ON!");
-                    // note on
-                    [soundGen playMidiNote:127 velocity:127];
-                    
-                    newBeat = false;
-                }
+                
+                stopAndStartPlayingMidiNoteForCurrentAvatar();
                 
                 //NSLog( @"touch began... %f %f", x, y );
-                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
                 
                 break;
             }
@@ -220,16 +214,11 @@ void touch_callback( NSSet * touches, UIView * view,
                 {
                     NSLog(@"NOTE ON!");
                     
-                    // note on
-                    [soundGen playMidiNote:127 velocity:127];
+                    
 
                     newBeat = false;
                     
                 }
-                //g_avatar->col.set(0.0, 0.0, 0.0);
-                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
-
-                
                 break;
             }
                 
@@ -241,15 +230,11 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
-                    
-                    // note on
-                    [soundGen playMidiNote:127 velocity:127];
 
                     newBeat = false;
 
                 }
-                //g_avatar->col.set(0.0, 0.0, 0.0);
-                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
+
                 break;
             }
                 
@@ -261,10 +246,9 @@ void touch_callback( NSSet * touches, UIView * view,
                 g_avatar->col.set(1.0, 1.0, 1.0);
                 touch_down = false;
                 //NSLog( @"touch ended... %f %f", x, y );
-                //g_avatar->col.set(1.0, 1.0, 1.0);
-                //g_avatar->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
                 // note off
-                [soundGen stopPlayingMidiNote:127];
+                //[soundGen stopPlayingMidiNote:127];
+                [soundGen stopPlayingAllNotes];
                 newBeat = false;
                 break;
             }
@@ -405,7 +389,7 @@ void RunnerInit()
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
-    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:5];
+    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:2];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
     
     
@@ -418,13 +402,13 @@ void RunnerInit()
         *p = 0;
     }
     // start
-    result = MoAudio::start( audio_callback, NULL );
-    if( !result )
-    {
-        // do not do this:
-        int * p = 0;
-        *p = 0;
-    }
+//    result = MoAudio::start( audio_callback, NULL );
+//    if( !result )
+//    {
+//        // do not do this:
+//        int * p = 0;
+//        *p = 0;
+//    }
     
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeNoteBoundarys(numNotesInScale);
@@ -437,9 +421,22 @@ Entity *getCurrentAvatar ()
     return g_avatar;
 }
 
-void RunnerRenderUpdate ()
+void stopAndStartPlayingMidiNoteForCurrentAvatar ()
 {
-    NSLog(@"BANG");
+    GLfloat xInc = (Globals::rightBound - Globals::leftBound) / (float)numNotesInScale;
+    int key = (int)((g_avatar->loc.x - Globals::leftBound) / xInc);
+    int note = [[Scale instance] noteForKey:key] + 60;
+    
+    [soundGen stopPlayingAllNotes];
+    [soundGen playMidiNote:note velocity:127];
+//    NSLog(@"playing note %d %d", note, key);
+}
+
+void RunnerRenderUpdateNote ()
+{
+    if (touch_down) {
+        stopAndStartPlayingMidiNoteForCurrentAvatar();
+    }
 }
      
 void makeNoteBoundarys(int numNotes)

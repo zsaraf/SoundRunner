@@ -44,7 +44,17 @@ bool firstTime = true;
 
 -(IBAction)timerDidGoOff:(id)sender
 {
-    RunnerRenderUpdate();
+    RunnerRenderUpdateNote();
+}
+
+-(IBAction)changeSynth:(id)sender
+{
+    static int patchNo = 2;
+    if (patchNo >= 3) {
+        NSLog(@"CHANGING TO PATCH # %d", patchNo);
+        [[SoundRunnerUtil appDelegate].soundGen setPatchNumber:patchNo];
+    }
+    patchNo ++;
 }
 
 - (void)viewDidLoad
@@ -52,7 +62,9 @@ bool firstTime = true;
     NSLog(@"go");
     [super viewDidLoad];
     
-    NSTimer *timer = [NSTimer timerWithTimeInterval:.5 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.25 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
+    
+    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
     
     if (firstTime)
     {
@@ -89,19 +101,6 @@ bool firstTime = true;
 //    [button addTarget:self action:@selector(playButtonPressed:) forControlEvents:UIControlEventTouchDown];
 //    [self.view addSubview:button];
 }
-
-
--(IBAction)playButtonPressed:(UIButton *)sender
-{
-    [[SoundRunnerUtil appDelegate].soundGen playMidiNote:127 velocity:127];
-    NSLog(@"Button pressed.");
-}
-
--(IBAction)playButtonPressedUp:(UIButton *)sender
-{
-    [[SoundRunnerUtil appDelegate].soundGen stopPlayingMidiNote:127];
-}
- 
 
 - (void)viewDidLayoutSubviews
 {
