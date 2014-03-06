@@ -109,7 +109,7 @@ void moveCamera(GLfloat inc)
     if ( nextAvatarX - leftClip <= minBuffer && !atEdge)
     {
         GLfloat clipGoal = nextAvatarX - minBuffer;
-        float slew = 0.01;
+        float slew = 0.8;
         leftClip = (clipGoal - leftClip)*slew + leftClip;
         rightClip = leftClip + g_ratio*2;
         boundClipPlanes(&atEdge);
@@ -119,7 +119,7 @@ void moveCamera(GLfloat inc)
     if ( rightClip - nextAvatarX <= minBuffer && !atEdge)
     {
         GLfloat clipGoal = nextAvatarX + minBuffer;
-        float slew = 0.01;
+        float slew = 0.8;
         rightClip = (clipGoal - rightClip)*slew + rightClip;
         leftClip = rightClip - g_ratio*2;
         boundClipPlanes(&atEdge);
