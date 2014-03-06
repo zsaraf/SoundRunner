@@ -26,10 +26,10 @@ void RunnerRender();
 void RunnerRenderUpdate ();
 
 // moves camera horizontally
-void moveCamera(GLfloat inc);
+void moveCamera( GLfloat inc );
 
 // control mechanism for moving the avatar
-void moveAvatar(float displacement);
+void moveAvatar( float displacement );
 
 Entity *getCurrentAvatar ();
 

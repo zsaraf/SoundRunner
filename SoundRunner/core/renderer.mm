@@ -77,46 +77,81 @@ void renderSingleEntity(Entity * e);
 void makeParticleSystem();
 void makeNoteBoundarys(int numNotes);
 void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::iterator p);
+// bound the left and right boundaries of the world
+void boundClipPlanes(bool * atEdge);
 
 
 
 
 void moveCamera(GLfloat inc)
 {
+    float boundConst = 1.3;
     // bound the avatar
-    if ( nextAvatarX <= Globals::leftBound + g_ratio && leftClip == Globals::leftBound )
+    if ( nextAvatarX <= Globals::leftBound + g_ratio*boundConst && leftClip == Globals::leftBound )
     {
         return;
     }
-    else if (nextAvatarX >= Globals::rightBound - g_ratio && rightClip == Globals::rightBound)
+    else if (nextAvatarX >= Globals::rightBound - g_ratio*boundConst && rightClip == Globals::rightBound)
     {
         return;
     }
+    
+    
+    bool atEdge = false;
     // increment the clip
     leftClip += inc;
     rightClip += inc;
     
-    // bounding to Globals::leftBound
+    boundClipPlanes(&atEdge);
+    
+    // min distance between clipping planes and avatar when its in motion and away from world bounds.
+    GLfloat minBuffer = .8;
+    if ( nextAvatarX - leftClip <= minBuffer && !atEdge)
+    {
+        GLfloat clipGoal = nextAvatarX - minBuffer;
+        float slew = 0.01;
+        leftClip = (clipGoal - leftClip)*slew + leftClip;
+        rightClip = leftClip + g_ratio*2;
+        boundClipPlanes(&atEdge);
+        //nextAvatarX = leftClip + minBuffer;
+        
+    }
+    if ( rightClip - nextAvatarX <= minBuffer && !atEdge)
+    {
+        GLfloat clipGoal = nextAvatarX + minBuffer;
+        float slew = 0.01;
+        rightClip = (clipGoal - rightClip)*slew + rightClip;
+        leftClip = rightClip - g_ratio*2;
+        boundClipPlanes(&atEdge);
+
+        //nextAvatarX = rightClip - minBuffer;
+    }
+    
+    
+}
+
+void boundClipPlanes(bool * atEdge)
+{
     if (leftClip <= Globals::leftBound)
     {
-        
+        *atEdge = true;
         leftClip = Globals::leftBound;
         rightClip = Globals::leftBound + g_ratio*2;
     }
     // bounding to Globals::rightBound
-
+    
     if (rightClip >= Globals::rightBound)
     {
-        
+        *atEdge = true;
         rightClip = Globals::rightBound;
         leftClip = Globals::rightBound - g_ratio*2;
     }
-    
 }
 
+// avatar is bounded in the world bounds via its own update function in Entity.mm
 void moveAvatar(float displacement)
 {
-    nextAvatarX = g_avatar->loc.x + displacement*2.5;
+    nextAvatarX = g_avatar->loc.x + displacement*2.;
 }
 
 
