@@ -11,7 +11,7 @@
 
 #import <iostream>
 #import <vector>
-#import "mo_audio.h"
+    #import "mo_audio.h"
 #import "mo_touch.h"
 #import "mo_gfx.h"
 #import "Entity.h"
@@ -23,7 +23,7 @@ void RunnerSetDims( GLfloat width, GLfloat height );
 // draw next frame of graphics
 void RunnerRender();
 
-void RunnerRenderUpdate ();
+void RunnerRenderUpdateNote ();
 
 // moves camera horizontally
 void moveCamera( GLfloat inc );

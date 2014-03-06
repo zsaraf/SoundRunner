@@ -8,8 +8,8 @@ dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Entity.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_glut.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Globals.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/core/Scales.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/Scale.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunnerUtil.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/AppDelegate.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/core/../../data/soundfonts/SoundGen.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/SoundGen.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Physics.h
