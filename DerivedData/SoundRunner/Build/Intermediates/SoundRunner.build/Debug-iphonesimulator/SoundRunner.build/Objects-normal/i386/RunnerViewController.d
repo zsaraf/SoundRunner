@@ -12,4 +12,4 @@ dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/Globals.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunnerUtil.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/AppDelegate.h \
-  /Users/loudmouth/github/SoundRunner/SoundRunner/core/../../data/soundfonts/SoundGen.h
+  /Users/loudmouth/github/SoundRunner/SoundRunner/core/SoundGen.h

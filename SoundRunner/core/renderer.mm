@@ -48,6 +48,8 @@ UInt32 g_numFrames;
 
 // graphics stuffs
 Entity * g_avatar;
+Entity * g_scrollmap;
+Entity * g_scrollAvatar;
 std::vector<Entity *> g_entities;
 std::vector<Entity *> g_particles;
 GLfloat nextAvatarX = 0.0;
@@ -79,6 +81,8 @@ void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::i
 // bound the left and right boundaries of the world
 void boundClipPlanes(bool * atEdge);
 void stopAndStartPlayingMidiNoteForCurrentAvatar ();
+Entity * makeScrollMap();
+Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX);
 
 
 
@@ -392,17 +396,20 @@ void RunnerInit()
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
     
     
-    // init audio
-    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
-    if( !result )
-    {
-        // do not do this:
-        int * p = 0;
-        *p = 0;
-    }
+//    // init audio
+//    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
+//    if( !result )
+//    {
+//        // do not do this:
+//        int * p = 0;
+//        *p = 0;
+//    }
     
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeNoteBoundarys(numNotesInScale);
+    g_scrollmap = makeScrollMap();
+    g_scrollAvatar = makeScrollAvatar((ScrollMap*)g_scrollmap, &nextAvatarX);
+
     makeParticleSystem();
     
 }
@@ -456,6 +463,65 @@ void makeNoteBoundarys(int numNotes)
             bound->active = true;
         }
     }
+}
+
+Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX)
+{
+    Entity * e = new ScrollAvatar(scrollMap, nextAvX, 0.05);
+    if ( e != NULL )
+    {
+        //NSLog(@"making new avatar");
+        
+        // add to g_entities
+        g_entities.push_back( e );
+        // alpha
+        e->alpha = 0.7;
+        // set velocity
+        e->vel.set( 0.0, 0.0, 0.0);
+        // set color
+        if (touch_down) {
+            e->col.set(244/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
+        } else {
+            e->col.set( 1.0, 1.0, 1.0 );
+        }
+        // set scale
+        e->sca.setAll( 1 );
+        // activate
+        e->active = true;
+    }
+    return e;
+    
+    
+}
+
+
+Entity * makeScrollMap()
+{
+    Entity * e = new ScrollMap(&leftClip, &rightClip);
+    if ( e != NULL )
+    {
+        //NSLog(@"making new avatar");
+        
+        // add to g_entities
+        g_entities.push_back( e );
+        // alpha
+        e->alpha = 0.05;
+        // set velocity
+        e->vel.set( 0.0, 0.0, 0.0);
+        // set color
+        if (touch_down) {
+            e->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
+        } else {
+            e->col.set( 1.0, 1.0, 1.0 );
+        }
+        // set scale
+        e->sca.setAll( 1 );
+        // activate
+        e->active = true;
+    }
+    return e;
+
+    
 }
 
 
