@@ -54,7 +54,7 @@ void Avatar::update( double dt )
     GLfloat g_gfxWidth = 1024;
     GLfloat g_gfxHeight = 640;
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
-    alpha -= 0.01;
+    alpha -= 0.1;
     if (isMoving)
     {
         loc.set(loc.x + dt*vel.x, + loc.y + dt*vel.y, loc.z + dt*vel.z);
@@ -72,9 +72,9 @@ void Avatar::update( double dt )
         if (loc.x > Globals::rightBound)
             loc.x = Globals::rightBound;
         
-        sca.x -= inc;
-        sca.y -= inc;
-        sca.z -= inc;
+//        sca.x += inc;
+//        sca.y += inc;
+//        sca.z += inc;
     }
 }
 

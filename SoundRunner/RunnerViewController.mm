@@ -198,18 +198,18 @@ float lastYaw = 0.0;
                  float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
                  float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
-                 float yawChange = fabs(yaw - lastYaw)/updateInterval;
-                 float rollChange = fabs(roll - lastRoll)/updateInterval;
-                 
-                 float scaleConst = 2.0;
+                 float scaleConst = 20.0;
                  
 //                 NSLog(@"-yaw/180.0 is: %f", -yaw/180.0);
 //                 NSLog(@"accelComponenet is: %f", accelComponent);
-                 moveAvatar(-yaw/180.0*fabs(accelComponent)*scaleConst);
-//                 moveAvatar(accelComponent/scaleConst);
                  
-                 moveCamera(-yaw/180.0*fabs(accelComponent)*scaleConst);
-//                 moveCamera(accelComponent/scaleConst);
+//                 moveAvatar(-yaw/180.0*fabs(accelComponent)*scaleConst);
+                 
+//                 moveCamera(-yaw/180.0*fabs(accelComponent)*scaleConst);
+                 
+                 float xRotation = self.motionManager.deviceMotion.rotationRate.x/scaleConst;
+                 moveAvatar(xRotation);
+                 moveCamera(xRotation);
                  
         
                  
