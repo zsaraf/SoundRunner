@@ -32,7 +32,8 @@
 bool firstTime = true;
 // accelerometer data
 float accelComponent = 0.0;
-
+float lastRoll = 0.0;
+float lastYaw = 0.0;
 
 //// idk what this function is for
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -165,7 +166,7 @@ float accelComponent = 0.0;
      {
          
          // do stuff with accelerometer data
-         accelComponent = fabs(accelerometerData.acceleration.x);
+         accelComponent = accelerometerData.acceleration.y;
 
      }];
 }
@@ -197,13 +198,18 @@ float accelComponent = 0.0;
                  float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
                  float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
-                 float scaleConst = 2.0;
-                 NSLog(@"-yaw/180.0 is: %f", -yaw/180.0);
-                 NSLog(@"accelComponenet is: %f", accelComponent);
-                 moveAvatar(-yaw/180.0/scaleConst*accelComponent);
+                 float scaleConst = 20.0;
                  
-                 moveCamera(-yaw/180.0/scaleConst*accelComponent);
-                
+//                 NSLog(@"-yaw/180.0 is: %f", -yaw/180.0);
+//                 NSLog(@"accelComponenet is: %f", accelComponent);
+                 
+//                 moveAvatar(-yaw/180.0*fabs(accelComponent)*scaleConst);
+                 
+//                 moveCamera(-yaw/180.0*fabs(accelComponent)*scaleConst);
+                 
+                 float xRotation = self.motionManager.deviceMotion.rotationRate.x/scaleConst;
+                 moveAvatar(xRotation);
+                 moveCamera(xRotation);
                  
         
                  

@@ -93,6 +93,49 @@ private:
     GLfloat y2 = -1.5;
 };
 
+class ScrollMap : public Entity
+{
+public:
+    ScrollMap(GLfloat * leftClip, GLfloat * rightClip);
+    
+    //update
+    virtual void update( double dt );
+    // render
+    virtual void render();
+public:
+    
+    GLfloat top;
+    GLfloat height;
+    GLfloat width;
+    GLfloat margin;
+    GLfloat * leftEdge;
+    GLfloat * rightEdge;
+private:
+    
+    
+    const static int numVertices = 8;
+    GLfloat vertices[numVertices];
+    
+
+};
+
+class ScrollAvatar : public Entity
+{
+public:
+    ScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, GLfloat width);
+    // update
+    virtual void update(double dt);
+    // render
+    virtual void render();
+private:
+    ScrollMap * theMap;
+    GLfloat * nextAvatarX;
+    GLfloat theWidth;
+    const static int numVertices = 8;
+    GLfloat vertices[numVertices];
+    
+    
+};
 
 
 #endif /* defined(__LBow__Entity__) */

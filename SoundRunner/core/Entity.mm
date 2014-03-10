@@ -54,7 +54,7 @@ void Avatar::update( double dt )
     GLfloat g_gfxWidth = 1024;
     GLfloat g_gfxHeight = 640;
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
-    alpha -= 0.01;
+    alpha -= 0.1;
     if (isMoving)
     {
         loc.set(loc.x + dt*vel.x, + loc.y + dt*vel.y, loc.z + dt*vel.z);
@@ -72,9 +72,9 @@ void Avatar::update( double dt )
         if (loc.x > Globals::rightBound)
             loc.x = Globals::rightBound;
         
-        sca.x -= inc;
-        sca.y -= inc;
-        sca.z -= inc;
+//        sca.x += inc;
+//        sca.y += inc;
+//        sca.z += inc;
     }
 }
 
@@ -220,6 +220,107 @@ void NoteBoundary::render()
     glDisable( GL_BLEND );
 }
 
+ScrollMap::ScrollMap(GLfloat * leftClip, GLfloat * rightClip)
+{
+    margin = 0.06;
+    top = 0.97;
+    height = 0.02;
+    leftEdge = leftClip;
+    rightEdge = rightClip;
+    width = (*rightEdge - margin) - (*leftEdge + margin);
+    
+    for ( int i = 0; i < numVertices; i += 4 )
+    {
+        vertices[i] = *leftEdge + margin;
+        vertices[i+2] = *rightEdge - margin;
+        vertices[i + 1] = vertices[i+3] = top - i*height;
+        
+    }
+}
+
+void ScrollMap::update(double dt)
+{
+    for ( int i = 0; i < numVertices; i += 4 )
+    {
+        vertices[i] = *leftEdge + margin;
+        vertices[i+2] = *rightEdge - margin;
+        vertices[i + 1] = vertices[i+3] = top - i*height;
+        
+    }
+}
+
+void ScrollMap::render()
+{
+    // enable blending
+    glEnable( GL_BLEND );
+    // set blend func
+    glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+    // glBlendFunc( GL_ONE, GL_ONE );
+    glLineWidth(1.0);
+    
+    // vertex pointer
+    glVertexPointer( 2, GL_FLOAT, 0, vertices );
+    glEnableClientState( GL_VERTEX_ARRAY );
+    
+    // line strip
+    glDrawArrays( GL_TRIANGLE_STRIP, 0, 4);
+    
+    
+    // disable blend
+    glDisable( GL_BLEND );
+}
+
+
+
+
+ScrollAvatar::ScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, GLfloat width)
+{
+    nextAvatarX = nextAvX;
+    theMap = scrollMap;
+    theWidth = width;
+    GLfloat percent = (*nextAvatarX - Globals::leftBound)/(Globals::rightBound - Globals::leftBound);
+    for ( int i = 0; i < numVertices; i += 4 )
+    {
+        vertices[i] = *(theMap->leftEdge) + theMap->margin + percent*theMap->width - theWidth;
+        vertices[i+2] = *(theMap->leftEdge) + theMap->margin + percent*theMap->width + theWidth;
+        vertices[i + 1] = vertices[i+3] = theMap->top - i*theMap->height;
+        
+    }
+}
+
+void ScrollAvatar::update(double dt)
+{
+    GLfloat percent = (*nextAvatarX - Globals::leftBound)/(Globals::rightBound - Globals::leftBound);
+    for ( int i = 0; i < numVertices; i += 4 )
+    {
+        vertices[i] = *(theMap->leftEdge) + theMap->margin+ percent*theMap->width - theWidth;
+        vertices[i+2] = *(theMap->leftEdge) + theMap->margin + percent*theMap->width + theWidth;
+        vertices[i + 1] = vertices[i+3] = theMap->top - i*theMap->height;
+        
+    }
+}
+
+
+void ScrollAvatar::render()
+{
+    // enable blending
+    glEnable( GL_BLEND );
+    // set blend func
+    glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+    // glBlendFunc( GL_ONE, GL_ONE );
+    glLineWidth(1.0);
+    
+    // vertex pointer
+    glVertexPointer( 2, GL_FLOAT, 0, vertices );
+    glEnableClientState( GL_VERTEX_ARRAY );
+    
+    // line strip
+    glDrawArrays( GL_TRIANGLE_STRIP, 0, 4);
+    
+    
+    // disable blend
+    glDisable( GL_BLEND );
+}
 
 
 
