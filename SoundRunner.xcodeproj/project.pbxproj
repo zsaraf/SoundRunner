@@ -180,6 +180,9 @@
 		9251D1CE18BD638E00FA09DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1B018BD638E00FA09DB /* UIKit.framework */; };
 		9251D1D618BD638E00FA09DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9251D1D418BD638E00FA09DB /* InfoPlist.strings */; };
 		9251D1D818BD638E00FA09DB /* SoundRunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9251D1D718BD638E00FA09DB /* SoundRunnerTests.m */; };
+		92577AF318CE82C800391E98 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF018CE82C800391E98 /* GCDAsyncSocket.m */; };
+		92577AF418CE82C800391E98 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */; };
+		92577AF818CE82EF00391E98 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF718CE82EF00391E98 /* NetworkManager.m */; };
 		92BEABB218C6B4EE0032C458 /* flare-tng-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BEABB118C6B4EE0032C458 /* flare-tng-5.png */; };
 		92BEABB518C9210C0032C458 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BEABB418C9210C0032C458 /* Scale.m */; };
 		92BEABB818C9308A0032C458 /* SoundGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BEABB718C9308A0032C458 /* SoundGen.m */; };
@@ -490,6 +493,12 @@
 		9251D1D318BD638E00FA09DB /* SoundRunnerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoundRunnerTests-Info.plist"; sourceTree = "<group>"; };
 		9251D1D518BD638E00FA09DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9251D1D718BD638E00FA09DB /* SoundRunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundRunnerTests.m; sourceTree = "<group>"; };
+		92577AEF18CE82C800391E98 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		92577AF018CE82C800391E98 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		92577AF118CE82C800391E98 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		92577AF618CE82EF00391E98 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = ../../NetworkManager.h; sourceTree = "<group>"; };
+		92577AF718CE82EF00391E98 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = ../../NetworkManager.m; sourceTree = "<group>"; };
 		92BEABB118C6B4EE0032C458 /* flare-tng-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-5.png"; sourceTree = "<group>"; };
 		92BEABB318C9210C0032C458 /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scale.h; sourceTree = "<group>"; };
 		92BEABB418C9210C0032C458 /* Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scale.m; sourceTree = "<group>"; };
@@ -562,6 +571,7 @@
 		5D69C67318BED3C4006F0951 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				92577AF918CE82FC00391E98 /* Networking */,
 				5D2F3B2118C6AB56001E1923 /* Physics.h */,
 				5D2F3B2218C6AB56001E1923 /* Physics.mm */,
 				92BEABB618C9308A0032C458 /* SoundGen.h */,
@@ -881,6 +891,7 @@
 		9251D1A018BD638E00FA09DB = {
 			isa = PBXGroup;
 			children = (
+				92577AF518CE82CD00391E98 /* GCDAsyncSocket */,
 				5D69C67D18BF061C006F0951 /* data */,
 				5D69C65818BED3B9006F0951 /* api */,
 				5D69C67318BED3C4006F0951 /* core */,
@@ -962,6 +973,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		92577AF518CE82CD00391E98 /* GCDAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				92577AEF18CE82C800391E98 /* GCDAsyncSocket.h */,
+				92577AF018CE82C800391E98 /* GCDAsyncSocket.m */,
+				92577AF118CE82C800391E98 /* GCDAsyncUdpSocket.h */,
+				92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */,
+			);
+			name = GCDAsyncSocket;
+			sourceTree = "<group>";
+		};
+		92577AF918CE82FC00391E98 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				92577AF618CE82EF00391E98 /* NetworkManager.h */,
+				92577AF718CE82EF00391E98 /* NetworkManager.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1010,7 +1041,7 @@
 				ORGANIZATIONNAME = "Zachary Waleed Saraf";
 				TargetAttributes = {
 					9251D1A818BD638E00FA09DB = {
-						DevelopmentTeam = FUTU96J3U9;
+						DevelopmentTeam = 7NX6YPQXT3;
 					};
 					9251D1C918BD638E00FA09DB = {
 						TestTargetID = 9251D1A818BD638E00FA09DB;
@@ -1139,6 +1170,7 @@
 				5DDBF32D18BFC9C200C9220A /* BlowBotl.cpp in Sources */,
 				5DDBF37118BFC9C200C9220A /* TubeBell.cpp in Sources */,
 				5DDBF34F18BFC9C200C9220A /* ModalBar.cpp in Sources */,
+				92577AF418CE82C800391E98 /* GCDAsyncUdpSocket.m in Sources */,
 				5DDBF36518BFC9C200C9220A /* SingWave.cpp in Sources */,
 				5DDBF32618BFC9C200C9220A /* Asymp.cpp in Sources */,
 				5DDBF33418BFC9C200C9220A /* DelayA.cpp in Sources */,
@@ -1173,9 +1205,11 @@
 				5DDBF36818BFC9C200C9220A /* Socket.cpp in Sources */,
 				5D69C66B18BED3B9006F0951 /* mo_audio.mm in Sources */,
 				5DDBF32F18BFC9C200C9220A /* Bowed.cpp in Sources */,
+				92577AF818CE82EF00391E98 /* NetworkManager.m in Sources */,
 				5DDBF37218BFC9C200C9220A /* TwoPole.cpp in Sources */,
 				5D69C66D18BED3B9006F0951 /* mo_fft.mm in Sources */,
 				5DDBF34518BFC9C200C9220A /* Iir.cpp in Sources */,
+				92577AF318CE82C800391E98 /* GCDAsyncSocket.m in Sources */,
 				5DDBF33318BFC9C200C9220A /* Delay.cpp in Sources */,
 				5DDBF34418BFC9C200C9220A /* HevyMetl.cpp in Sources */,
 				5DDBF31A18BFC9C200C9220A /* sine.c in Sources */,

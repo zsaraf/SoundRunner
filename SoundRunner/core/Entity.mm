@@ -54,7 +54,9 @@ void Avatar::update( double dt )
     GLfloat g_gfxWidth = 1024;
     GLfloat g_gfxHeight = 640;
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
-    alpha -= 0.1;
+    alpha -= 0.05;
+    sca.x *= 1.03;
+    sca.y *= 1.03;
     if (isMoving)
     {
         loc.set(loc.x + dt*vel.x, + loc.y + dt*vel.y, loc.z + dt*vel.z);
@@ -155,6 +157,9 @@ void Particle::update( double dt )
         loc.x += vel.x;
         loc.y += vel.y;
     }
+    
+//    sca.x *= 1.01;
+//    sca.y *= 1.01;
 }
 
 void Particle::render()
