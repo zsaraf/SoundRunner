@@ -21,7 +21,7 @@ using namespace std;
 #define SRATE 24000
 #define FRAMESIZE 512
 #define NUM_CHANNELS 2
-#define NUM_PARTICLES 400
+#define NUM_PARTICLES 900
 
 #define NUM_NICE_COLORS 4
 
@@ -540,7 +540,7 @@ Entity * makeAvatar(float x, float y)
         // alpha
         e->alpha = 1.0;
         // set velocity
-        e->vel.set( 0.0, -1.5, 0.0);
+        e->vel.set( 0.0, -1.8, 0.0);
         // set location
         e->loc.set( x, y, 0 );
         // set color
