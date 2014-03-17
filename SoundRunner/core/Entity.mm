@@ -57,6 +57,7 @@ void Avatar::update( double dt )
     alpha -= 0.05;
     sca.x *= 1.03;
     sca.y *= 1.03;
+    sca.z *= 1.03;
     if (isMoving)
     {
         loc.set(loc.x + dt*vel.x, + loc.y + dt*vel.y, loc.z + dt*vel.z);
@@ -92,7 +93,7 @@ void Avatar::render()
     // set blend func
     glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
     // glBlendFunc( GL_ONE, GL_ONE );
-    
+
     // bind the texture
     glBindTexture( GL_TEXTURE_2D, Globals::g_texture[0] );
     

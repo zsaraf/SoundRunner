@@ -7,7 +7,7 @@
 //
 
 #import "NetworkManager.h"
-#import "FuckApple.h"
+//#import "FuckApple.h"
 
 #define WAITING_FOR_OTHER_USER_TAG 20
 #define USER_NAME_SEND_TAG 21

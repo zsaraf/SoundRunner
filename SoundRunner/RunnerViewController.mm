@@ -158,7 +158,7 @@ float lastYaw = 0.0;
 // accelerometer stuffs
 - (void)startMyMotionDetect
 {
-    NSTimeInterval updateInterval = 1/90; // 60 Hz updateInterval
+    NSTimeInterval updateInterval = 1/90; // 90 Hz updateInterval
     [self.motionManager setAccelerometerUpdateInterval:updateInterval];
     
     

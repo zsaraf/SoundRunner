@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.m
+//  SettingsViewController.mm
 //  SoundRunner
 //
 //  Created by JP Wright on 2/26/14.
