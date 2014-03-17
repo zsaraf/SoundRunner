@@ -37,7 +37,6 @@ static const GLfloat niceColors[] = {
 
 // -------------------instance variables-------------------
 // --------------------------------------------------------
-GLfloat g_waveformWidth = 2;
 GLfloat g_gfxWidth = 1024;
 GLfloat g_gfxHeight = 640;
 GLfloat g_ratio = g_gfxWidth / g_gfxHeight;
@@ -53,6 +52,8 @@ Entity * g_avatar = NULL;
 Entity * g_scrollmap;
 Entity * g_scrollAvatar;
 std::vector<Entity *> g_entities;
+std::vector<Entity *> g_tail;
+
 std::vector<Entity *> g_particles;
 GLfloat nextAvatarX = 0.0;
 int numNotesInScale = 20;//Scales::numNotesPerScale;
@@ -542,11 +543,11 @@ Entity * makeAvatar(float x, float y)
         //NSLog(@"making new avatar");
 
         // add to g_entities
-        g_entities.push_back( e );
+        g_tail.push_back( e );
         // alpha
         e->alpha = 1.0;
         // set velocity
-        e->vel.set( 0.0, -1.8, 0.0);
+        e->vel.set( 0.0, -1.8, -1.0);
         // set location
         e->loc.set( x, y, 0 );
         // set color
@@ -605,7 +606,6 @@ void RunnerSetDims( GLfloat width, GLfloat height )
     g_gfxWidth = width;
     g_gfxHeight = height;
     
-    g_waveformWidth = width / height * 1.9;
 }
 
 
@@ -626,11 +626,14 @@ void RunnerRender()
     // alternate
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     // orthographic
-    glOrthof( leftClip, rightClip, -1, 1, -1, 1 );
+    glOrthof( leftClip, rightClip, -1, 1, 1, -1 );
+//    glFrustumf(leftClip, rightClip, -1, 1, -1, 1);
+//    glDepthMask(GL_TRUE);
+//    MoGfx::perspective(30, (rightClip - leftClip)/2, 1, -1);
     // modelview
     glMatrixMode( GL_MODELVIEW );
     // reset
-    // glLoadIdentity();
+    glLoadIdentity();
     
     // BACKGROUND COLOR
     glClearColor( 22/255.0, 31/255.0, 40/255.0, 1); // rgba(44, 62, 80,1.0)
@@ -664,6 +667,27 @@ void renderEntities()
             e--;
             
             if (g_entities.size() == 0 ) break;
+            continue;
+            
+            
+        }
+        else {
+            renderSingleEntity((*e));
+        }
+    }
+    
+    // render tail...HACK: render in reverse for psuedo 3D...
+    for ( e = g_tail.end() - 1; e != g_tail.begin(); e--)
+    {
+        if ( (*e)->active == FALSE )
+        {
+            delete (*e);
+            
+            g_tail.erase(e);
+            
+//            e--;
+            
+            if (g_tail.size() == 0 ) break;
             continue;
             
             

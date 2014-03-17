@@ -21,6 +21,7 @@
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/BlowBotl.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/TubeBell.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/ModalBar.o
+/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/GCDAsyncUdpSocket.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/SingWave.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Asymp.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/DelayA.o
@@ -55,9 +56,11 @@
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Socket.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/mo_audio.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Bowed.o
+/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/NetworkManager.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/TwoPole.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/mo_fft.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Iir.o
+/Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/GCDAsyncSocket.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/Delay.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/HevyMetl.o
 /Users/loudmouth/github/SoundRunner/DerivedData/SoundRunner/Build/Intermediates/SoundRunner.build/Debug-iphonesimulator/SoundRunner.build/Objects-normal/i386/sine.o
