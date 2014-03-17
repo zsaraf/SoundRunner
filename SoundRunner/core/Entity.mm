@@ -74,9 +74,9 @@ void Avatar::update( double dt )
         if (loc.x > Globals::rightBound)
             loc.x = Globals::rightBound;
         
-//        sca.x += inc;
-//        sca.y += inc;
-//        sca.z += inc;
+        sca.x += inc;
+        sca.y += inc;
+        sca.z += inc;
     }
 }
 

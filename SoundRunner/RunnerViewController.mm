@@ -198,7 +198,7 @@ float lastYaw = 0.0;
                  float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
                  float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
-                 float scaleConst = 20.0;
+                 float scaleConst = 12.0;
                  
 //                 NSLog(@"-yaw/180.0 is: %f", -yaw/180.0);
 //                 NSLog(@"accelComponenet is: %f", accelComponent);
