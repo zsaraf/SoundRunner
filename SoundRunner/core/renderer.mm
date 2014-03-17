@@ -72,6 +72,7 @@ int sampCount = 0;
 // -------------------function prototypes------------------
 // --------------------------------------------------------
 
+Entity * makeOtherAvatar (float x, float y);
 Entity * makeAvatar(float x, float y);
 void renderEntities();
 void renderSingleEntity(Entity * e);
@@ -428,6 +429,9 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
     for (NSString *playerName in [SoundRunnerUtil appDelegate].otherPlayers) {
         OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:playerName];
         [otherPlayer.soundGen stopPlayingAllNotes];
+        if (otherPlayer.avatar == NULL) {
+            otherPlayer.avatar = (OtherAvatar *)makeOtherAvatar(otherPlayer.xLoc, avatarYStart);
+        }
         if (otherPlayer.noteOn) {
             int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
             int note = [[Scale instance] noteForKey:key] + 60;
@@ -556,6 +560,34 @@ Entity * makeAvatar(float x, float y)
         } else {
             e->col.set( 1.0, 1.0, 1.0 );
         }
+        // set scale
+        e->sca.setAll( .4 );
+        // activate
+        e->active = true;
+    }
+    return e;
+}
+
+Entity * makeOtherAvatar (float x, float y)
+{
+    Entity * e = new OtherAvatar(true); // true means velocity is active
+    if ( e != NULL )
+    {
+        //NSLog(@"making new avatar");
+        
+        // add to g_entities
+        g_entities.push_back( e );
+        // alpha
+        e->alpha = 1.0;
+        // set velocity
+        e->vel.set( 0.0, -1.8, -1.0);
+        // set location
+        e->loc.set( x, y, 0 );
+        // set color
+        int random_num = rand();
+        int color_index = random_num % NUM_NICE_COLORS;
+        // color
+        e->col.set(niceColors[color_index * 3], niceColors[color_index * 3 + 1], niceColors[color_index * 3 + 2]);
         // set scale
         e->sca.setAll( .4 );
         // activate

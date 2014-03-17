@@ -127,6 +127,9 @@ static NetworkManager *myInstance;
         OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:chunks[1]];
         CGFloat xLoc = [chunks[2] floatValue];
         otherPlayer.xLoc = xLoc;
+        if (otherPlayer.avatar) {
+            otherPlayer.avatar->loc.x = xLoc;
+        }
     } else if (noteOnRange.location == 0) {
         NSArray *chunks = [dataString componentsSeparatedByString:@":"];
         OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:chunks[1]];

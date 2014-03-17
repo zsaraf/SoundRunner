@@ -32,7 +32,7 @@
 		5DDBF1A118BF2A0400C9220A /* flare-tng-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19E18BF2A0400C9220A /* flare-tng-4.png */; };
 		5DDBF1BE18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 */; };
 		920EF04D18C2B039000BC189 /* SoundRunnerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */; };
-		924BC0EF18D7AD810090513A /* OtherPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B953E318D76E3900783356 /* OtherPlayer.m */; };
+		924BC0EF18D7AD810090513A /* OtherPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92B953E318D76E3900783356 /* OtherPlayer.mm */; };
 		924BC0F018D7ADB10090513A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B953E618D7706B00783356 /* LoginViewController.m */; };
 		9251D1AD18BD638E00FA09DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1AC18BD638E00FA09DB /* Foundation.framework */; };
 		9251D1AF18BD638E00FA09DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1AE18BD638E00FA09DB /* CoreGraphics.framework */; };
@@ -49,7 +49,7 @@
 		9251D1D818BD638E00FA09DB /* SoundRunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9251D1D718BD638E00FA09DB /* SoundRunnerTests.m */; };
 		92577AF318CE82C800391E98 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF018CE82C800391E98 /* GCDAsyncSocket.m */; };
 		92577AF418CE82C800391E98 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */; };
-		92577AF818CE82EF00391E98 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF718CE82EF00391E98 /* NetworkManager.m */; };
+		92577AF818CE82EF00391E98 /* NetworkManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF718CE82EF00391E98 /* NetworkManager.mm */; };
 		92BEABB218C6B4EE0032C458 /* flare-tng-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BEABB118C6B4EE0032C458 /* flare-tng-5.png */; };
 		92BEABB518C9210C0032C458 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BEABB418C9210C0032C458 /* Scale.m */; };
 		92BEABB818C9308A0032C458 /* SoundGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BEABB718C9308A0032C458 /* SoundGen.m */; };
@@ -134,9 +134,9 @@
 		92577AF118CE82C800391E98 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		92577AF618CE82EF00391E98 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = ../../NetworkManager.h; sourceTree = "<group>"; };
-		92577AF718CE82EF00391E98 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = ../../NetworkManager.m; sourceTree = "<group>"; };
+		92577AF718CE82EF00391E98 /* NetworkManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NetworkManager.mm; path = ../../NetworkManager.mm; sourceTree = "<group>"; };
 		92B953E218D76E3900783356 /* OtherPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPlayer.h; sourceTree = "<group>"; };
-		92B953E318D76E3900783356 /* OtherPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherPlayer.m; sourceTree = "<group>"; };
+		92B953E318D76E3900783356 /* OtherPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OtherPlayer.mm; sourceTree = "<group>"; };
 		92B953E518D7706B00783356 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		92B953E618D7706B00783356 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		92BEABB118C6B4EE0032C458 /* flare-tng-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-5.png"; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				92B953E218D76E3900783356 /* OtherPlayer.h */,
-				92B953E318D76E3900783356 /* OtherPlayer.m */,
+				92B953E318D76E3900783356 /* OtherPlayer.mm */,
 				92577AF518CE82CD00391E98 /* GCDAsyncSocket */,
 				5D69C67D18BF061C006F0951 /* data */,
 				5D69C65818BED3B9006F0951 /* api */,
@@ -368,7 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				92577AF618CE82EF00391E98 /* NetworkManager.h */,
-				92577AF718CE82EF00391E98 /* NetworkManager.m */,
+				92577AF718CE82EF00391E98 /* NetworkManager.mm */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 				ORGANIZATIONNAME = "Zachary Waleed Saraf";
 				TargetAttributes = {
 					9251D1A818BD638E00FA09DB = {
-						DevelopmentTeam = FUTU96J3U9;
+						DevelopmentTeam = 7NX6YPQXT3;
 					};
 					9251D1C918BD638E00FA09DB = {
 						TestTargetID = 9251D1A818BD638E00FA09DB;
@@ -480,7 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				924BC0F018D7ADB10090513A /* LoginViewController.m in Sources */,
-				924BC0EF18D7AD810090513A /* OtherPlayer.m in Sources */,
+				924BC0EF18D7AD810090513A /* OtherPlayer.mm in Sources */,
 				9251D1BD18BD638E00FA09DB /* AppDelegate.mm in Sources */,
 				5D4662EF18BECD0B00DA6000 /* SettingsViewController.mm in Sources */,
 				5D69C66F18BED3B9006F0951 /* mo_gfx.mm in Sources */,
@@ -491,7 +491,7 @@
 				5D2F3B2318C6AB56001E1923 /* Physics.mm in Sources */,
 				5D4662EC18BECC4000DA6000 /* RunnerViewController.mm in Sources */,
 				5D69C66B18BED3B9006F0951 /* mo_audio.mm in Sources */,
-				92577AF818CE82EF00391E98 /* NetworkManager.m in Sources */,
+				92577AF818CE82EF00391E98 /* NetworkManager.mm in Sources */,
 				5D69C66D18BED3B9006F0951 /* mo_fft.mm in Sources */,
 				92577AF318CE82C800391E98 /* GCDAsyncSocket.m in Sources */,
 				92BEABB518C9210C0032C458 /* Scale.m in Sources */,

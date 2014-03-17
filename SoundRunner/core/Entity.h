@@ -57,6 +57,19 @@ private:
     bool fadeOut;
 };
 
+class OtherAvatar : public Entity
+{
+public:
+    OtherAvatar(bool fade);
+    // update
+    virtual void update( double dt );
+    // render
+    virtual void render();
+    bool isMoving;
+private:
+    bool fadeOut;
+};
+
 
 class Particle : public Entity
 {

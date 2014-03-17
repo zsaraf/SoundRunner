@@ -18,6 +18,7 @@
         self.xLoc = 0;
         self.noteOn = NO;
         self.name = name;
+        self.avatar = NULL;
     }
     return self;
 }

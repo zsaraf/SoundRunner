@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SoundGen.h"
+#import "Entity.h"
 
 @interface OtherPlayer : NSObject
 
@@ -17,5 +18,6 @@
 @property (nonatomic) BOOL noteOn;
 @property (nonatomic) CGFloat xLoc;
 @property (nonatomic, strong) SoundGen *soundGen;
+@property (nonatomic) OtherAvatar *avatar;
 
 @end
