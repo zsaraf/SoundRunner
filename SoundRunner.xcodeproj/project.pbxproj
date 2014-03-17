@@ -183,6 +183,8 @@
 		92577AF318CE82C800391E98 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF018CE82C800391E98 /* GCDAsyncSocket.m */; };
 		92577AF418CE82C800391E98 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */; };
 		92577AF818CE82EF00391E98 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF718CE82EF00391E98 /* NetworkManager.m */; };
+		92B953E418D76E3900783356 /* OtherPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B953E318D76E3900783356 /* OtherPlayer.m */; };
+		92B953E718D7706B00783356 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B953E618D7706B00783356 /* LoginViewController.m */; };
 		92BEABB218C6B4EE0032C458 /* flare-tng-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BEABB118C6B4EE0032C458 /* flare-tng-5.png */; };
 		92BEABB518C9210C0032C458 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BEABB418C9210C0032C458 /* Scale.m */; };
 		92BEABB818C9308A0032C458 /* SoundGen.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BEABB718C9308A0032C458 /* SoundGen.m */; };
@@ -499,6 +501,10 @@
 		92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		92577AF618CE82EF00391E98 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = ../../NetworkManager.h; sourceTree = "<group>"; };
 		92577AF718CE82EF00391E98 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkManager.m; path = ../../NetworkManager.m; sourceTree = "<group>"; };
+		92B953E218D76E3900783356 /* OtherPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPlayer.h; sourceTree = "<group>"; };
+		92B953E318D76E3900783356 /* OtherPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherPlayer.m; sourceTree = "<group>"; };
+		92B953E518D7706B00783356 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		92B953E618D7706B00783356 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		92BEABB118C6B4EE0032C458 /* flare-tng-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-5.png"; sourceTree = "<group>"; };
 		92BEABB318C9210C0032C458 /* Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scale.h; sourceTree = "<group>"; };
 		92BEABB418C9210C0032C458 /* Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scale.m; sourceTree = "<group>"; };
@@ -891,6 +897,8 @@
 		9251D1A018BD638E00FA09DB = {
 			isa = PBXGroup;
 			children = (
+				92B953E218D76E3900783356 /* OtherPlayer.h */,
+				92B953E318D76E3900783356 /* OtherPlayer.m */,
 				92577AF518CE82CD00391E98 /* GCDAsyncSocket */,
 				5D69C67D18BF061C006F0951 /* data */,
 				5D69C65818BED3B9006F0951 /* api */,
@@ -934,6 +942,8 @@
 				920EF04B18C2B039000BC189 /* SoundRunnerUtil.h */,
 				920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */,
 				9251D1BE18BD638E00FA09DB /* Main_iPhone.storyboard */,
+				92B953E518D7706B00783356 /* LoginViewController.h */,
+				92B953E618D7706B00783356 /* LoginViewController.m */,
 				5D4662EA18BECC4000DA6000 /* RunnerViewController.h */,
 				5D4662EB18BECC4000DA6000 /* RunnerViewController.mm */,
 				5D4662ED18BECD0B00DA6000 /* SettingsViewController.h */,
@@ -1201,6 +1211,7 @@
 				5DDBF36A18BFC9C200C9220A /* StifKarp.cpp in Sources */,
 				5DDBF32B18BFC9C200C9220A /* BlitSaw.cpp in Sources */,
 				5DDBF34118BFC9C200C9220A /* FMVoices.cpp in Sources */,
+				92B953E418D76E3900783356 /* OtherPlayer.m in Sources */,
 				5DDBF32A18BFC9C200C9220A /* Blit.cpp in Sources */,
 				5DDBF36818BFC9C200C9220A /* Socket.cpp in Sources */,
 				5D69C66B18BED3B9006F0951 /* mo_audio.mm in Sources */,
@@ -1234,6 +1245,7 @@
 				5DDBF35718BFC9C200C9220A /* PercFlut.cpp in Sources */,
 				5DDBF33B18BFC9C200C9220A /* FileWrite.cpp in Sources */,
 				5DDBF36718BFC9C200C9220A /* Skini.cpp in Sources */,
+				92B953E718D7706B00783356 /* LoginViewController.m in Sources */,
 				5D69C67118BED3B9006F0951 /* mo_thread.mm in Sources */,
 				5DDBF33518BFC9C200C9220A /* DelayL.cpp in Sources */,
 				5DDBF32918BFC9C200C9220A /* BiQuad.cpp in Sources */,

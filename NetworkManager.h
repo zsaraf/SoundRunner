@@ -27,8 +27,12 @@ typedef struct {
 @interface NetworkManager : NSObject <GCDAsyncSocketDelegate>
 
 -(void)createNetwork;
+-(void)sendNewPlayerMessage:(NSString *)newPlayer;
 //-(void)sendLoop:(Loop *)loop;
 +(NetworkManager *)instance;
+-(void)sendNoteOn:(BOOL)noteOn;
+-(void)sendChangeInstrument:(NSInteger)instrument;
+-(void)sendChangeXLoc:(CGFloat)xLoc;
 
 @property (nonatomic, weak) id<NetworkManagerDelegate> delegate;
 

@@ -18,5 +18,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) SoundGen *soundGen;
+@property (nonatomic, strong) NSMutableDictionary *otherPlayers;
 
 @end

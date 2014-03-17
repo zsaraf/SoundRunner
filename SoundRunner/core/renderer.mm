@@ -8,6 +8,7 @@
 
 #import "renderer.h"
 #import <math.h>
+#import "NetworkManager.h"
 
 #import "Globals.h"
 #import "Scale.h"
@@ -15,6 +16,7 @@
 #import "Physics.h"
 #import <stdlib.h>
 #import "SoundGen.h"
+#import "OtherPlayer.h"
 using namespace std;
 
 
@@ -47,7 +49,7 @@ GLfloat avatarYStart = 0.3;
 UInt32 g_numFrames;
 
 // graphics stuffs
-Entity * g_avatar;
+Entity * g_avatar = NULL;
 Entity * g_scrollmap;
 Entity * g_scrollAvatar;
 std::vector<Entity *> g_entities;
@@ -65,9 +67,6 @@ double lastTime = 0.0;
 int samplesPerBeat = SRATE * 1/(Globals::BPM/60.0); // samples per beat
 bool newBeat = false;
 int sampCount = 0;
-
-
-
 
 // -------------------function prototypes------------------
 // --------------------------------------------------------
@@ -202,7 +201,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 touch_down = true;
                 
                 stopAndStartPlayingMidiNoteForCurrentAvatar();
-                
+                [[NetworkManager instance] sendNoteOn:YES];
                 //NSLog( @"touch began... %f %f", x, y );
                 
                 break;
@@ -252,6 +251,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 // note off
                 //[soundGen stopPlayingMidiNote:127];
                 [soundGen stopPlayingAllNotes];
+                [[NetworkManager instance] sendNoteOn:NO];
                 newBeat = false;
                 break;
             }
@@ -353,15 +353,6 @@ void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::i
 }
 
 
-
-
-
-
-
-
-
-
-
 // initialize the engine (audio, grx, interaction)
 void RunnerInit()
 {
@@ -394,7 +385,6 @@ void RunnerInit()
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
     [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:2];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
-    
     
 //    // init audio
 //    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -430,8 +420,24 @@ void stopAndStartPlayingMidiNoteForCurrentAvatar ()
 //    NSLog(@"playing note %d %d", note, key);
 }
 
+void stopAndStartPlayingMidiNoteForOtherPlayers()
+{
+    GLfloat xInc = (Globals::rightBound - Globals::leftBound) / (float)numNotesInScale;
+    
+    for (NSString *playerName in [SoundRunnerUtil appDelegate].otherPlayers) {
+        OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:playerName];
+        [otherPlayer.soundGen stopPlayingAllNotes];
+        if (otherPlayer.noteOn) {
+            int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
+            int note = [[Scale instance] noteForKey:key] + 60;
+            [otherPlayer.soundGen playMidiNote:note velocity:127];
+        }
+    }
+}
+
 void RunnerRenderUpdateNote ()
 {
+    stopAndStartPlayingMidiNoteForOtherPlayers();
     if (touch_down) {
         stopAndStartPlayingMidiNoteForCurrentAvatar();
         g_avatar->col.set(155/255., 89/255., 182/255.); //rgba(155, 89, 182,1.0)

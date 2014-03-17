@@ -11,6 +11,16 @@
 
 @implementation AppDelegate
 
+@synthesize otherPlayers = _otherPlayers;
+
+-(NSMutableDictionary *)otherPlayers
+{
+    if (!_otherPlayers) {
+        _otherPlayers = [[NSMutableDictionary alloc] init];
+    }
+    return _otherPlayers;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
