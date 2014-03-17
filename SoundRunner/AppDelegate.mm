@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NetworkManager.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,7 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
+    [[NetworkManager instance] createNetwork];
     return YES;
 }
 							
