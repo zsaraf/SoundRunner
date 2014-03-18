@@ -42,8 +42,9 @@
     [self addInstrWithName:@"Square Lead 2" color:[UIColor redColor] bankNum:12 patchNum:80 atIndex:2];
     [self addInstrWithName:@"Chorused FM" color:[UIColor greenColor] bankNum:8 patchNum:5 atIndex:3];
     [self addInstrWithName:@"Polysynth" color:[UIColor magentaColor] bankNum:0 patchNum:90 atIndex:4];
-    [self addInstrWithName:@"Melodic Tom" color:[UIColor blueColor] bankNum:11 patchNum:117 atIndex:5];
+    [self addInstrWithName:@"Formant Synth" color:[UIColor blueColor] bankNum:8 patchNum:26 atIndex:5];
     [self addInstrWithName:@"Orchestra Pad" color:[UIColor purpleColor] bankNum:8 patchNum:48 atIndex:6];
+    [self addInstrWithName:@"Synth Mallet" color:[UIColor cyanColor] bankNum:1 patchNum:98 atIndex:7];
     
     
     return self;
