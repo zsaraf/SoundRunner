@@ -34,16 +34,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // TODO: get names displaying.
-    [self.instrNames initWithObjects:@"hello", @"goodbye"];
+    // TODO: get names displaying. TODO: INITIALIZE THE instrNames array.
+    self.instrNames = [NSArray arrayWithObjects:@"string1", @"string2", @"Baritone Sax", nil];
     // add table view
+    
     [self.view addSubview:tblView];
     // init the all the sounds to load in.
     self.allSounds = [[AllSounds alloc] init];
     
     // list the dictionary
     self.instruments = @{
-        @"Baritone Sax": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3],
+        @"Baritone Sax1": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3],
         @"Baritone Sax": [self.allSounds getInstrumentAtIndex:0]
         
         };
