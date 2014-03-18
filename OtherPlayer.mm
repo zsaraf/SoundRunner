@@ -29,6 +29,11 @@
 {
     _instrument = instrument;
     
+    if (self.avatar) {
+        const float* colors = CGColorGetComponents( instrument.color.CGColor );
+        self.avatar->col = Vector3D(colors[0], colors[1], colors[2]);
+    }
+    
     [self.soundGen setBankNumber:instrument.bankNum patchNumber:instrument.patchNum];
 }
 

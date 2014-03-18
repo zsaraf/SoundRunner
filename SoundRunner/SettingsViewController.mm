@@ -45,8 +45,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -87,14 +85,8 @@
 {
     // get the instrument
     Instrument * currInstr = (Instrument *)[[AllSounds instance].instruments objectAtIndex:indexPath.item];
-    // get its name
-    NSString * name = currInstr.name;
     
-    // set the bank and patch num for soundGen
-    [[SoundRunnerUtil appDelegate].soundGen setBankNumber:currInstr.bankNum patchNumber:currInstr.patchNum];
-    
-    
-    
+    [SoundRunnerUtil appDelegate].currentInstrument = currInstr;
 }
 
 

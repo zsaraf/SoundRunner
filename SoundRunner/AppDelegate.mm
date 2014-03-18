@@ -12,6 +12,14 @@
 @implementation AppDelegate
 
 @synthesize otherPlayers = _otherPlayers;
+@synthesize currentInstrument = _currentInstrument;
+
+-(void)setCurrentInstrument:(Instrument *)currentInstrument
+{
+    _currentInstrument = currentInstrument;
+    [[NetworkManager instance] sendChangeInstrument:currentInstrument];
+    [self.soundGen setBankNumber:currentInstrument.bankNum patchNumber:currentInstrument.patchNum];
+}
 
 -(NSMutableDictionary *)otherPlayers
 {

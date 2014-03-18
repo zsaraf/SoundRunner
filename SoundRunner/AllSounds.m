@@ -46,9 +46,17 @@
     [self addInstrWithName:@"Orchestra Pad" color:[UIColor purpleColor] bankNum:8 patchNum:48 atIndex:6];
     
     
-    
-    
     return self;
+}
+
+-(Instrument *)instrumentForName:(NSString *)name
+{
+    for (Instrument *instrument in self.instruments) {
+        if ([instrument.name isEqualToString:name]) {
+            return instrument;
+        }
+    }
+    return nil;
 }
 
 - (Instrument *)addInstrWithName:(NSString*)name color:(UIColor*)color bankNum:(int)bankNum patchNum:(int)patchNum atIndex:(int)index

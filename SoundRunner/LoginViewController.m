@@ -10,6 +10,7 @@
 #import "RunnerViewController.h"
 #import "NetworkManager.h"
 #import "SettingsViewController.h"
+#import "SoundRunnerUtil.h"
 
 @interface LoginViewController ()
 
@@ -30,6 +31,7 @@
 {
     [textField resignFirstResponder];
     [self nextScreen:nil];
+    [SoundRunnerUtil appDelegate].currentInstrument = [[AllSounds instance].instruments objectAtIndex:[SoundRunnerUtil appDelegate].otherPlayers.count];
     [[NetworkManager instance] sendNewPlayerMessage:textField.text];
     return YES;
 }

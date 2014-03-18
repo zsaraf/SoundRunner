@@ -15,7 +15,7 @@ class Player:
 class IphoneChat(Protocol):
 
 	name = ''
-	instrument = 2
+	instrument = ''
 	xLoc = 2
 	noteOn = 0
 
@@ -29,7 +29,7 @@ class IphoneChat(Protocol):
 		message = 'OTHERPLAYERS'
 		for c in self.factory.clients:
 			if (c != self and c.name != ''):
-				message += ':' + c.name + ':' + `c.instrument` + ':' + `c.xLoc`
+				message += ':' + c.name + ':' + c.instrument + ':' + `c.xLoc`
 				#self.message("OTHERPLAYERS" + c.name + ':' + `c.instrument` + ':' + `c.xLoc`)
 		if (message != 'OTHERPLAYERS'):
 			self.message(message)
@@ -44,13 +44,14 @@ class IphoneChat(Protocol):
 	def dataReceived(self, data):
 		print data
 		if (data.find('NEWPLAYER:') != -1):
-			playerName = (data.split(':'))[1]#data[len('NEWPLAYER:'):]
-			self.name = playerName
+			splitRes = (data.split(':'))
+			self.name = splitRes[1]#data[len('NEWPLAYER:'):]
+			self.instrument = splitRes[2]
 		elif (data.find('CHANGEINSTRUMENT:') != -1):
 			splitRes = (data.split(':'))
 			instrument = splitRes[1]
-			self.instrument = int(instrument)
-			data = "CHANGEINSTRUMENT:" + self.name + ':' + `self.instrument`
+			self.instrument = instrument
+			data = "CHANGEINSTRUMENT:" + self.name + ':' + self.instrument
 		elif (data.find('CHANGEXLOC:') != -1):
 			splitRes = (data.split(':'))
 			xLoc = splitRes[1]
