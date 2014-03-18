@@ -7,8 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "NetworkManager.h"
 
 @implementation AppDelegate
+
+@synthesize otherPlayers = _otherPlayers;
+
+-(NSMutableDictionary *)otherPlayers
+{
+    if (!_otherPlayers) {
+        _otherPlayers = [[NSMutableDictionary alloc] init];
+    }
+    return _otherPlayers;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -16,6 +27,7 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
+    [[NetworkManager instance] createNetwork];
     return YES;
 }
 							

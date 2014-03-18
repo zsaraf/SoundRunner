@@ -8,6 +8,7 @@
 
 #import "renderer.h"
 #import <math.h>
+#import "NetworkManager.h"
 
 #import "Globals.h"
 #import "Scale.h"
@@ -15,6 +16,7 @@
 #import "Physics.h"
 #import <stdlib.h>
 #import "SoundGen.h"
+#import "OtherPlayer.h"
 using namespace std;
 
 
@@ -46,7 +48,7 @@ GLfloat avatarYStart = 0.3;
 UInt32 g_numFrames;
 
 // graphics stuffs
-Entity * g_avatar;
+Entity * g_avatar = NULL;
 Entity * g_scrollmap;
 Entity * g_scrollAvatar;
 std::vector<Entity *> g_entities;
@@ -67,12 +69,10 @@ int samplesPerBeat = SRATE * 1/(Globals::BPM/60.0); // samples per beat
 bool newBeat = false;
 int sampCount = 0;
 
-
-
-
 // -------------------function prototypes------------------
 // --------------------------------------------------------
 
+Entity * makeOtherAvatar (float x, float y);
 Entity * makeAvatar(float x, float y);
 void renderEntities();
 void renderSingleEntity(Entity * e);
@@ -203,7 +203,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 touch_down = true;
                 
                 stopAndStartPlayingMidiNoteForCurrentAvatar();
-                
+                [[NetworkManager instance] sendNoteOn:YES];
                 //NSLog( @"touch began... %f %f", x, y );
                 
                 break;
@@ -250,6 +250,7 @@ void touch_callback( NSSet * touches, UIView * view,
                 // note off
                 //[soundGen stopPlayingMidiNote:127];
                 [soundGen stopPlayingAllNotes];
+                [[NetworkManager instance] sendNoteOn:NO];
                 newBeat = false;
                 break;
             }
@@ -351,15 +352,6 @@ void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::i
 }
 
 
-
-
-
-
-
-
-
-
-
 // initialize the engine (audio, grx, interaction)
 void RunnerInit()
 {
@@ -392,7 +384,6 @@ void RunnerInit()
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
     [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:2];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
-    
     
 //    // init audio
 //    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -428,8 +419,27 @@ void stopAndStartPlayingMidiNoteForCurrentAvatar ()
 //    NSLog(@"playing note %d %d", note, key);
 }
 
+void stopAndStartPlayingMidiNoteForOtherPlayers()
+{
+    GLfloat xInc = (Globals::rightBound - Globals::leftBound) / (float)numNotesInScale;
+    
+    for (NSString *playerName in [SoundRunnerUtil appDelegate].otherPlayers) {
+        OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:playerName];
+        [otherPlayer.soundGen stopPlayingAllNotes];
+        if (otherPlayer.avatar == NULL) {
+            otherPlayer.avatar = (OtherAvatar *)makeOtherAvatar(otherPlayer.xLoc, avatarYStart);
+        }
+        if (otherPlayer.noteOn) {
+            int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
+            int note = [[Scale instance] noteForKey:key] + 60;
+            [otherPlayer.soundGen playMidiNote:note velocity:127];
+        }
+    }
+}
+
 void RunnerRenderUpdateNote ()
 {
+    stopAndStartPlayingMidiNoteForOtherPlayers();
     if (touch_down) {
         stopAndStartPlayingMidiNoteForCurrentAvatar();
         g_avatar->col.set(155/255., 89/255., 182/255.); //rgba(155, 89, 182,1.0)
@@ -555,6 +565,34 @@ Entity * makeAvatar(float x, float y)
     return e;
 }
 
+Entity * makeOtherAvatar (float x, float y)
+{
+    Entity * e = new OtherAvatar(true); // true means velocity is active
+    if ( e != NULL )
+    {
+        //NSLog(@"making new avatar");
+        
+        // add to g_entities
+        g_entities.push_back( e );
+        // alpha
+        e->alpha = 1.0;
+        // set velocity
+        e->vel.set( 0.0, -1.8, -1.0);
+        // set location
+        e->loc.set( x, y, 0 );
+        // set color
+        int random_num = rand();
+        int color_index = random_num % NUM_NICE_COLORS;
+        // color
+        e->col.set(niceColors[color_index * 3], niceColors[color_index * 3 + 1], niceColors[color_index * 3 + 2]);
+        // set scale
+        e->sca.setAll( .4 );
+        // activate
+        e->active = true;
+    }
+    return e;
+}
+
 
 
 void makeParticleSystem()
@@ -632,6 +670,13 @@ void RunnerRender()
     
     // push
     glPushMatrix();
+    
+    for (NSString *playerName in [SoundRunnerUtil appDelegate].otherPlayers) {
+        OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:playerName];
+        if (otherPlayer.avatar != NULL) {
+            otherPlayer.avatar->loc.x = (otherPlayer.xLoc - otherPlayer.avatar->loc.x) * .05 + otherPlayer.avatar->loc.x;
+        }
+    }
     
     // entities
     renderEntities();

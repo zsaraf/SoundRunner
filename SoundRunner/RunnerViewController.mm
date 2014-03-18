@@ -10,6 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "renderer.h"
 #import "SoundRunnerUtil.h"
+#import "NetworkManager.h"
 
 
 @interface RunnerViewController ()
@@ -60,6 +61,15 @@ float lastYaw = 0.0;
     patchNo ++;
 }
 
+-(IBAction)sendXLocMessage:(NSTimer *)sender
+{
+    Entity *entity = getCurrentAvatar();
+    
+    if (entity == NULL) return;
+    
+    [[NetworkManager instance] sendChangeXLoc:entity->loc.x];
+}
+
 - (void)viewDidLoad
 {
     NSLog(@"go");
@@ -68,6 +78,8 @@ float lastYaw = 0.0;
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.25 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
     
 //    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
+    
+    NSTimer *xLocTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(sendXLocMessage:) userInfo:Nil repeats:YES];
     
     if (firstTime)
     {

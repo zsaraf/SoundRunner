@@ -113,6 +113,49 @@ void Avatar::render()
     glDisable( GL_TEXTURE_2D );
 }
 
+
+OtherAvatar::OtherAvatar(bool isMoving)
+{
+    this->isMoving = isMoving;
+}
+
+// update
+void OtherAvatar::update( double dt ) {}
+
+
+
+// redner
+void OtherAvatar::render()
+{
+    // enable texture mapping
+    glEnable( GL_TEXTURE_2D );
+    // enable blending
+    glEnable( GL_BLEND );
+    // set blend func
+    glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+    // glBlendFunc( GL_ONE, GL_ONE );
+    
+    // bind the texture
+    glBindTexture( GL_TEXTURE_2D, Globals::g_texture[0] );
+    
+    // vertex
+    glVertexPointer( 2, GL_FLOAT, 0, squareVertices );
+    glEnableClientState( GL_VERTEX_ARRAY );
+    
+    // texture coordinate
+    glTexCoordPointer( 2, GL_FLOAT, 0, texCoords );
+    glEnableClientState( GL_TEXTURE_COORD_ARRAY );
+    
+    // triangle strip
+    glDrawArrays( GL_TRIANGLE_STRIP, 0, 4 );
+    
+    // disable blend
+    glDisable( GL_BLEND );
+    glDisable( GL_TEXTURE_2D );
+}
+
+
+
 /* UGLY UGLY UGLY Find better way */
 #define RADIUS .2
 #define RADIUS_SQUARED .04

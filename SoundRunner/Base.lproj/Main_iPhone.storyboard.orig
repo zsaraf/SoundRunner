@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="poZ-ar-Q5d">
+<<<<<<< HEAD
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bzK-9E-NHX">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="poZ-ar-Q5d">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+>>>>>>> 3586a51ea70d154c8bbf7f9997b1a39d22877209
     </dependencies>
     <scenes>
         <!--GLKit View Controller-->
@@ -35,31 +42,36 @@
             </objects>
             <point key="canvasLocation" x="-15" y="-55"/>
         </scene>
+<<<<<<< HEAD
         <!--Settings View Controller-->
-        <scene sceneID="kxT-z4-ZAP">
+        <scene sceneID="uqj-Qc-4M3">
             <objects>
-                <viewController storyboardIdentifier="settingsViewController" id="e6X-a1-6Ta" customClass="SettingsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9PK-Ge-YzC">
+                <viewController storyboardIdentifier="settingsViewController" id="kuG-hU-3vZ" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8tb-v0-xsi"/>
+                        <viewControllerLayoutGuide type="bottom" id="8fn-NY-baW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PeD-hH-cP5">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CPW-hh-ssh">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="278"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1y3-mn-X0C">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="280"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="e6X-a1-6Ta" id="xMV-v4-qKH"/>
-                                    <outlet property="delegate" destination="e6X-a1-6Ta" id="95Q-p0-Z5q"/>
+                                    <outlet property="dataSource" destination="kuG-hU-3vZ" id="CHT-tB-enc"/>
+                                    <outlet property="delegate" destination="kuG-hU-3vZ" id="rD9-2B-9Pw"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3aQ-EJ-hVo">
-                                <rect key="frame" x="508" y="284" width="35" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xa-B0-sNO">
+                                <rect key="frame" x="507" y="283" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showMain:" destination="e6X-a1-6Ta" eventType="touchUpInside" id="JmN-56-Qjw"/>
+                                    <action selector="showMain:" destination="kuG-hU-3vZ" eventType="touchUpInside" id="8YL-ul-XWc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,13 +80,13 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="tblView" destination="CPW-hh-ssh" id="quZ-Vd-dwD"/>
+                        <outlet property="tblView" destination="1y3-mn-X0C" id="DB4-Pg-Aa4"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wzT-zR-gg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAK-Mc-eop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="-208"/>
-        </scene>
+            <point key="canvasLocation" x="674" y="-55"/>
+=======
         <!--Login View Controller-->
         <scene sceneID="C2E-t1-fYv">
             <objects>
@@ -118,7 +130,8 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSD-wL-On8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="383"/>
+            <point key="canvasLocation" x="365" y="-77"/>
+>>>>>>> 3586a51ea70d154c8bbf7f9997b1a39d22877209
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
