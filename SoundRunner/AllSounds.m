@@ -40,6 +40,7 @@
     Instrument *bariSax = [self addInstrWithName:@"Baritone Sax" color:[UIColor whiteColor] bankNum:0 patchNum:67 atIndex:0];
     Instrument *squareLead2 = [self addInstrWithName:@"Square Lead 2" color:[UIColor redColor] bankNum:12 patchNum:80 atIndex:1];
     Instrument *chorusedFM = [self addInstrWithName:@"Chorused FM" color:[UIColor greenColor] bankNum:8 patchNum:5 atIndex:2];
+    Instrument *polysynth = [self addInstrWithName:@"Polysynth" color:[UIColor magentaColor] bankNum:0 patchNum:90 atIndex:3];
     
     return self;
 }

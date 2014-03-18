@@ -8,24 +8,19 @@ kick drum -- just find it.
 TODO now:
 
     --change color of buddy... buddy plays -- done
-    --scroll avatar -- done.
     
-    --play right sound for non-local buddy.
-    --default sound...have it assign a different one to each person
-    
-    
-    --colors next to settings view controller lil colored squares--have that correspond with color of the avatar
+    --play right sound for non-local buddy -- almost
+    --default sound...have it assign a different one to each person    
+    --pull color for avatar from instrument.
     
     
-    --4 floor kick drum.
+    --choosing instruments and colors.
     --better scale.
 
 TODO future:
 
     --app icon.
     --get textures that make sense for the sound...
-
-
 
 
 
