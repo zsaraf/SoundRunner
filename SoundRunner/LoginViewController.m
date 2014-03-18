@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "RunnerViewController.h"
 #import "NetworkManager.h"
+#import "SettingsViewController.h"
 
 @interface LoginViewController ()
 
@@ -45,6 +46,8 @@
 -(IBAction)nextScreen:(NSTimer *)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    //SettingsViewController *svc = [storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
+    
     RunnerViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"runnerViewController"];
     [self presentViewController:vc animated:YES completion:^{}];
 }

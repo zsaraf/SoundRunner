@@ -12,7 +12,6 @@
 #import <iostream>
 #import <vector>
     #import "mo_audio.h"
-#import "mo_touch.h"
 #import "mo_gfx.h"
 #import "Entity.h"
 
@@ -36,6 +35,8 @@ void moveCamera( GLfloat inc );
 void moveAvatar( float displacement );
 
 Entity *getCurrentAvatar ();
+
+void touch_callback( NSSet * touches, UIView * view, void * data);
 
 
 #endif /* defined(__SoundRunner__renderer__) */

@@ -166,9 +166,7 @@ void moveAvatar(float displacement)
 // name: touch_callback()
 // desc: the touch call back
 //-----------------------------------------------------------------------------
-void touch_callback( NSSet * touches, UIView * view,
-                    std::vector<MoTouchTrack> & tracks,
-                    void * data)
+void touch_callback( NSSet * touches, UIView * view, void * data)
 {
     // points
     CGPoint pt;
@@ -359,7 +357,7 @@ void RunnerInit()
     NSLog( @"init..." );
     
     // set touch callback
-    MoTouch::addCallback( touch_callback, NULL );
+    //MoTouch::addCallback( touch_callback, NULL );
     
     // generate texture name
     glGenTextures( 2, &Globals::g_texture[0] );
@@ -686,8 +684,6 @@ void RunnerRender()
     // pop
     glPopMatrix();
 }
-
-
 
 // render all entities in simulation
 void renderEntities()
