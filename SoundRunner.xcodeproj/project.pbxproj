@@ -47,6 +47,7 @@
 		9251D1CE18BD638E00FA09DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9251D1B018BD638E00FA09DB /* UIKit.framework */; };
 		9251D1D618BD638E00FA09DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9251D1D418BD638E00FA09DB /* InfoPlist.strings */; };
 		9251D1D818BD638E00FA09DB /* SoundRunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9251D1D718BD638E00FA09DB /* SoundRunnerTests.m */; };
+		9254820318D823CA007146B0 /* Drummer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9254820218D823CA007146B0 /* Drummer.m */; };
 		92577AF318CE82C800391E98 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF018CE82C800391E98 /* GCDAsyncSocket.m */; };
 		92577AF418CE82C800391E98 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */; };
 		92577AF818CE82EF00391E98 /* NetworkManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92577AF718CE82EF00391E98 /* NetworkManager.mm */; };
@@ -129,6 +130,8 @@
 		9251D1D318BD638E00FA09DB /* SoundRunnerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoundRunnerTests-Info.plist"; sourceTree = "<group>"; };
 		9251D1D518BD638E00FA09DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9251D1D718BD638E00FA09DB /* SoundRunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundRunnerTests.m; sourceTree = "<group>"; };
+		9254820118D823CA007146B0 /* Drummer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drummer.h; sourceTree = "<group>"; };
+		9254820218D823CA007146B0 /* Drummer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drummer.m; sourceTree = "<group>"; };
 		92577AEF18CE82C800391E98 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		92577AF018CE82C800391E98 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		92577AF118CE82C800391E98 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
@@ -267,6 +270,8 @@
 		9251D1A018BD638E00FA09DB = {
 			isa = PBXGroup;
 			children = (
+				9254820118D823CA007146B0 /* Drummer.h */,
+				9254820218D823CA007146B0 /* Drummer.m */,
 				92B953E218D76E3900783356 /* OtherPlayer.h */,
 				92B953E318D76E3900783356 /* OtherPlayer.mm */,
 				92577AF518CE82CD00391E98 /* GCDAsyncSocket */,
@@ -483,6 +488,7 @@
 				924BC0EF18D7AD810090513A /* OtherPlayer.mm in Sources */,
 				9251D1BD18BD638E00FA09DB /* AppDelegate.mm in Sources */,
 				5D4662EF18BECD0B00DA6000 /* SettingsViewController.mm in Sources */,
+				9254820318D823CA007146B0 /* Drummer.m in Sources */,
 				5D69C66F18BED3B9006F0951 /* mo_gfx.mm in Sources */,
 				92BEABB818C9308A0032C458 /* SoundGen.m in Sources */,
 				920EF04D18C2B039000BC189 /* SoundRunnerUtil.m in Sources */,

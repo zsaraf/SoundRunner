@@ -17,6 +17,7 @@
 #import <stdlib.h>
 #import "SoundGen.h"
 #import "OtherPlayer.h"
+#import "Drummer.h"
 using namespace std;
 
 
@@ -381,9 +382,9 @@ void RunnerInit()
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
-    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:2];
-    [SoundRunnerUtil appDelegate].drumSoundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:0];
+    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:120 patchNumber:0];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
+    [SoundRunnerUtil appDelegate].drummer = [[Drummer alloc] init];
     
 //    // init audio
 //    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
@@ -412,7 +413,9 @@ void stopAndStartPlayingMidiNoteForCurrentAvatar ()
 {
     GLfloat xInc = (Globals::rightBound - Globals::leftBound) / (float)numNotesInScale;
     int key = (int)((g_avatar->loc.x - Globals::leftBound) / xInc);
-    int note = [[Scale instance] noteForKey:key] + 60;
+    int note = [[Scale instance] noteForKey:key] + 20;
+    
+    NSLog(@"PLaying note: %d", note);
     
     [soundGen stopPlayingAllNotes];
     [soundGen playMidiNote:note velocity:127];
@@ -439,6 +442,7 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
 
 void RunnerRenderUpdateNote()
 {
+    [[SoundRunnerUtil appDelegate].drummer tick];
     stopAndStartPlayingMidiNoteForOtherPlayers();
     if ( touch_down)
     {
