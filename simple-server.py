@@ -31,7 +31,8 @@ class IphoneChat(Protocol):
 			if (c != self and c.name != ''):
 				message += ':' + c.name + ':' + `c.instrument` + ':' + `c.xLoc`
 				#self.message("OTHERPLAYERS" + c.name + ':' + `c.instrument` + ':' + `c.xLoc`)
-		self.message(message)
+		if (message != 'OTHERPLAYERS:'):
+			self.message(message)
 		#if (len(self.factory.clients) >= 2):
 		#	for c in self.factory.clients:
 		#		c.message("ready");

@@ -70,6 +70,21 @@ float lastYaw = 0.0;
     [[NetworkManager instance] sendChangeXLoc:entity->loc.x];
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    touch_callback( touches, self.view, NULL);
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    touch_callback(touches, self.view, NULL);
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    touch_callback(touches, self.view, NULL);
+}
+
 - (void)viewDidLoad
 {
     NSLog(@"go");
