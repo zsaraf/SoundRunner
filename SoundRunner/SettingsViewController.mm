@@ -67,6 +67,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier ];
         [cell.textLabel setFont:[UIFont fontWithName:@"Gill Sans" size:24]];
+        cell.textLabel.textColor = [UIColor whiteColor];
         
     }
     
