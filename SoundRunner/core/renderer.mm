@@ -18,6 +18,7 @@
 #import "SoundGen.h"
 #import "OtherPlayer.h"
 #import "Drummer.h"
+#import "AllSounds.h"
 using namespace std;
 
 
@@ -389,6 +390,10 @@ void RunnerInit()
     MoGfx::loadTexture( @"flare-tng-2", @"png" );
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
+    
+    
+    
+    Instrument *defaultInstrument = [AllSounds [SoundRunnerUtil appDelegate].otherPlayers.count];
     
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
     [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:0];

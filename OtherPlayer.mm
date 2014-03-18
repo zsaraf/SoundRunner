@@ -10,6 +10,8 @@
 
 @implementation OtherPlayer
 
+@synthesize instrument = _instrument;
+
 -(id)initWithName:(NSString *)name
 {
     if (self = [super init]) {
@@ -21,6 +23,13 @@
         self.avatar = NULL;
     }
     return self;
+}
+
+-(void)setInstrument:(Instrument *)instrument
+{
+    _instrument = instrument;
+    
+    [self.soundGen setBankNumber:instrument.bankNum patchNumber:instrument.patchNum];
 }
 
 @end
