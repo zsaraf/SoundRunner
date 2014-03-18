@@ -438,7 +438,7 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
         }
         if (otherPlayer.noteOn) {
             int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
-            int note = [[Scale instance] noteForKey:key] + 60;
+            int note = [[Scale instance] noteForKey:key] + 20;
             [otherPlayer.soundGen playMidiNote:note velocity:127];
             makeOtherAvatarNote(otherPlayer.avatar->loc.x, otherPlayer.avatar->loc.y, otherPlayer.avatar->col);
         }
