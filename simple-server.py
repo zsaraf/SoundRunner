@@ -26,12 +26,12 @@ class IphoneChat(Protocol):
 		# 		player = playerNames[self]
 		# 		print 'MESSAGING' + player.name
 		# 		self.message(playerName)
-		message = 'OTHERPLAYERS:'
+		message = 'OTHERPLAYERS'
 		for c in self.factory.clients:
 			if (c != self and c.name != ''):
 				message += ':' + c.name + ':' + `c.instrument` + ':' + `c.xLoc`
 				#self.message("OTHERPLAYERS" + c.name + ':' + `c.instrument` + ':' + `c.xLoc`)
-		if (message != 'OTHERPLAYERS:'):
+		if (message != 'OTHERPLAYERS'):
 			self.message(message)
 		#if (len(self.factory.clients) >= 2):
 		#	for c in self.factory.clients:
