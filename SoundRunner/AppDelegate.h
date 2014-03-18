@@ -10,6 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "SoundGen.h"
 #import "Drummer.h"
+#import "Instrument.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
@@ -18,6 +19,7 @@
 @property (readonly) CMMotionManager *motionManager;
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) Instrument *currentInstrument;
 @property (nonatomic, strong) SoundGen *soundGen;
 @property (nonatomic, strong) Drummer *drummer;
 @property (nonatomic, strong) NSMutableDictionary *otherPlayers;

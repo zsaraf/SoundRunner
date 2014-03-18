@@ -391,9 +391,7 @@ void RunnerInit()
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
-    
-    
-    Instrument *defaultInstrument = [AllSounds [SoundRunnerUtil appDelegate].otherPlayers.count];
+    [SoundRunnerUtil appDelegate].currentInstrument = [[AllSounds instance].instruments objectAtIndex:[SoundRunnerUtil appDelegate].otherPlayers.count];
     
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
     [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:0];

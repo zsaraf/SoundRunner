@@ -19,7 +19,7 @@
 
 
 
-+(id)instance
++(AllSounds *)instance
 {
     static AllSounds *allSounds = nil;
     static dispatch_once_t onceToken;

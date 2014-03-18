@@ -36,7 +36,6 @@
     // add table view
     [self.view addSubview:tblView];
     // init the all the sounds to load in.
-    self.allSounds = [[AllSounds alloc] init];
 
 }
 
@@ -56,7 +55,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.allSounds.instruments.count;
+    return [AllSounds instance].instruments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,7 +68,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier ];
         
     }
-    cell.textLabel.text = ((Instrument *)[self.allSounds.instruments objectAtIndex:indexPath.row]).name;
+    cell.textLabel.text = ((Instrument *)[[AllSounds instance].instruments objectAtIndex:indexPath.row]).name;
 
     return cell;
 }
@@ -84,7 +83,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // get the instrument
-    Instrument * currInstr = (Instrument *)[self.allSounds.instruments objectAtIndex:indexPath.item];
+    Instrument * currInstr = (Instrument *)[[AllSounds instance].instruments objectAtIndex:indexPath.item];
     // get its name
     NSString * name = currInstr.name;
     

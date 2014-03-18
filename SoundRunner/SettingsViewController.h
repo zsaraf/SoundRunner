@@ -17,7 +17,6 @@
 
 - (IBAction)showMain:(id)sender;
 
-@property (nonatomic, strong) AllSounds *allSounds; // holds all the instruments.
 @property (nonatomic, retain) UITableView* tblView;
 
 
