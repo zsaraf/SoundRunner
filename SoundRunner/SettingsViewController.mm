@@ -75,7 +75,6 @@
 
 - (IBAction)showMain:(id)sender
 {
-    resetTouchCallback();
     [self dismissViewControllerAnimated:YES completion:^{ }];
 
 }

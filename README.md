@@ -5,5 +5,11 @@ SoundRunner
 
 Settings screen to get instruments -- done'ish
 3d tail  -- done
-change interaction to tilt.
-kick drum
+kick drum -- just find it.
+
+particle movement?
+change color if buddy plays.
+
+
+
+

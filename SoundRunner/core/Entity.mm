@@ -180,13 +180,21 @@ void Particle::update( double dt )
     GLfloat g_gfxWidth = 1024;
     GLfloat g_gfxHeight = 640;
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
-    
+    sca.setAll(sca.x * 1.07);
+    alpha -= 0.02;
+
     if (loc.x < Globals::leftBound || loc.x > Globals::rightBound) {
         vel.x = -1 * vel.x;
     }
-    if (loc.y < -1 || loc.y > 1) {
-        vel.y = -1 * vel.y;
+    if (loc.y < -1.2)
+    {
+        loc.y *= -1;
+        sca.setAll((rand()/(float)RAND_MAX * .04) + .04);
+        alpha = 1.0;
     }
+//    if (loc.y > 1) {
+//        vel.y = -1 * vel.y;
+//    }
     
     Entity *avatar = getCurrentAvatar();
     
@@ -201,9 +209,7 @@ void Particle::update( double dt )
         loc.x += vel.x;
         loc.y += vel.y;
     }
-    
-//    sca.x *= 1.01;
-//    sca.y *= 1.01;
+
 }
 
 void Particle::render()

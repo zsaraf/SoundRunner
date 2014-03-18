@@ -23,7 +23,7 @@ using namespace std;
 #define SRATE 24000
 #define FRAMESIZE 512
 #define NUM_CHANNELS 2
-#define NUM_PARTICLES 900
+#define NUM_PARTICLES 1000
 
 #define NUM_NICE_COLORS 4
 
@@ -608,13 +608,13 @@ void makeParticleSystem()
         part->loc.y = 2*g_ratio*( (rand() / (float)RAND_MAX) - 0.5 );
         part->loc.z = 0;
         part->vel.x = -.005 + (rand() / (float)RAND_MAX) * .01;
-        part->vel.y = -.005 + (rand() / (float)RAND_MAX) * .01;
+        part->vel.y = -.005 + (rand() / (float)RAND_MAX) * .01 - 0.1;
         // alpha
         part->alpha = 1.0;
         // scale
         int random_num = rand();
         
-        part->sca.setAll((random_num/(float)RAND_MAX * .06) + .04);
+        part->sca.setAll((random_num/(float)RAND_MAX * .04) + .04);
 
         int color_index = random_num % NUM_NICE_COLORS;
         // color
@@ -759,16 +759,6 @@ void renderSingleEntity(Entity * e)
     // pop
     glPopMatrix();
     
-}
-
-void removeTouchCallback()
-{
-    MoTouch::removeCallback(touch_callback);
-}
-
-void resetTouchCallback()
-{
-    MoTouch::addCallback(touch_callback, NULL);
 }
 
 

@@ -23,11 +23,6 @@ void RunnerSetDims( GLfloat width, GLfloat height );
 void RunnerRender();
 void RunnerRenderUpdateNote();
 
-// so we can do normal stuff
-void removeTouchCallback();
-// so we can do gl stuff
-void resetTouchCallback();
-void noteOn();
 // moves camera horizontally
 void moveCamera( GLfloat inc );
 

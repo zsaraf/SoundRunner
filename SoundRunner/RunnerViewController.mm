@@ -281,7 +281,6 @@ bool isNoteOn = false;
 {
     // show view controller
     [self presentViewController:settings animated:YES completion:^(){}];
-    removeTouchCallback();
     
 }
 @end
