@@ -381,7 +381,8 @@ void RunnerInit()
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
-    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:2];
+    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:2];
+    [SoundRunnerUtil appDelegate].drumSoundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:0];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
     
     g_avatar = makeAvatar(0.0, avatarYStart);
