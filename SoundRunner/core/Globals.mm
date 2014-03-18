@@ -9,7 +9,7 @@
 #import "Globals.h"
 
 
-GLuint Globals::g_texture[2];
+GLuint Globals::g_texture[3];
 // default BPM
 float Globals::BPM = 120.0;
 

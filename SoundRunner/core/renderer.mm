@@ -87,6 +87,7 @@ void boundClipPlanes(bool * atEdge);
 void stopAndStartPlayingMidiNoteForCurrentAvatar ();
 Entity * makeScrollMap();
 Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D col);
+Entity * makeOtherAvatarNote (float x, float y, Vector3D col);
 
 
 
@@ -361,7 +362,7 @@ void RunnerInit()
     //MoTouch::addCallback( touch_callback, NULL );
     
     // generate texture name
-    glGenTextures( 2, &Globals::g_texture[0] );
+    glGenTextures( 3, &Globals::g_texture[0] );
     // bind the texture
     glBindTexture( GL_TEXTURE_2D, Globals::g_texture[0] );
     // setting parameters
@@ -378,6 +379,14 @@ void RunnerInit()
     
     // load the texture
     MoGfx::loadTexture( @"flare-tng-4", @"png" );
+    
+    glBindTexture( GL_TEXTURE_2D, Globals::g_texture[2] );
+    // setting parameters
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    
+    // load the texture
+    MoGfx::loadTexture( @"flare-tng-2", @"png" );
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
@@ -437,6 +446,7 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
             int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
             int note = [[Scale instance] noteForKey:key] + 60;
             [otherPlayer.soundGen playMidiNote:note velocity:127];
+            makeOtherAvatarNote(otherPlayer.avatar->loc.x, otherPlayer.avatar->loc.y, otherPlayer.avatar->col);
         }
     }
 }
@@ -595,6 +605,31 @@ Entity * makeOtherAvatar (float x, float y)
     return e;
 }
 
+Entity * makeOtherAvatarNote (float x, float y, Vector3D col)
+{
+    Entity * e = new OtherAvatarNote(true); // true means velocity is active
+    if ( e != NULL )
+    {
+        //NSLog(@"making new avatar");
+        
+        // add to g_entities
+        g_entities.push_back( e );
+        // alpha
+        e->alpha = 1.0;
+        // set velocity
+        e->vel.set( 0.0, -1.8, -1.0);
+        // set location
+        e->loc.set( x, y, 0 );
+        // set color
+        // color
+        e->col = col;
+        // set scale
+        e->sca.setAll( .7 );
+        // activate
+        e->active = true;
+    }
+    return e;
+}
 
 
 void makeParticleSystem()

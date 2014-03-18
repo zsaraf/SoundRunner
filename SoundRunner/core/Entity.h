@@ -70,6 +70,19 @@ private:
     bool fadeOut;
 };
 
+class OtherAvatarNote : public Entity
+{
+public:
+    OtherAvatarNote(bool fade);
+    // update
+    virtual void update( double dt );
+    // render
+    virtual void render();
+    bool isMoving;
+private:
+    bool fadeOut;
+};
+
 
 class Particle : public Entity
 {
