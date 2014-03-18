@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AllSounds.h"
 
 @interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
@@ -17,6 +18,7 @@
 - (IBAction)showMain:(id)sender;
 
 @property (nonatomic, strong) NSArray *instrNames;
+@property (nonatomic, strong) AllSounds *allSounds;
 @property (nonatomic, retain) UITableView* tblView;
 @property (nonatomic, strong) NSDictionary *instruments;
 

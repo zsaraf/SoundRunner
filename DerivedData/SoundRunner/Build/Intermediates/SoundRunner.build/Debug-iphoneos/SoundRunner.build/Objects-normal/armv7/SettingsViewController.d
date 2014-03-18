@@ -1,9 +1,12 @@
 dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/SettingsViewController.mm \
   /Users/loudmouth/github/SoundRunner/SoundRunner/SettingsViewController.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/AllSounds.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/Instrument.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/SoundRunnerUtil.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/AppDelegate.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/SoundGen.h \
+  /Users/loudmouth/github/SoundRunner/Drummer.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_audio.h \

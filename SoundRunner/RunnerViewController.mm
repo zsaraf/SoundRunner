@@ -54,12 +54,11 @@ bool isNoteOn = false;
 
 -(IBAction)changeSynth:(id)sender
 {
-    static int patchNo = 2;
+    static int patchNo = 2; // staticccc
     if (patchNo >= 3) {
         NSLog(@"CHANGING TO PATCH # %d", patchNo);
-        [[SoundRunnerUtil appDelegate].soundGen setPatchNumber:patchNo];
+        [[SoundRunnerUtil appDelegate].soundGen setBankNumber:0 patchNumber:patchNo];
     }
-    patchNo ++;
 }
 
 -(IBAction)sendXLocMessage:(NSTimer *)sender
@@ -91,9 +90,9 @@ bool isNoteOn = false;
     NSLog(@"go");
     [super viewDidLoad];
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.25 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.3 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
     
-//    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
+    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
     
     NSTimer *xLocTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(sendXLocMessage:) userInfo:Nil repeats:YES];
     
@@ -123,15 +122,7 @@ bool isNoteOn = false;
         [self startGyroDetect];
         firstTime = false;
     }
-    
-//    NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
-//    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:5];
-//    
-//    UIButton *button = [[UIButton alloc] initWithFrame:self.view.bounds];
-//    [button setTitle:@"PLAY NOTE" forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(playButtonPressedUp:) forControlEvents:UIControlEventTouchUpInside];
-//    [button addTarget:self action:@selector(playButtonPressed:) forControlEvents:UIControlEventTouchDown];
-//    [self.view addSubview:button];
+
 }
 
 - (void)viewDidLayoutSubviews
@@ -227,7 +218,7 @@ bool isNoteOn = false;
 //                 float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
 //                 float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
-                 float scaleConst = 12.0;
+                 float scaleConst = 15.0;
                  
                  float xRotation = self.motionManager.deviceMotion.rotationRate.x/scaleConst;
                  

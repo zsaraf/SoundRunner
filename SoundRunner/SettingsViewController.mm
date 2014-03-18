@@ -10,6 +10,8 @@
 #import "SoundRunnerUtil.h"
 #import "RunnerViewController.h"
 #import "renderer.h"
+#import "AllSounds.h"
+#import "Instrument.h"
 
 @interface SettingsViewController ()
 
@@ -32,11 +34,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.instrNames = [NSArray arrayWithObjects:@"Guitar",@"Bass", @"Keys",nil];
+    // TODO: get names displaying. TODO: INITIALIZE THE instrNames array.
+    self.instrNames = [NSArray arrayWithObjects:@"Square Lead 2", @"Baritone Sax",
+                       @"Chorused FM", nil];
+    // add table view
+    
     [self.view addSubview:tblView];
-    self.instruments = @{@"Guitar": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3]};
+    // init the all the sounds to load in.
+    self.allSounds = [[AllSounds alloc] init];
+    
+    // list the dictionary
+    self.instruments = @{
+        @"Baritone Sax": [self.allSounds getInstrumentAtIndex:0],
+        @"Square Lead 2": [self.allSounds getInstrumentAtIndex:1],
+        @"Chorused FM" : [self.allSounds getInstrumentAtIndex:2]
+        
+        };
+    
 
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,9 +96,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // get name of selected cell
     NSString * name = [self.instrNames objectAtIndex:indexPath.item];
-    int dictValue = [[self.instruments objectForKey:name] intValue];
-    [[SoundRunnerUtil appDelegate].soundGen setPatchNumber:dictValue];
+    
+    // get the instrument for the name in the dictionary
+    Instrument * dictInstr = [self.instruments objectForKey:name];
+    
+    // look up value for the name in the dictionary
+//    int dictValue = [[self.instruments objectForKey:name] intValue];
+    
+    // set the bank and patch num
+    [[SoundRunnerUtil appDelegate].soundGen setBankNumber:dictInstr.bankNum patchNumber:dictInstr.patchNum];
     
     
     

@@ -395,18 +395,10 @@ void RunnerInit()
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
     [SoundRunnerUtil appDelegate].drummer = [[Drummer alloc] init];
     
-//    // init audio
-//    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
-//    if( !result )
-//    {
-//        // do not do this:
-//        int * p = 0;
-//        *p = 0;
-//    }
-    
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeNoteBoundarys(numNotesInScale);
     g_scrollmap = makeScrollMap();
+    
     g_scrollAvatar = makeScrollAvatar((ScrollMap*)g_scrollmap, &nextAvatarX, Vector3D(1, 1, 1));
 
     makeParticleSystem();
@@ -494,7 +486,7 @@ Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D col
     Entity * e = new ScrollAvatar(scrollMap, nextAvX, 0.05);
     if ( e != NULL )
     {
-        //NSLog(@"making new avatar");
+        //NSLog(@"making new scroll avatar");
         
         // add to g_entities
         g_entities.push_back( e );
@@ -755,7 +747,7 @@ void renderEntities()
             delete (*e);
             
             g_tail.erase(e);
-            
+            // dont delete that line. a good place to look if weird bugs...
 //            e--;
             
             if (g_tail.size() == 0 ) break;
