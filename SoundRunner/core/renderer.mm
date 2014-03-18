@@ -563,7 +563,9 @@ Entity * makeAvatar(float x, float y)
         if (touch_down) {
             e->col.set(231/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
         } else {
-            e->col.set( 1.0, 1.0, 1.0 );
+            UIColor *thisCol = [SoundRunnerUtil appDelegate].currentInstrument.color;
+            const float* colors = CGColorGetComponents( thisCol.CGColor );
+            if (thisCol) e->col.set(colors[0], colors[1], colors[2]);
         }
         // set scale
         e->sca.setAll( .4 );
