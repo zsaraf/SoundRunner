@@ -15,15 +15,12 @@ TODO now:
     
     
     --choosing instruments and colors.
-    --4 floor kick drum.
     --better scale.
 
 TODO future:
 
     --app icon.
     --get textures that make sense for the sound...
-
-
 
 
 

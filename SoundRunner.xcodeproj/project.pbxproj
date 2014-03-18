@@ -109,9 +109,6 @@
 		5D69C67818BED5BB006F0951 /* Entity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Entity.mm; sourceTree = "<group>"; };
 		5D69C67A18BEFDCD006F0951 /* Globals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Globals.mm; sourceTree = "<group>"; };
 		5D69C67B18BEFDCD006F0951 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
-		5D73EA5C18D8129C00E20577 /* das_moog.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = das_moog.sf2; sourceTree = "<group>"; };
-		5D73EA5D18D812A200E20577 /* rocking8m11e.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rocking8m11e.sf2; sourceTree = "<group>"; };
-		5D73EA5E18D81E7700E20577 /* Gort's-DoubleDecker.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gort's-DoubleDecker.sf2"; sourceTree = "<group>"; };
 		5D73EA5F18D81EF300E20577 /* GeneralUser_GS_1.43.ins */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneralUser_GS_1.43.ins; sourceTree = "<group>"; };
 		5D73EA6118D823B700E20577 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		5D73EA6218D823B700E20577 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
@@ -277,10 +274,7 @@
 		5DDBF1BC18BFC1D000C9220A /* soundfonts */ = {
 			isa = PBXGroup;
 			children = (
-				5D73EA5E18D81E7700E20577 /* Gort's-DoubleDecker.sf2 */,
 				5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 */,
-				5D73EA5D18D812A200E20577 /* rocking8m11e.sf2 */,
-				5D73EA5C18D8129C00E20577 /* das_moog.sf2 */,
 				5D73EA5F18D81EF300E20577 /* GeneralUser_GS_1.43.ins */,
 			);
 			path = soundfonts;

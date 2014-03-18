@@ -37,8 +37,6 @@
     if (self.t % 4 == 0 ) {
         [self.soundGen playMidiNote:KICK velocity:127];
     }
-    
-    
     self.t ++;
 }
 
