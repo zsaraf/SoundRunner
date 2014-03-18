@@ -39,8 +39,9 @@ enum {
 @synthesize processingGraph     = _processingGraph;
 @synthesize patchNumber         = _patchNumber;
 @synthesize soundFontURL        = _soundFontURL;
+@synthesize bankNumber          = _bankNumber;
 
--(id)initWithSoundFontURL:(NSURL *)soundFontURL patchNumber:(NSInteger)patchNumber
+-(id)initWithSoundFontURL:(NSURL *)soundFontURL bankNumber:(uint8_t)bankNumber patchNumber:(NSInteger)patchNumber
 {
     if (self = [super init]) {
         self.currentlyPlayingNotes = [[NSMutableSet alloc] init];
@@ -51,29 +52,45 @@ enum {
         NSAssert (audioSessionActivated == YES, @"Unable to set up audio session.");
         
         _soundFontURL = soundFontURL;
+        _bankNumber = bankNumber;
+        _patchNumber = patchNumber;
         
         // Create the audio processing graph; place references to the graph and to the Sampler unit
         // into the processingGraph and samplerUnit instance variables.
         [self createAUGraph];
         [self configureAndStartAudioProcessingGraph: self.processingGraph];
         
-        [self loadFromDLSOrSoundFont:soundFontURL withPatch:patchNumber];
+        [self loadFromDLSOrSoundFont];
     }
     return self;
+}
+
+-(void)setBankNumber:(uint8_t)bankNumber patchNumber:(NSInteger)patchNumber
+{
+    _bankNumber = bankNumber;
+    _patchNumber = patchNumber;
+    [self loadFromDLSOrSoundFont];
 }
 
 -(void)setSoundFontURL:(NSURL *)soundFontURL
 {
     _soundFontURL = soundFontURL;
     
-    [self loadFromDLSOrSoundFont:soundFontURL withPatch:self.patchNumber];
+    [self loadFromDLSOrSoundFont];
 }
 
 -(void)setPatchNumber:(NSInteger)patchNumber
 {
     _patchNumber = patchNumber;
     
-    [self loadFromDLSOrSoundFont:self.soundFontURL withPatch:patchNumber];
+    [self loadFromDLSOrSoundFont];
+}
+
+-(void)setBankNumber:(uint8_t)bankNumber
+{
+    _bankNumber = bankNumber;
+    
+    [self loadFromDLSOrSoundFont];
 }
 
 // Set up the audio session for this app.
@@ -242,16 +259,18 @@ enum {
 
 // this method assumes the class has a member called mySamplerUnit
 // which is an instance of an AUSampler
--(OSStatus) loadFromDLSOrSoundFont: (NSURL *)bankURL withPatch: (int)presetNumber
+-(OSStatus) loadFromDLSOrSoundFont
 {
     OSStatus result = noErr;
     
     // fill out a bank preset data structure
     AUSamplerBankPresetData bpdata;
-    bpdata.bankURL  = (__bridge CFURLRef) bankURL;
+    bpdata.bankURL  = (__bridge CFURLRef) self.soundFontURL;
     bpdata.bankMSB  = kAUSampler_DefaultMelodicBankMSB;
-    bpdata.bankLSB  = kAUSampler_DefaultBankLSB;
-    bpdata.presetID = (UInt8) presetNumber;
+    // bank no
+    bpdata.bankLSB  = self.bankNumber;//kAUSampler_DefaultBankLSB;
+    // patch no
+    bpdata.presetID = self.patchNumber;//(UInt8) presetNumber;
     
     // set the kAUSamplerProperty_LoadPresetFromBank property
     result = AudioUnitSetProperty(self.samplerUnit,
