@@ -217,9 +217,6 @@ void touch_callback( NSSet * touches, UIView * view,
                 if (newBeat)
                 {
                     NSLog(@"NOTE ON!");
-                    
-                    
-
                     newBeat = false;
                     
                 }

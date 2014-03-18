@@ -67,7 +67,7 @@ float lastYaw = 0.0;
     
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.25 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
     
-    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
+//    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
     
     if (firstTime)
     {
@@ -83,7 +83,8 @@ float lastYaw = 0.0;
         view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
         
         [self setupGL];
-        settings = [[SettingsViewController alloc] init];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        settings = [storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
         
         
         // initialize
@@ -252,5 +253,12 @@ float lastYaw = 0.0;
     //    glClearColor( 1.0f, 1.0f, 0.0f, 1.0f);
     //    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     RunnerRender();
+}
+
+- (IBAction)showSettings:(id)sender
+{
+    // show view controller
+    [self presentViewController:settings animated:YES completion:^(){}];
+
 }
 @end

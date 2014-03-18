@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    IBOutlet UITableView * tblView;
+    
+}
+
+- (IBAction)showMain:(id)sender;
+
+@property (nonatomic, strong) NSArray *instrNames;
+@property (nonatomic, retain) UITableView* tblView;
+@property (nonatomic, strong) NSDictionary *instruments;
+
 
 @end

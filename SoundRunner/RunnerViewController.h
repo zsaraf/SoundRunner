@@ -12,5 +12,5 @@
 
 
 @interface RunnerViewController : GLKViewController
-
+- (IBAction)showSettings:(id)sender;
 @end

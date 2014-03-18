@@ -10,19 +10,35 @@
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/UIViewController-bzK-9E-NHX.nib/objects.nib</key>
 		<data>
-		W8UQgcvbK0U+PWNOiI+G7lAwQV0=
+		hWOxSfIqRnbrKRjDTtktfp09Qq4=
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/UIViewController-bzK-9E-NHX.nib/runtime.nib</key>
 		<data>
-		ppusL8PlFIZMaTDYcqbf+7AhYy8=
+		bentOph62g20vIEnIm784sLKtLI=
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/bzK-9E-NHX-view-bdF-ik-r31.nib/objects.nib</key>
 		<data>
-		DWkCixWvHVX52hi/39lHiIhHDTs=
+		TW+QEsf8kXSjZMhZaBsECKtXUps=
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/bzK-9E-NHX-view-bdF-ik-r31.nib/runtime.nib</key>
 		<data>
-		9Ezw0wbt3HB0nNdj1++UEyH7ttM=
+		lyvSwYFY3brmB3SVzQ35MrxyMGc=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/kuG-hU-3vZ-view-PeD-hH-cP5.nib/objects.nib</key>
+		<data>
+		hCm3rF9OPhqBJIwxfSNKs+gcPCk=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/kuG-hU-3vZ-view-PeD-hH-cP5.nib/runtime.nib</key>
+		<data>
+		aCkuZAw5K2VB611TCxpUxuvGV/s=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/settingsViewController.nib/objects.nib</key>
+		<data>
+		PLr6dhxzPqoMzGHzDvd83naq0Jo=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/settingsViewController.nib/runtime.nib</key>
+		<data>
+		5IrlsCK9Kxx6XFeVUs2Wf6eX5Eo=
 		</data>
 		<key>COPYING</key>
 		<data>
@@ -265,19 +281,35 @@
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/UIViewController-bzK-9E-NHX.nib/objects.nib</key>
 		<data>
-		W8UQgcvbK0U+PWNOiI+G7lAwQV0=
+		hWOxSfIqRnbrKRjDTtktfp09Qq4=
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/UIViewController-bzK-9E-NHX.nib/runtime.nib</key>
 		<data>
-		ppusL8PlFIZMaTDYcqbf+7AhYy8=
+		bentOph62g20vIEnIm784sLKtLI=
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/bzK-9E-NHX-view-bdF-ik-r31.nib/objects.nib</key>
 		<data>
-		DWkCixWvHVX52hi/39lHiIhHDTs=
+		TW+QEsf8kXSjZMhZaBsECKtXUps=
 		</data>
 		<key>Base.lproj/Main_iPhone.storyboardc/bzK-9E-NHX-view-bdF-ik-r31.nib/runtime.nib</key>
 		<data>
-		9Ezw0wbt3HB0nNdj1++UEyH7ttM=
+		lyvSwYFY3brmB3SVzQ35MrxyMGc=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/kuG-hU-3vZ-view-PeD-hH-cP5.nib/objects.nib</key>
+		<data>
+		hCm3rF9OPhqBJIwxfSNKs+gcPCk=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/kuG-hU-3vZ-view-PeD-hH-cP5.nib/runtime.nib</key>
+		<data>
+		aCkuZAw5K2VB611TCxpUxuvGV/s=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/settingsViewController.nib/objects.nib</key>
+		<data>
+		PLr6dhxzPqoMzGHzDvd83naq0Jo=
+		</data>
+		<key>Base.lproj/Main_iPhone.storyboardc/settingsViewController.nib/runtime.nib</key>
+		<data>
+		5IrlsCK9Kxx6XFeVUs2Wf6eX5Eo=
 		</data>
 		<key>COPYING</key>
 		<data>
