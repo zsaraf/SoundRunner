@@ -3,12 +3,14 @@ SoundRunner
 
 
 
-Settings screen to get instruments -- done'ish
+Settings screen to get instruments -- done.
 3d tail  -- done
 kick drum -- just find it.
 
-particle movement?
-change color if buddy plays.
+change color if buddy plays -- ?
+scroll avatar -- done.
+maybe colors next to settings view controller.  
+better scale.
 
 
 

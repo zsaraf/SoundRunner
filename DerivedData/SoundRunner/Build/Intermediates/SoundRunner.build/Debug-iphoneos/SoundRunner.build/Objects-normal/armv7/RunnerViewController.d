@@ -3,6 +3,7 @@ dependencies: \
   /Users/loudmouth/github/SoundRunner/SoundRunner/RunnerViewController.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/SettingsViewController.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/AllSounds.h \
+  /Users/loudmouth/github/SoundRunner/SoundRunner/Instrument.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/core/renderer.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_audio.h \
   /Users/loudmouth/github/SoundRunner/SoundRunner/api/momu/mo_def.h \

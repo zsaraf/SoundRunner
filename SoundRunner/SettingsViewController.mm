@@ -35,7 +35,8 @@
 {
     [super viewDidLoad];
     // TODO: get names displaying. TODO: INITIALIZE THE instrNames array.
-    self.instrNames = [NSArray arrayWithObjects:@"string1", @"string2", @"Baritone Sax", nil];
+    self.instrNames = [NSArray arrayWithObjects:@"Square Lead 2", @"Baritone Sax",
+                       @"Chorused FM", nil];
     // add table view
     
     [self.view addSubview:tblView];
@@ -44,8 +45,9 @@
     
     // list the dictionary
     self.instruments = @{
-        @"Baritone Sax1": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3],
-        @"Baritone Sax": [self.allSounds getInstrumentAtIndex:0]
+        @"Baritone Sax": [self.allSounds getInstrumentAtIndex:0],
+        @"Square Lead 2": [self.allSounds getInstrumentAtIndex:1],
+        @"Chorused FM" : [self.allSounds getInstrumentAtIndex:2]
         
         };
     

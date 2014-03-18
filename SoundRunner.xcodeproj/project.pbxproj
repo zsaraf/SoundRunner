@@ -665,13 +665,8 @@
 				GCC_PREFIX_HEADER = "SoundRunner/SoundRunner-Prefix.pch";
 				INFOPLIST_FILE = "SoundRunner/SoundRunner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass/**",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/**",
-					"/Users/zach/Developer/SoundRunner/SoundRunner/bass24-ios",
-					"/Users/zach/Developer/SoundRunner/SoundRunner/bass/**",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -692,11 +687,7 @@
 				GCC_PREFIX_HEADER = "SoundRunner/SoundRunner-Prefix.pch";
 				INFOPLIST_FILE = "SoundRunner/SoundRunner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass/**",
-					"/Users/loudmouth/github/SoundRunner/SoundRunner/bass24-ios/**",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
