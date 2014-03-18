@@ -25,18 +25,20 @@
     
     self.instruments = [NSMutableArray new];
     
-    // make an instrument
-    Instrument *bariSax = [self addInstrWithBankNum:0 patchNum:67 atIndex:0];
-    Instrument *squareLead2 = [self addInstrWithBankNum:12 patchNum:80 atIndex:1];
-    Instrument *chorusedFM = [self addInstrWithBankNum:8 patchNum:5 atIndex:2];
-    // insert it.
+    // add all the instruments!
+    Instrument *bariSax = [self addInstrWithName:@"Baritone Sax "bankNum:0 patchNum:67 atIndex:0];
+    Instrument *squareLead2 = [self addInstrWithName:@"Square Lead 2" bankNum:12 patchNum:80 atIndex:1];
+    Instrument *chorusedFM = [self addInstrWithName:@"Chorused FM" bankNum:8 patchNum:5 atIndex:2];
+    
+    
     
     return self;
 }
 
-- (Instrument *)addInstrWithBankNum:(int)bankNum patchNum:(int)patchNum atIndex:(int)index
+- (Instrument *)addInstrWithName:(NSString*)name bankNum:(int)bankNum patchNum:(int)patchNum atIndex:(int)index
 {
     Instrument *thisInstr = [[Instrument alloc] init];
+    thisInstr.name = name;
     thisInstr.bankNum = bankNum;
     thisInstr.patchNum = patchNum;
     // add to array

@@ -7,7 +7,7 @@ kick drum -- just find it.
 
 TODO now:
 
-    --change color if buddy plays -- ?
+    --change color of buddy... buddy plays -- done
     --scroll avatar -- done.
     --default sound...have it assign a different one to each person
     --colors next to settings view controller lil colored squares--have that correspond with color of the avatar

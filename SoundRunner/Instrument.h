@@ -12,5 +12,7 @@
 
 @property (nonatomic) NSInteger patchNum;
 @property (nonatomic) uint8_t bankNum;
+@property (nonatomic, strong) NSString * name;
+
 
 @end
