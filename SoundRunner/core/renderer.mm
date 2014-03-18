@@ -674,6 +674,13 @@ void RunnerRender()
     // push
     glPushMatrix();
     
+    for (NSString *playerName in [SoundRunnerUtil appDelegate].otherPlayers) {
+        OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:playerName];
+        if (otherPlayer.avatar != NULL) {
+            otherPlayer.avatar->loc.x = (otherPlayer.xLoc - otherPlayer.avatar->loc.x) * .05 + otherPlayer.avatar->loc.x;
+        }
+    }
+    
     // entities
     renderEntities();
     

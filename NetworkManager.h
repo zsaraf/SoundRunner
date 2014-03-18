@@ -34,6 +34,8 @@ typedef struct {
 -(void)sendChangeInstrument:(NSInteger)instrument;
 -(void)sendChangeXLoc:(CGFloat)xLoc;
 
+@property (nonatomic, strong) NSDictionary *keyValues;
+
 @property (nonatomic, weak) id<NetworkManagerDelegate> delegate;
 
 @end

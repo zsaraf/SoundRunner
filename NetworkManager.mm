@@ -49,8 +49,9 @@ static NetworkManager *myInstance;
 {
     if (self.asyncSocket) return;
     self.asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    [self.asyncSocket connectToHost:@"10.34.70.75" onPort:80 error:nil];
+    [self.asyncSocket connectToHost:@"192.168.187.187" onPort:80 error:nil];
     [self.asyncSocket readDataWithTimeout:-1 tag:WAITING_FOR_OTHER_USER_TAG];
+    [[NSNumber numberWithInt:5] intValue];
 }
 
 -(void)sendNewPlayerMessage:(NSString *)newPlayer
@@ -128,7 +129,7 @@ static NetworkManager *myInstance;
         CGFloat xLoc = [chunks[2] floatValue];
         otherPlayer.xLoc = xLoc;
         if (otherPlayer.avatar) {
-            otherPlayer.avatar->loc.x = xLoc;
+            //otherPlayer.avatar->loc.x = xLoc;
         }
     } else if (noteOnRange.location == 0) {
         NSArray *chunks = [dataString componentsSeparatedByString:@":"];
