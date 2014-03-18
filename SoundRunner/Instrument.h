@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "mo_gfx.h"
 
 @interface Instrument : NSObject
 
 @property (nonatomic) NSInteger patchNum;
 @property (nonatomic) uint8_t bankNum;
 @property (nonatomic, strong) NSString * name;
-//@property (nonatomic) Vector3D color;
-
+@property (nonatomic, strong) UIColor * color;
 
 @end
