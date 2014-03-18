@@ -67,6 +67,8 @@ int numVoices = 32;
 double lastTime = 0.0;
 int samplesPerBeat = SRATE * 1/(Globals::BPM/60.0); // samples per beat
 bool newBeat = false;
+bool touch_down = false;
+
 int sampCount = 0;
 
 // -------------------function prototypes------------------
@@ -159,7 +161,6 @@ void moveAvatar(float displacement)
     nextAvatarX = g_avatar->loc.x + displacement*2.;
 }
 
-bool touch_down = false;
 
 //-----------------------------------------------------------------------------
 // name: touch_callback()
@@ -437,10 +438,11 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
     }
 }
 
-void RunnerRenderUpdateNote ()
+void RunnerRenderUpdateNote()
 {
     stopAndStartPlayingMidiNoteForOtherPlayers();
-    if (touch_down) {
+    if ( touch_down)
+    {
         stopAndStartPlayingMidiNoteForCurrentAvatar();
         g_avatar->col.set(155/255., 89/255., 182/255.); //rgba(155, 89, 182,1.0)
     }
@@ -763,7 +765,15 @@ void renderSingleEntity(Entity * e)
     
 }
 
+void removeTouchCallback()
+{
+    MoTouch::removeCallback(touch_callback);
+}
 
+void resetTouchCallback()
+{
+    MoTouch::addCallback(touch_callback, NULL);
+}
 
 
 

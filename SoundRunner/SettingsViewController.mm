@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "SoundRunnerUtil.h"
 #import "RunnerViewController.h"
+#import "renderer.h"
 
 @interface SettingsViewController ()
 
@@ -68,13 +69,13 @@
         
     }
     cell.textLabel.text = [self.instrNames objectAtIndex:indexPath.row];
-
     return cell;
 }
 
 
 - (IBAction)showMain:(id)sender
 {
+    resetTouchCallback();
     [self dismissViewControllerAnimated:YES completion:^{ }];
 
 }
@@ -84,6 +85,9 @@
     NSString * name = [self.instrNames objectAtIndex:indexPath.item];
     int dictValue = [[self.instruments objectForKey:name] intValue];
     [[SoundRunnerUtil appDelegate].soundGen setPatchNumber:dictValue];
+    
+    
+    
 }
 
 

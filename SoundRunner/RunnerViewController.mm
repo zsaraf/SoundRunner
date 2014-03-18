@@ -35,7 +35,8 @@ bool firstTime = true;
 float accelComponent = 0.0;
 float lastRoll = 0.0;
 float lastYaw = 0.0;
-
+float yRotRelative = 0.0;
+bool isNoteOn = false;
 //// idk what this function is for
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{
@@ -207,20 +208,14 @@ float lastYaw = 0.0;
                  // processing of gyro data here.
                  
                  // TODO: figure out slew for moving around the screen.
-                 float roll = 180/M_PI*self.motionManager.deviceMotion.attitude.roll;
-                 float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
-                 float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
+//                 float roll = 180/M_PI*self.motionManager.deviceMotion.attitude.roll;
+//                 float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
+//                 float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
                  float scaleConst = 12.0;
                  
-//                 NSLog(@"-yaw/180.0 is: %f", -yaw/180.0);
-//                 NSLog(@"accelComponenet is: %f", accelComponent);
-                 
-//                 moveAvatar(-yaw/180.0*fabs(accelComponent)*scaleConst);
-                 
-//                 moveCamera(-yaw/180.0*fabs(accelComponent)*scaleConst);
-                 
                  float xRotation = self.motionManager.deviceMotion.rotationRate.x/scaleConst;
+                 
                  moveAvatar(xRotation);
                  moveCamera(xRotation);
                  
@@ -271,6 +266,7 @@ float lastYaw = 0.0;
 {
     // show view controller
     [self presentViewController:settings animated:YES completion:^(){}];
-
+    removeTouchCallback();
+    
 }
 @end
