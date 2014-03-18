@@ -34,20 +34,10 @@
 -(void)tick
 {
     [self.soundGen stopPlayingAllNotes];
-    //[self.soundGen playMidiNote:CYMBAL velocity:127];
-    if (self.t % 8 == 0 || self.t % 16 == 7 || self.t % 16 == 3 || self.t % 16 == 11) {
+    if (self.t % 4 == 0 ) {
         [self.soundGen playMidiNote:KICK velocity:127];
-    } else if (self.t % 8 == 4) {
-        [self.soundGen playMidiNote:SNARE velocity:127];
-        [self.soundGen playMidiNote:CLAP velocity:127];
     }
     
-    if (self.t % 2 == 0) {
-        [self.soundGen playMidiNote:CYMBAL1 velocity:127];
-    }
-//    } else if (self.t % 2 == 1) {
-//        [self.soundGen playMidiNote:CYMBAL2 velocity:127];
-//    }
     
     self.t ++;
 }

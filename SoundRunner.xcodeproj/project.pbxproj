@@ -141,16 +141,16 @@
 		9251D1D318BD638E00FA09DB /* SoundRunnerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoundRunnerTests-Info.plist"; sourceTree = "<group>"; };
 		9251D1D518BD638E00FA09DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9251D1D718BD638E00FA09DB /* SoundRunnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoundRunnerTests.m; sourceTree = "<group>"; };
-		9254820118D823CA007146B0 /* Drummer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drummer.h; sourceTree = "<group>"; };
-		9254820218D823CA007146B0 /* Drummer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drummer.m; sourceTree = "<group>"; };
+		9254820118D823CA007146B0 /* Drummer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drummer.h; path = ../../Drummer.h; sourceTree = "<group>"; };
+		9254820218D823CA007146B0 /* Drummer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Drummer.m; path = ../../Drummer.m; sourceTree = "<group>"; };
 		92577AEF18CE82C800391E98 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		92577AF018CE82C800391E98 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		92577AF118CE82C800391E98 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		92577AF218CE82C800391E98 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		92577AF618CE82EF00391E98 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkManager.h; path = ../../NetworkManager.h; sourceTree = "<group>"; };
 		92577AF718CE82EF00391E98 /* NetworkManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NetworkManager.mm; path = ../../NetworkManager.mm; sourceTree = "<group>"; };
-		92B953E218D76E3900783356 /* OtherPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPlayer.h; sourceTree = "<group>"; };
-		92B953E318D76E3900783356 /* OtherPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OtherPlayer.mm; sourceTree = "<group>"; };
+		92B953E218D76E3900783356 /* OtherPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherPlayer.h; path = ../../OtherPlayer.h; sourceTree = "<group>"; };
+		92B953E318D76E3900783356 /* OtherPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OtherPlayer.mm; path = ../../OtherPlayer.mm; sourceTree = "<group>"; };
 		92B953E518D7706B00783356 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		92B953E618D7706B00783356 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		92BEABB118C6B4EE0032C458 /* flare-tng-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-5.png"; sourceTree = "<group>"; };
@@ -227,6 +227,10 @@
 				92577AF918CE82FC00391E98 /* Networking */,
 				5D2F3B2118C6AB56001E1923 /* Physics.h */,
 				5D2F3B2218C6AB56001E1923 /* Physics.mm */,
+				9254820118D823CA007146B0 /* Drummer.h */,
+				9254820218D823CA007146B0 /* Drummer.m */,
+				92B953E218D76E3900783356 /* OtherPlayer.h */,
+				92B953E318D76E3900783356 /* OtherPlayer.mm */,
 				92BEABB618C9308A0032C458 /* SoundGen.h */,
 				92BEABB718C9308A0032C458 /* SoundGen.m */,
 				92BEABB318C9210C0032C458 /* Scale.h */,
@@ -285,10 +289,6 @@
 		9251D1A018BD638E00FA09DB = {
 			isa = PBXGroup;
 			children = (
-				9254820118D823CA007146B0 /* Drummer.h */,
-				9254820218D823CA007146B0 /* Drummer.m */,
-				92B953E218D76E3900783356 /* OtherPlayer.h */,
-				92B953E318D76E3900783356 /* OtherPlayer.mm */,
 				92577AF518CE82CD00391E98 /* GCDAsyncSocket */,
 				5D69C67D18BF061C006F0951 /* data */,
 				5D69C65818BED3B9006F0951 /* api */,
@@ -445,7 +445,7 @@
 				ORGANIZATIONNAME = "Zachary Waleed Saraf";
 				TargetAttributes = {
 					9251D1A818BD638E00FA09DB = {
-						DevelopmentTeam = 7NX6YPQXT3;
+						DevelopmentTeam = FUTU96J3U9;
 					};
 					9251D1C918BD638E00FA09DB = {
 						TestTargetID = 9251D1A818BD638E00FA09DB;
