@@ -8,6 +8,7 @@
 
 #import "AllSounds.h"
 #import "Instrument.h"
+//#import "mo_gfx.h"
 
 @implementation AllSounds
 @synthesize instruments;
@@ -35,12 +36,13 @@
     return self;
 }
 
-- (Instrument *)addInstrWithName:(NSString*)name bankNum:(int)bankNum patchNum:(int)patchNum atIndex:(int)index
+- (Instrument *)addInstrWithName:(NSString*)name bankNum:(int)bankNum patchNum:(int)patchNum  atIndex:(int)index // andColor:(Vector3D)color
 {
     Instrument *thisInstr = [[Instrument alloc] init];
     thisInstr.name = name;
     thisInstr.bankNum = bankNum;
     thisInstr.patchNum = patchNum;
+//    thisInstr.color = color;
     // add to array
     [self.instruments insertObject:thisInstr atIndex:index];
     return thisInstr;
