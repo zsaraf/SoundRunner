@@ -18,6 +18,17 @@
 }
 
 
+
++(id)instance
+{
+    static AllSounds *allSounds = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        allSounds = [[self alloc] init];
+    });
+    return allSounds;
+}
+
 // TODO: initialize this object to hold all the correct instruments. make sure the property
 
 - (id) init {

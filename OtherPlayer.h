@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SoundGen.h"
 #import "Entity.h"
+#import "Instrument.h"
 
 @interface OtherPlayer : NSObject
 
@@ -20,5 +21,6 @@
 @property (nonatomic, strong) SoundGen *soundGen;
 @property (nonatomic) OtherAvatar *avatar;
 @property (nonatomic) ScrollAvatar *scrollAvatar;
+@property (nonatomic, weak) Instrument *instrument;
 
 @end

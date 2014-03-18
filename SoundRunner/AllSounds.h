@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSMutableArray * instruments;
 
++(id)instance;
 - (Instrument *)getInstrumentAtIndex:(int)index;
 
 @end
