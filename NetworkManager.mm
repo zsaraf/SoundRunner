@@ -102,7 +102,8 @@ static NetworkManager *myInstance;
     NSRange changeXLocRange = [dataString rangeOfString:@"CHANGEXLOC:"];
     NSRange noteOnRange = [dataString rangeOfString:@"CHANGENOTEON:"];
     if (newPlayerRange.location == 0) {
-        NSString *newPlayerName = [dataString substringFromIndex:newPlayerRange.length];
+        NSArray *chunks = [dataString componentsSeparatedByString:@":"];
+        NSString *newPlayerName = chunks[1];
         OtherPlayer *newPlayer = [[OtherPlayer alloc] initWithName:newPlayerName];
         [[SoundRunnerUtil appDelegate].otherPlayers setObject:newPlayer forKey:newPlayerName];
     } else if (otherPlayerRange.location == 0) {
