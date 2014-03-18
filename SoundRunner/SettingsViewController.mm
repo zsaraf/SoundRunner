@@ -89,9 +89,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // get name of selected cell
     NSString * name = [self.instrNames objectAtIndex:indexPath.item];
 //    Instrument dictValue = [[self.allSounds.allSounds.]
+    // look up value for the name in the dictionary
     int dictValue = [[self.instruments objectForKey:name] intValue];
+    // set the bank and patch num
     [[SoundRunnerUtil appDelegate].soundGen setBankNumber:0 patchNumber:dictValue];
     
     

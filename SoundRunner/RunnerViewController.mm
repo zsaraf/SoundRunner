@@ -52,14 +52,13 @@ bool isNoteOn = false;
     RunnerRenderUpdateNote();
 }
 
--(IBAction)changeSynth:(id)sender withPatchNo:(int)patchNum
+-(IBAction)changeSynth:(id)sender
 {
     static int patchNo = 2; // staticccc
     if (patchNo >= 3) {
         NSLog(@"CHANGING TO PATCH # %d", patchNo);
-        [[SoundRunnerUtil appDelegate].soundGen setPatchNumber:patchNo];
+        [[SoundRunnerUtil appDelegate].soundGen setBankNumber:0 patchNumber:patchNo];
     }
-    patchNo = patchNum;
 }
 
 -(IBAction)sendXLocMessage:(NSTimer *)sender
