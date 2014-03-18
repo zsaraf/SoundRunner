@@ -94,7 +94,7 @@ bool isNoteOn = false;
     
     NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
     
-    NSTimer *xLocTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(sendXLocMessage:) userInfo:Nil repeats:YES];
+    NSTimer *xLocTimer = [NSTimer scheduledTimerWithTimeInterval:.3 target:self selector:@selector(sendXLocMessage:) userInfo:Nil repeats:YES];
     
     if (firstTime)
     {
