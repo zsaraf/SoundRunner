@@ -17,10 +17,8 @@
 
 - (IBAction)showMain:(id)sender;
 
-@property (nonatomic, strong) NSArray *instrNames;
-@property (nonatomic, strong) AllSounds *allSounds;
+@property (nonatomic, strong) AllSounds *allSounds; // holds all the instruments.
 @property (nonatomic, retain) UITableView* tblView;
-@property (nonatomic, strong) NSDictionary *instruments;
 
 
 @end
