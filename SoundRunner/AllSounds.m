@@ -37,10 +37,14 @@
     self.instruments = [NSMutableArray new];
     
     // add all the instruments!
-    Instrument *bariSax = [self addInstrWithName:@"Baritone Sax" color:[UIColor whiteColor] bankNum:0 patchNum:67 atIndex:0];
-    Instrument *squareLead2 = [self addInstrWithName:@"Square Lead 2" color:[UIColor redColor] bankNum:12 patchNum:80 atIndex:1];
-    Instrument *chorusedFM = [self addInstrWithName:@"Chorused FM" color:[UIColor greenColor] bankNum:8 patchNum:5 atIndex:2];
-    Instrument *polysynth = [self addInstrWithName:@"Polysynth" color:[UIColor magentaColor] bankNum:0 patchNum:90 atIndex:3];
+    [self addInstrWithName:@"Stereo Grand" color:[UIColor orangeColor] bankNum:0 patchNum:0 atIndex:0];
+    [self addInstrWithName:@"Baritone Sax" color:[UIColor whiteColor] bankNum:0 patchNum:67 atIndex:1];
+    [self addInstrWithName:@"Square Lead 2" color:[UIColor redColor] bankNum:12 patchNum:80 atIndex:2];
+    [self addInstrWithName:@"Chorused FM" color:[UIColor greenColor] bankNum:8 patchNum:5 atIndex:3];
+    [self addInstrWithName:@"Polysynth" color:[UIColor magentaColor] bankNum:0 patchNum:90 atIndex:4];
+    [self addInstrWithName:@"Melodic Tom" color:[UIColor blueColor] bankNum:11 patchNum:117 atIndex:5];
+    [self addInstrWithName:@"Orchestra Pad" color:[UIColor purpleColor] bankNum:8 patchNum:48 atIndex:6];
+    
     
     
     

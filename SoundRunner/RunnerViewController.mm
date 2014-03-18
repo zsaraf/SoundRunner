@@ -36,7 +36,7 @@ float accelComponent = 0.0;
 float lastRoll = 0.0;
 float lastYaw = 0.0;
 float yRotRelative = 0.0;
-bool isNoteOn = false;
+bool onOffSwitch = false;
 //// idk what this function is for
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{
@@ -49,6 +49,9 @@ bool isNoteOn = false;
 
 -(IBAction)timerDidGoOff:(id)sender
 {
+    if (onOffSwitch == true) onOffSwitch = false;
+    else onOffSwitch = true;
+//    RunnerRenderUpdateNote(onOffSwitch);
     RunnerRenderUpdateNote();
 }
 
@@ -92,7 +95,7 @@ bool isNoteOn = false;
     
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.3 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
     
-    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
+//    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
     
     NSTimer *xLocTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(sendXLocMessage:) userInfo:Nil repeats:YES];
     
@@ -218,7 +221,7 @@ bool isNoteOn = false;
 //                 float yaw = 180/M_PI*self.motionManager.deviceMotion.attitude.yaw;
 //                 float pitch = 180/M_PI*self.motionManager.deviceMotion.attitude.pitch;
                  
-                 float scaleConst = 15.0;
+                 float scaleConst = 18.0;
                  
                  float xRotation = self.motionManager.deviceMotion.rotationRate.x/scaleConst;
                  
