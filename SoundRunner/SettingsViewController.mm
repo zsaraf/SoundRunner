@@ -34,7 +34,12 @@
     [super viewDidLoad];
     self.instrNames = [NSArray arrayWithObjects:@"Guitar",@"Bass", @"Keys",nil];
     [self.view addSubview:tblView];
-    self.instruments = @{@"Guitar": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3]};
+    self.instruments = @{
+        @"Guitar": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3],
+        
+        
+        };
+    
 
 	// Do any additional setup after loading the view.
 }

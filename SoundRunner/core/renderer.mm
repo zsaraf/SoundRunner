@@ -384,19 +384,11 @@ void RunnerInit()
     [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL patchNumber:2];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
     
-//    // init audio
-//    bool result = MoAudio::init( SRATE, FRAMESIZE, NUM_CHANNELS );
-//    if( !result )
-//    {
-//        // do not do this:
-//        int * p = 0;
-//        *p = 0;
-//    }
-    
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeNoteBoundarys(numNotesInScale);
     g_scrollmap = makeScrollMap();
     g_scrollAvatar = makeScrollAvatar((ScrollMap*)g_scrollmap, &nextAvatarX);
+    
 
     makeParticleSystem();
     
@@ -478,7 +470,7 @@ Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX)
     Entity * e = new ScrollAvatar(scrollMap, nextAvX, 0.05);
     if ( e != NULL )
     {
-        //NSLog(@"making new avatar");
+        //NSLog(@"making new scroll avatar");
         
         // add to g_entities
         g_entities.push_back( e );

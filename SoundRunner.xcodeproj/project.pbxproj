@@ -26,6 +26,9 @@
 		5D69C67618BED3C4006F0951 /* renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67518BED3C4006F0951 /* renderer.mm */; };
 		5D69C67918BED5BB006F0951 /* Entity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67818BED5BB006F0951 /* Entity.mm */; };
 		5D69C67C18BEFDCD006F0951 /* Globals.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5D69C67A18BEFDCD006F0951 /* Globals.mm */; };
+		5D73EA6018D81EF300E20577 /* GeneralUser_GS_1.43.ins in Resources */ = {isa = PBXBuildFile; fileRef = 5D73EA5F18D81EF300E20577 /* GeneralUser_GS_1.43.ins */; };
+		5D73EA6318D823B700E20577 /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D73EA6218D823B700E20577 /* Instrument.m */; };
+		5D73EA6618D8242B00E20577 /* AllSounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D73EA6518D8242B00E20577 /* AllSounds.m */; };
 		5DDBF19B18BF287600C9220A /* flare-tng-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19A18BF287600C9220A /* flare-tng-3.png */; };
 		5DDBF19F18BF2A0400C9220A /* flare-tng-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19C18BF2A0400C9220A /* flare-tng-1.png */; };
 		5DDBF1A018BF2A0400C9220A /* flare-tng-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DDBF19D18BF2A0400C9220A /* flare-tng-2.png */; };
@@ -105,6 +108,14 @@
 		5D69C67818BED5BB006F0951 /* Entity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Entity.mm; sourceTree = "<group>"; };
 		5D69C67A18BEFDCD006F0951 /* Globals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Globals.mm; sourceTree = "<group>"; };
 		5D69C67B18BEFDCD006F0951 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		5D73EA5C18D8129C00E20577 /* das_moog.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = das_moog.sf2; sourceTree = "<group>"; };
+		5D73EA5D18D812A200E20577 /* rocking8m11e.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rocking8m11e.sf2; sourceTree = "<group>"; };
+		5D73EA5E18D81E7700E20577 /* Gort's-DoubleDecker.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gort's-DoubleDecker.sf2"; sourceTree = "<group>"; };
+		5D73EA5F18D81EF300E20577 /* GeneralUser_GS_1.43.ins */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeneralUser_GS_1.43.ins; sourceTree = "<group>"; };
+		5D73EA6118D823B700E20577 /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
+		5D73EA6218D823B700E20577 /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
+		5D73EA6418D8242B00E20577 /* AllSounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllSounds.h; sourceTree = "<group>"; };
+		5D73EA6518D8242B00E20577 /* AllSounds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllSounds.m; sourceTree = "<group>"; };
 		5DDBF19A18BF287600C9220A /* flare-tng-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-3.png"; sourceTree = "<group>"; };
 		5DDBF19C18BF2A0400C9220A /* flare-tng-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-1.png"; sourceTree = "<group>"; };
 		5DDBF19D18BF2A0400C9220A /* flare-tng-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flare-tng-2.png"; sourceTree = "<group>"; };
@@ -259,7 +270,11 @@
 		5DDBF1BC18BFC1D000C9220A /* soundfonts */ = {
 			isa = PBXGroup;
 			children = (
+				5D73EA5E18D81E7700E20577 /* Gort's-DoubleDecker.sf2 */,
 				5DDBF1BD18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 */,
+				5D73EA5D18D812A200E20577 /* rocking8m11e.sf2 */,
+				5D73EA5C18D8129C00E20577 /* das_moog.sf2 */,
+				5D73EA5F18D81EF300E20577 /* GeneralUser_GS_1.43.ins */,
 			);
 			path = soundfonts;
 			sourceTree = "<group>";
@@ -318,6 +333,10 @@
 				5D4662EB18BECC4000DA6000 /* RunnerViewController.mm */,
 				5D4662ED18BECD0B00DA6000 /* SettingsViewController.h */,
 				5D4662EE18BECD0B00DA6000 /* SettingsViewController.mm */,
+				5D73EA6418D8242B00E20577 /* AllSounds.h */,
+				5D73EA6518D8242B00E20577 /* AllSounds.m */,
+				5D73EA6118D823B700E20577 /* Instrument.h */,
+				5D73EA6218D823B700E20577 /* Instrument.m */,
 				9251D1C418BD638E00FA09DB /* Images.xcassets */,
 				9251D1B318BD638E00FA09DB /* Supporting Files */,
 			);
@@ -460,6 +479,7 @@
 				5DDBF1A018BF2A0400C9220A /* flare-tng-2.png in Resources */,
 				5DDBF19B18BF287600C9220A /* flare-tng-3.png in Resources */,
 				9251D1C018BD638E00FA09DB /* Main_iPhone.storyboard in Resources */,
+				5D73EA6018D81EF300E20577 /* GeneralUser_GS_1.43.ins in Resources */,
 				5DDBF1BE18BFC1D000C9220A /* GeneralUser_GS_FluidSynth_v1.sf2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D73EA6618D8242B00E20577 /* AllSounds.m in Sources */,
 				924BC0F018D7ADB10090513A /* LoginViewController.m in Sources */,
 				924BC0EF18D7AD810090513A /* OtherPlayer.mm in Sources */,
 				9251D1BD18BD638E00FA09DB /* AppDelegate.mm in Sources */,
@@ -499,6 +520,7 @@
 				5D69C67018BED3B9006F0951 /* mo_glut.cpp in Sources */,
 				5D69C67118BED3B9006F0951 /* mo_thread.mm in Sources */,
 				5D69C67218BED3B9006F0951 /* mo_touch.mm in Sources */,
+				5D73EA6318D823B700E20577 /* Instrument.m in Sources */,
 				5D69C67918BED5BB006F0951 /* Entity.mm in Sources */,
 				5D69C66C18BED3B9006F0951 /* mo_buffer.mm in Sources */,
 				5D69C67618BED3C4006F0951 /* renderer.mm in Sources */,
