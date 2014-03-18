@@ -36,6 +36,7 @@
     // add table view
     [self.view addSubview:tblView];
     // init the all the sounds to load in.
+    
     self.allSounds = [[AllSounds alloc] init];
 
 }
@@ -69,7 +70,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier ];
         
     }
-    cell.textLabel.text = ((Instrument *)[self.allSounds.instruments objectAtIndex:indexPath.row]).name;
+    Instrument * thisInstr = (Instrument *)[self.allSounds.instruments objectAtIndex:indexPath.row];
+    cell.textLabel.text = thisInstr.name;
+    cell.backgroundColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 1.0 alpha: 1.0];
+
 
     return cell;
 }
