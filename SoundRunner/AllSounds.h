@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Instrument.h"
 
 @interface AllSounds : NSObject
 
-@property (nonatomic) NSArray * allSounds;
+@property (nonatomic) NSMutableArray * instruments;
 
+- (Instrument *)getInstrumentAtIndex:(int)index;
 
 @end

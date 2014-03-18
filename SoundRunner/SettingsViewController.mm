@@ -34,17 +34,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // TODO: get names displaying.
+    [self.instrNames initWithObjects:@"hello", @"goodbye"];
+    // add table view
     [self.view addSubview:tblView];
+    // init the all the sounds to load in.
     self.allSounds = [[AllSounds alloc] init];
     
+    // list the dictionary
     self.instruments = @{
-        @"Guitar": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3],
-        
+        @"Baritone Sax": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3],
+        @"Baritone Sax": [self.allSounds getInstrumentAtIndex:0]
         
         };
     
 
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,11 +95,15 @@
 {
     // get name of selected cell
     NSString * name = [self.instrNames objectAtIndex:indexPath.item];
-//    Instrument dictValue = [[self.allSounds.allSounds.]
+    
+    // get the instrument for the name in the dictionary
+    Instrument * dictInstr = [self.instruments objectForKey:name];
+    
     // look up value for the name in the dictionary
-    int dictValue = [[self.instruments objectForKey:name] intValue];
+//    int dictValue = [[self.instruments objectForKey:name] intValue];
+    
     // set the bank and patch num
-    [[SoundRunnerUtil appDelegate].soundGen setBankNumber:0 patchNumber:dictValue];
+    [[SoundRunnerUtil appDelegate].soundGen setBankNumber:dictInstr.bankNum patchNumber:dictInstr.patchNum];
     
     
     

@@ -10,4 +10,8 @@
 
 @implementation Instrument
 
+- (id) init
+{
+    return [super init];
+}
 @end
