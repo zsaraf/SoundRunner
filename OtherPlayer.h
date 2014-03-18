@@ -19,5 +19,6 @@
 @property (nonatomic) CGFloat xLoc;
 @property (nonatomic, strong) SoundGen *soundGen;
 @property (nonatomic) OtherAvatar *avatar;
+@property (nonatomic) ScrollAvatar *scrollAvatar;
 
 @end

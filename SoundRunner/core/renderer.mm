@@ -86,7 +86,7 @@ void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::i
 void boundClipPlanes(bool * atEdge);
 void stopAndStartPlayingMidiNoteForCurrentAvatar ();
 Entity * makeScrollMap();
-Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX);
+Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D col);
 
 
 
@@ -382,7 +382,7 @@ void RunnerInit()
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
-    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:120 patchNumber:0];
+    [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:0];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
     [SoundRunnerUtil appDelegate].drummer = [[Drummer alloc] init];
     
@@ -398,7 +398,7 @@ void RunnerInit()
     g_avatar = makeAvatar(0.0, avatarYStart);
     makeNoteBoundarys(numNotesInScale);
     g_scrollmap = makeScrollMap();
-    g_scrollAvatar = makeScrollAvatar((ScrollMap*)g_scrollmap, &nextAvatarX);
+    g_scrollAvatar = makeScrollAvatar((ScrollMap*)g_scrollmap, &nextAvatarX, Vector3D(1, 1, 1));
 
     makeParticleSystem();
     
@@ -431,6 +431,7 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
         [otherPlayer.soundGen stopPlayingAllNotes];
         if (otherPlayer.avatar == NULL) {
             otherPlayer.avatar = (OtherAvatar *)makeOtherAvatar(otherPlayer.xLoc, avatarYStart);
+            otherPlayer.scrollAvatar = (ScrollAvatar *)makeScrollAvatar((ScrollMap *)g_scrollmap, &(otherPlayer.avatar->loc.x), otherPlayer.avatar->col);
         }
         if (otherPlayer.noteOn) {
             int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
@@ -478,7 +479,7 @@ void makeNoteBoundarys(int numNotes)
     }
 }
 
-Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX)
+Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D col)
 {
     Entity * e = new ScrollAvatar(scrollMap, nextAvX, 0.05);
     if ( e != NULL )
@@ -492,11 +493,7 @@ Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX)
         // set velocity
         e->vel.set( 0.0, 0.0, 0.0);
         // set color
-        if (touch_down) {
-            e->col.set(244/255.0, 76/255.0, 60/255.0); //rgba(231, 76, 60,1.0)
-        } else {
-            e->col.set( 1.0, 1.0, 1.0 );
-        }
+        e->col = col;
         // set scale
         e->sca.setAll( 1 );
         // activate
