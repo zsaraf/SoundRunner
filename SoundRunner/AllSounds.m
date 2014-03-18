@@ -41,9 +41,17 @@
     Instrument *squareLead2 = [self addInstrWithName:@"Square Lead 2" color:[UIColor redColor] bankNum:12 patchNum:80 atIndex:1];
     Instrument *chorusedFM = [self addInstrWithName:@"Chorused FM" color:[UIColor greenColor] bankNum:8 patchNum:5 atIndex:2];
     
-    
-    
     return self;
+}
+
+-(Instrument *)instrumentForName:(NSString *)name
+{
+    for (Instrument *instrument in self.instruments) {
+        if ([instrument.name isEqualToString:name]) {
+            return instrument;
+        }
+    }
+    return nil;
 }
 
 - (Instrument *)addInstrWithName:(NSString*)name color:(UIColor*)color bankNum:(int)bankNum patchNum:(int)patchNum atIndex:(int)index

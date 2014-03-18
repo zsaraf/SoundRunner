@@ -9,6 +9,7 @@
 #import "NetworkManager.h"
 #import "OtherPlayer.h"
 #import "SoundRunnerUtil.h"
+#import "AllSounds.h"
 
 #define WAITING_FOR_OTHER_USER_TAG 20
 #define USER_NAME_SEND_TAG 21
@@ -49,14 +50,14 @@ static NetworkManager *myInstance;
 {
     if (self.asyncSocket) return;
     self.asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    [self.asyncSocket connectToHost:@"10.34.70.80" onPort:80 error:nil];
+    [self.asyncSocket connectToHost:@"10.31.78.119" onPort:80 error:nil];
     [self.asyncSocket readDataWithTimeout:-1 tag:WAITING_FOR_OTHER_USER_TAG];
     [[NSNumber numberWithInt:5] intValue];
 }
 
 -(void)sendNewPlayerMessage:(NSString *)newPlayer
 {
-    NSString *newPlayerString = [NSString stringWithFormat:@"NEWPLAYER:%@:", newPlayer];
+    NSString *newPlayerString = [NSString stringWithFormat:@"NEWPLAYER:%@:%@:", newPlayer, [SoundRunnerUtil appDelegate].currentInstrument.name];
     NSData *data = [newPlayerString dataUsingEncoding:NSUTF8StringEncoding];
     [self.asyncSocket writeData:data withTimeout:-1 tag:1];
     [self.asyncSocket readDataWithTimeout:-1 tag:2];
@@ -70,9 +71,9 @@ static NetworkManager *myInstance;
     [self.asyncSocket readDataWithTimeout:-1 tag:2];
 }
 
--(void)sendChangeInstrument:(NSInteger)instrument
+-(void)sendChangeInstrument:(Instrument *)instrument
 {
-    NSString *dataString = [NSString stringWithFormat:@"CHANGEINSTRUMENT:%d:", instrument];
+    NSString *dataString = [NSString stringWithFormat:@"CHANGEINSTRUMENT:%@:", instrument.name];
     NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
     [self.asyncSocket writeData:data withTimeout:-1 tag:1];
     [self.asyncSocket readDataWithTimeout:-1 tag:2];
@@ -105,6 +106,7 @@ static NetworkManager *myInstance;
         NSArray *chunks = [dataString componentsSeparatedByString:@":"];
         NSString *newPlayerName = chunks[1];
         OtherPlayer *newPlayer = [[OtherPlayer alloc] initWithName:newPlayerName];
+        newPlayer.instrument = [[AllSounds instance] instrumentForName:chunks[2]];
         [[SoundRunnerUtil appDelegate].otherPlayers setObject:newPlayer forKey:newPlayerName];
     } else if (otherPlayerRange.location == 0) {
         NSArray *chunks = [dataString componentsSeparatedByString:@":"];
@@ -112,18 +114,18 @@ static NetworkManager *myInstance;
         int numOtherPlayers = (chunks.count - 1)/3;
         for (int i = 0; i < numOtherPlayers; i++) {
             NSString *name = [chunks objectAtIndex:1+3*i];
-            NSInteger instrument = [[chunks objectAtIndex:2+3*i] integerValue];
+            Instrument *instrument = [[AllSounds instance] instrumentForName:[chunks objectAtIndex:2+3*i]];
             CGFloat xLoc = [[chunks objectAtIndex:3+3*i] floatValue];
             OtherPlayer *otherPlayer = [[OtherPlayer alloc] initWithName:name];
-            otherPlayer.soundGen.patchNumber = instrument;
+            otherPlayer.instrument = instrument;
             otherPlayer.xLoc = xLoc;
             [[SoundRunnerUtil appDelegate].otherPlayers setObject:otherPlayer forKey:name];
         }
     } else if (changeInstrumentRange.location == 0) {
         NSArray *chunks = [dataString componentsSeparatedByString:@":"];
         OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:chunks[1]];
-        NSInteger instrument = [chunks[2] integerValue];
-        otherPlayer.soundGen.patchNumber = instrument;
+        Instrument *instrument = [[AllSounds instance] instrumentForName:[chunks objectAtIndex:2]];
+        otherPlayer.instrument = instrument;
     } else if (changeXLocRange.location == 0) {
         NSArray *chunks = [dataString componentsSeparatedByString:@":"];
         OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:chunks[1]];

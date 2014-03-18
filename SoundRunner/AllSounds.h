@@ -15,5 +15,6 @@
 
 +(AllSounds *)instance;
 - (Instrument *)getInstrumentAtIndex:(int)index;
+-(Instrument *)instrumentForName:(NSString *)name;
 
 @end

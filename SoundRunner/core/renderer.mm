@@ -76,7 +76,7 @@ int sampCount = 0;
 // -------------------function prototypes------------------
 // --------------------------------------------------------
 
-Entity * makeOtherAvatar (float x, float y);
+Entity * makeOtherAvatar (OtherPlayer *otherPlayer);
 Entity * makeAvatar(float x, float y);
 void renderEntities();
 void renderSingleEntity(Entity * e);
@@ -391,8 +391,6 @@ void RunnerInit()
     
     GLfloat ratio = g_gfxWidth / g_gfxHeight;
     
-    [SoundRunnerUtil appDelegate].currentInstrument = [[AllSounds instance].instruments objectAtIndex:[SoundRunnerUtil appDelegate].otherPlayers.count];
-    
     NSURL *presetURL = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"GeneralUser_GS_FluidSynth_v1" ofType:@"sf2"]];
     [SoundRunnerUtil appDelegate].soundGen = [[SoundGen alloc] initWithSoundFontURL:presetURL bankNumber:0 patchNumber:0];
     soundGen = [SoundRunnerUtil appDelegate].soundGen;
@@ -432,9 +430,10 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
     
     for (NSString *playerName in [SoundRunnerUtil appDelegate].otherPlayers) {
         OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:playerName];
+        if (!otherPlayer.instrument) continue;
         [otherPlayer.soundGen stopPlayingAllNotes];
         if (otherPlayer.avatar == NULL) {
-            otherPlayer.avatar = (OtherAvatar *)makeOtherAvatar(otherPlayer.xLoc, avatarYStart);
+            otherPlayer.avatar = (OtherAvatar *)makeOtherAvatar(otherPlayer);
             otherPlayer.scrollAvatar = (ScrollAvatar *)makeScrollAvatar((ScrollMap *)g_scrollmap, &(otherPlayer.avatar->loc.x), otherPlayer.avatar->col);
         }
         if (otherPlayer.noteOn) {
@@ -572,7 +571,7 @@ Entity * makeAvatar(float x, float y)
     return e;
 }
 
-Entity * makeOtherAvatar (float x, float y)
+Entity * makeOtherAvatar (OtherPlayer *otherPlayer)
 {
     Entity * e = new OtherAvatar(true); // true means velocity is active
     if ( e != NULL )
@@ -586,12 +585,10 @@ Entity * makeOtherAvatar (float x, float y)
         // set velocity
         e->vel.set( 0.0, -1.8, -1.0);
         // set location
-        e->loc.set( x, y, 0 );
-        // set color
-        int random_num = rand();
-        int color_index = random_num % NUM_NICE_COLORS;
+        e->loc.set( otherPlayer.xLoc, avatarYStart, 0 );
         // color
-        e->col.set(niceColors[color_index * 3], niceColors[color_index * 3 + 1], niceColors[color_index * 3 + 2]);
+        const float* colors = CGColorGetComponents( otherPlayer.instrument.color.CGColor );
+        e->col.set(colors[0], colors[1], colors[2]);
         // set scale
         e->sca.setAll( .4 );
         // activate

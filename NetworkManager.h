@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GCDAsyncSocket.h"
+#import "Instrument.h"
 
 typedef struct {
     NSUInteger type_id;
@@ -31,7 +32,7 @@ typedef struct {
 //-(void)sendLoop:(Loop *)loop;
 +(NetworkManager *)instance;
 -(void)sendNoteOn:(BOOL)noteOn;
--(void)sendChangeInstrument:(NSInteger)instrument;
+-(void)sendChangeInstrument:(Instrument *)instrument;
 -(void)sendChangeXLoc:(CGFloat)xLoc;
 
 @property (nonatomic, strong) NSDictionary *keyValues;
