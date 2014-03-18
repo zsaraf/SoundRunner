@@ -711,7 +711,7 @@ void renderEntities()
             delete (*e);
             
             g_tail.erase(e);
-            
+            // dont delete that line. a good place to look if weird bugs...
 //            e--;
             
             if (g_tail.size() == 0 ) break;

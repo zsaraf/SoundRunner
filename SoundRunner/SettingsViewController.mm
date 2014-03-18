@@ -10,6 +10,8 @@
 #import "SoundRunnerUtil.h"
 #import "RunnerViewController.h"
 #import "renderer.h"
+#import "AllSounds.h"
+#import "Instrument.h"
 
 @interface SettingsViewController ()
 
@@ -32,8 +34,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.instrNames = [NSArray arrayWithObjects:@"Guitar",@"Bass", @"Keys",nil];
     [self.view addSubview:tblView];
+    self.allSounds = [[AllSounds alloc] init];
+    
     self.instruments = @{
         @"Guitar": [NSNumber numberWithInt:2], @"Keys": [NSNumber numberWithInt:3],
         
@@ -87,8 +90,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * name = [self.instrNames objectAtIndex:indexPath.item];
+//    Instrument dictValue = [[self.allSounds.allSounds.]
     int dictValue = [[self.instruments objectForKey:name] intValue];
-    [[SoundRunnerUtil appDelegate].soundGen setPatchNumber:dictValue];
+    [[SoundRunnerUtil appDelegate].soundGen setBankNumber:0 patchNumber:dictValue];
     
     
     
