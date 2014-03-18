@@ -395,7 +395,10 @@ void ScrollAvatar::update(double dt)
         vertices[i] = *(theMap->leftEdge) + theMap->margin+ percent*theMap->width - theWidth;
         vertices[i+2] = *(theMap->leftEdge) + theMap->margin + percent*theMap->width + theWidth;
         vertices[i + 1] = vertices[i+3] = theMap->top - i*theMap->height;
-        
+    }
+    
+    if (scrollCol->x != col.x) {
+        col = *scrollCol;
     }
 }
 

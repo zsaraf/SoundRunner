@@ -153,6 +153,8 @@ public:
     virtual void update(double dt);
     // render
     virtual void render();
+    
+    Vector3D *scrollCol;
 private:
     ScrollMap * theMap;
     GLfloat * nextAvatarX;

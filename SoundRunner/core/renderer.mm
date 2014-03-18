@@ -87,7 +87,7 @@ void handleCollisions(std::vector<Entity *> * entities, std::vector<Entity *>::i
 void boundClipPlanes(bool * atEdge);
 void stopAndStartPlayingMidiNoteForCurrentAvatar ();
 Entity * makeScrollMap();
-Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D col);
+Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D *col);
 Entity * makeOtherAvatarNote (float x, float y, Vector3D col);
 
 
@@ -400,7 +400,9 @@ void RunnerInit()
     makeNoteBoundarys(numNotesInScale);
     g_scrollmap = makeScrollMap();
     
-    g_scrollAvatar = makeScrollAvatar((ScrollMap*)g_scrollmap, &nextAvatarX, Vector3D(1, 1, 1));
+    Vector3D *defaultCol = new Vector3D(1, 1, 1);
+    
+    g_scrollAvatar = makeScrollAvatar((ScrollMap*)g_scrollmap, &nextAvatarX, defaultCol);
 
     makeParticleSystem();
     
@@ -434,7 +436,7 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
         [otherPlayer.soundGen stopPlayingAllNotes];
         if (otherPlayer.avatar == NULL) {
             otherPlayer.avatar = (OtherAvatar *)makeOtherAvatar(otherPlayer);
-            otherPlayer.scrollAvatar = (ScrollAvatar *)makeScrollAvatar((ScrollMap *)g_scrollmap, &(otherPlayer.avatar->loc.x), otherPlayer.avatar->col);
+            otherPlayer.scrollAvatar = (ScrollAvatar *)makeScrollAvatar((ScrollMap *)g_scrollmap, &(otherPlayer.avatar->loc.x), &otherPlayer.avatar->col);
         }
         if (otherPlayer.noteOn) {
             int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
@@ -483,9 +485,9 @@ void makeNoteBoundarys(int numNotes)
     }
 }
 
-Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D col)
+Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D *col)
 {
-    Entity * e = new ScrollAvatar(scrollMap, nextAvX, 0.05);
+    ScrollAvatar* e = new ScrollAvatar(scrollMap, nextAvX, 0.05);
     if ( e != NULL )
     {
         //NSLog(@"making new scroll avatar");
@@ -497,7 +499,7 @@ Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D col
         // set velocity
         e->vel.set( 0.0, 0.0, 0.0);
         // set color
-        e->col = col;
+        e->scrollCol = col;
         // set scale
         e->sca.setAll( 1 );
         // activate
