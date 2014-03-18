@@ -57,7 +57,7 @@ static NetworkManager *myInstance;
 
 -(void)sendNewPlayerMessage:(NSString *)newPlayer
 {
-    NSString *newPlayerString = [NSString stringWithFormat:@"NEWPLAYER:%@:%@:\n", newPlayer, [SoundRunnerUtil appDelegate].currentInstrument.name];
+    NSString *newPlayerString = [NSString stringWithFormat:@"NEWPLAYER:%@:%@:", newPlayer, [SoundRunnerUtil appDelegate].currentInstrument.name];
     NSData *data = [newPlayerString dataUsingEncoding:NSUTF8StringEncoding];
     [self.asyncSocket writeData:data withTimeout:-1 tag:1];
     [self.asyncSocket readDataWithTimeout:-1 tag:2];
@@ -65,7 +65,7 @@ static NetworkManager *myInstance;
 
 -(void)sendNoteOn:(BOOL)noteOn
 {
-    NSString *dataString = [NSString stringWithFormat:@"CHANGENOTEON:%d:\n", noteOn];
+    NSString *dataString = [NSString stringWithFormat:@"CHANGENOTEON:%d:", noteOn];
     NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
     [self.asyncSocket writeData:data withTimeout:-1 tag:1];
     [self.asyncSocket readDataWithTimeout:-1 tag:2];
@@ -73,7 +73,7 @@ static NetworkManager *myInstance;
 
 -(void)sendChangeInstrument:(Instrument *)instrument
 {
-    NSString *dataString = [NSString stringWithFormat:@"CHANGEINSTRUMENT:%@:\n", instrument.name];
+    NSString *dataString = [NSString stringWithFormat:@"CHANGEINSTRUMENT:%@:", instrument.name];
     NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
     [self.asyncSocket writeData:data withTimeout:-1 tag:1];
     [self.asyncSocket readDataWithTimeout:-1 tag:2];
@@ -81,7 +81,7 @@ static NetworkManager *myInstance;
 
 -(void)sendChangeXLoc:(CGFloat)xLoc
 {
-    NSString *dataString = [NSString stringWithFormat:@"CHANGEXLOC:%f:\n", xLoc];
+    NSString *dataString = [NSString stringWithFormat:@"CHANGEXLOC:%f:", xLoc];
     NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
     [self.asyncSocket writeData:data withTimeout:-1 tag:1];
     [self.asyncSocket readDataWithTimeout:-1 tag:2];
