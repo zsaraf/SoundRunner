@@ -64,6 +64,7 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier ];
+        [cell.textLabel setFont:[UIFont fontWithName:@"Gill Sans" size:24]];
         
     }
     
