@@ -37,6 +37,9 @@
     [self.view addSubview:tblView];
     // set row height
     [self.tblView setRowHeight:75];
+    [self.tblView setBackgroundColor:[UIColor clearColor]];
+    [self.tblView setSeparatorColor:[UIColor clearColor]];
+    [self.view setBackgroundColor:[UIColor colorWithRed:22/255.0 green:31/255.0 blue:40/255.0 alpha:1.0]];
     // init the all the sounds to load in.
 
 }
