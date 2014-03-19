@@ -47,20 +47,23 @@ class IphoneChat(Protocol):
 			splitRes = (data.split(':'))
 			self.name = splitRes[1]#data[len('NEWPLAYER:'):]
 			self.instrument = splitRes[2]
+		elif (data.find('CHANGENOTEON:') != -1):
+			data = data[data.find('CHANGENOTEON:'):]
+			splitRes = (data.split(':'))
+			self.noteOn = int(splitRes[1])
+			data = "CHANGENOTEON:" + self.name + ':' + `self.noteOn` + ':'
 		elif (data.find('CHANGEINSTRUMENT:') != -1):
+			data = data[data.find('CHANGEINSTRUMENT:'):]
 			splitRes = (data.split(':'))
 			instrument = splitRes[1]
 			self.instrument = instrument
 			data = "CHANGEINSTRUMENT:" + self.name + ':' + self.instrument + ':'
 		elif (data.find('CHANGEXLOC:') != -1):
+			data = data[data.find('CHANGEXLOC:'):]
 			splitRes = (data.split(':'))
 			xLoc = splitRes[1]
 			self.xLoc = float(xLoc)
 			data = "CHANGEXLOC:" + self.name + ':' + `self.xLoc` + ':'
-		elif (data.find('CHANGENOTEON:') != -1):
-			splitRes = (data.split(':'))
-			self.noteOn = int(splitRes[1])
-			data = "CHANGENOTEON:" + self.name + ':' + `self.noteOn` + ':'
 
 		for c in self.factory.clients:
 			if (c != self):
