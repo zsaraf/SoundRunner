@@ -35,6 +35,8 @@
     [super viewDidLoad];
     // add table view
     [self.view addSubview:tblView];
+    // set row height
+    [self.tblView setRowHeight:75];
     // init the all the sounds to load in.
 
 }
@@ -65,7 +67,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier ];
         [cell.textLabel setFont:[UIFont fontWithName:@"Gill Sans" size:24]];
-        
+        cell.textLabel.textColor = [UIColor whiteColor];
     }
     
     Instrument * thisInstr = (Instrument *)[[AllSounds instance].instruments objectAtIndex:indexPath.row];

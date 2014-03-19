@@ -321,11 +321,11 @@
 		9251D1B218BD638E00FA09DB /* SoundRunner */ = {
 			isa = PBXGroup;
 			children = (
+				9251D1BE18BD638E00FA09DB /* Main_iPhone.storyboard */,
 				9251D1BB18BD638E00FA09DB /* AppDelegate.h */,
 				9251D1BC18BD638E00FA09DB /* AppDelegate.mm */,
 				920EF04B18C2B039000BC189 /* SoundRunnerUtil.h */,
 				920EF04C18C2B039000BC189 /* SoundRunnerUtil.m */,
-				9251D1BE18BD638E00FA09DB /* Main_iPhone.storyboard */,
 				92B953E518D7706B00783356 /* LoginViewController.h */,
 				92B953E618D7706B00783356 /* LoginViewController.m */,
 				5D4662EA18BECC4000DA6000 /* RunnerViewController.h */,
