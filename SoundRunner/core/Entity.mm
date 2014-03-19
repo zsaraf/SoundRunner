@@ -305,7 +305,7 @@ void NoteBoundary::render()
     // set blend func
     glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
     // glBlendFunc( GL_ONE, GL_ONE );
-    glLineWidth(1.0);
+    glLineWidth(2.0);
     
     // vertex pointer
     glVertexPointer( 2, GL_FLOAT, 0, boundVertices );

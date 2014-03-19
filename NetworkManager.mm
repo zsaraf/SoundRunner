@@ -1,9 +1,9 @@
 //
 //  NetworkManager.m
-//  lovestep
+//  SoundRunner
 //
-//  Created by Zachary Waleed Saraf on 11/13/13.
-//  Copyright (c) 2013 Zachary Waleed Saraf. All rights reserved.
+//  Created by Zachary Waleed Saraf on 03/14/14.
+//  Copyright (c) 2013 Zachary Waleed Saraf & JP Wright. All rights reserved.
 //
 
 #import "NetworkManager.h"
