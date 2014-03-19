@@ -93,7 +93,7 @@ bool onOffSwitch = false;
     NSLog(@"go");
     [super viewDidLoad];
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.3 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:.25 target:self selector:@selector(timerDidGoOff:) userInfo:Nil repeats:YES];
     
 //    NSTimer *synthTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(changeSynth:) userInfo:Nil repeats:YES];
     

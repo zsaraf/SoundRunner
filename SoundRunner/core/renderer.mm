@@ -88,9 +88,6 @@ void boundClipPlanes(bool * atEdge);
 void stopAndStartPlayingMidiNoteForCurrentAvatar ();
 Entity * makeScrollMap();
 Entity * makeScrollAvatar(ScrollMap * scrollMap, GLfloat * nextAvX, Vector3D *col);
-Entity * makeOtherAvatarNote (float x, float y, Vector3D col);
-
-
 
 
 void moveCamera(GLfloat inc)
@@ -417,7 +414,7 @@ void stopAndStartPlayingMidiNoteForCurrentAvatar ()
 {
     GLfloat xInc = (Globals::rightBound - Globals::leftBound) / (float)numNotesInScale;
     int key = (int)((g_avatar->loc.x - Globals::leftBound) / xInc);
-    int note = [[Scale instance] noteForKey:key] + 20;
+    int note = [[Scale instance] noteForKey:key] + 36;
     
     NSLog(@"PLaying note: %d", note);
     
@@ -440,7 +437,7 @@ void stopAndStartPlayingMidiNoteForOtherPlayers()
         }
         if (otherPlayer.noteOn) {
             int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
-            int note = [[Scale instance] noteForKey:key] + 20;
+            int note = [[Scale instance] noteForKey:key] + 36;
             [otherPlayer.soundGen playMidiNote:note velocity:127];
             makeOtherAvatarNote(otherPlayer.avatar->loc.x, otherPlayer.avatar->loc.y, otherPlayer.avatar->col);
         }

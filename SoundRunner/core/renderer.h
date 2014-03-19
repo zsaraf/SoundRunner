@@ -28,6 +28,7 @@ void moveCamera( GLfloat inc );
 
 // control mechanism for moving the avatar
 void moveAvatar( float displacement );
+Entity * makeOtherAvatarNote (float x, float y, Vector3D col);
 
 Entity *getCurrentAvatar ();
 

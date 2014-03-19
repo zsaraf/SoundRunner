@@ -11,9 +11,9 @@
 @implementation Scale
 
 const int majorScale[] = {
-    0, 2, 3, 5, 7, 8, 10
+    0, 3, 5, 7, 10
 };
-const int majorScale_numNotes = 7;
+const int majorScale_numNotes = 5;
 
 
 

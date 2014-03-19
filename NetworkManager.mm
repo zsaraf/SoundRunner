@@ -10,6 +10,8 @@
 #import "OtherPlayer.h"
 #import "SoundRunnerUtil.h"
 #import "AllSounds.h"
+#import "Scale.h"
+#import "renderer.h"
 
 #define WAITING_FOR_OTHER_USER_TAG 20
 #define USER_NAME_SEND_TAG 21
@@ -139,6 +141,12 @@ static NetworkManager *myInstance;
         OtherPlayer *otherPlayer = [[SoundRunnerUtil appDelegate].otherPlayers objectForKey:chunks[1]];
         BOOL noteOn = [chunks[2] boolValue];
         otherPlayer.noteOn = noteOn;
+        
+//        GLfloat xInc = (Globals::rightBound - Globals::leftBound) / (float)20;
+//        int key = (int)((otherPlayer.xLoc - Globals::leftBound) / xInc);
+//        int note = [[Scale instance] noteForKey:key] + 20;
+//        [otherPlayer.soundGen playMidiNote:note velocity:127];
+//        makeOtherAvatarNote(otherPlayer.avatar->loc.x, otherPlayer.avatar->loc.y, otherPlayer.avatar->col);
     }
     
     [self.asyncSocket readDataWithTimeout:-1 tag:HEADER_TAG];
